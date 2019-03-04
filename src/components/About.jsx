@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {MDBBtn, MDBIcon} from "mdbreact";
 
 const About = ({user}) => {
@@ -33,18 +33,19 @@ const About = ({user}) => {
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column',
-    margin: '25px 1vw 0 1vw'
+    marginTop: 25
   };
   const textBox = {
     width: '100%',
-    overflowY: 'auto',
+    overflow: 'auto',
+    overflowX: 'hidden',
     fontFamily: 'Montserrat, serif',
     fontSize: '1em',
     color: 'white',
     marginTop: 15,
     display: 'flex',
     flexDirection: 'column',
-    paddingRight: '0.5em'
+    paddingRight: '1em'
   };
   const button = {
     width: 143,

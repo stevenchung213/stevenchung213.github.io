@@ -3,7 +3,7 @@ import React from 'react';
 const Filler = ({section}) => {
 
   const general = {
-    height: '35vh',
+    height: '29vh',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -12,7 +12,7 @@ const Filler = ({section}) => {
   };
 
   return (
-    <div id={section.name} style={general}></div>
+    <div id={section} style={general}></div>
   );
 };
 

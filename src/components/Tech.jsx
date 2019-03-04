@@ -135,13 +135,13 @@ const Tech = () => {
     <div id='tech-container' style={general}>
       <div id='tech1-sub' style={tech1}>
         <div style={titleBox}>
-          <h3 style={{fontWeight: 900}}>
+          <h3 className='h3-responsive' style={{fontWeight: 900}}>
             - FAMILIAR TECHNOLOGIES -
           </h3>
         </div>
-        <div id='frontend-container' style={{float: 'left', width: '46vw'}}>
+        <div id='frontend-container' style={{float: 'left', width: '45vw'}}>
           <div style={subTitleBox}>
-            <h3 style={categoryTitle}>{'< Front End >'}</h3>
+            <h4 className='h4-responsive' style={categoryTitle}>{'< Front End >'}</h4>
           </div>
           <div className='category-container' style={front}>
             {
@@ -159,9 +159,9 @@ const Tech = () => {
             }
           </div>
         </div>
-        <div id='backend-container' style={{float: 'right', width: '46vw'}}>
+        <div id='backend-container' style={{float: 'right', width: '45vw'}}>
           <div style={subTitleBox}>
-            <h3 style={categoryTitle}>{'< Back End >'}</h3>
+            <h4 className='h4-responsive' style={categoryTitle}>{'< Back End >'}</h4>
           </div>
           <div className='category-container' style={back}>
             {
@@ -183,7 +183,7 @@ const Tech = () => {
       <div id='tech2-sub' style={tech2}>
         <div id='dev-container' style={{width: '100%'}}>
           <div style={subTitleBox}>
-            <h3 style={categoryTitle}>{'< Dev Tools >'}</h3>
+            <h4 className='h4-responsive' style={categoryTitle}>{'< Dev Tools >'}</h4>
           </div>
           <div className='category-container' style={dev}>
             {

@@ -20,7 +20,7 @@ export default class Navbar extends Component {
     const navBarStyle = {
       position: 'fixed',
       backgroundColor: 'black',
-      opacity: '0.7',
+      opacity: '1',
       zIndex: 10000,
       width: '100%'
     };
@@ -42,13 +42,13 @@ export default class Navbar extends Component {
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <MDBNavbarNav right>
                 <MDBNavItem>
-                  <AnchorLink href='#about'>ABOUT</AnchorLink>
+                  <AnchorLink href='#about-nav'>ABOUT</AnchorLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <AnchorLink href='#tech'>TECH</AnchorLink>
+                  <AnchorLink href='#tech-nav'>TECH</AnchorLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <AnchorLink  href='#projects'>PROJECTS</AnchorLink>
+                  <AnchorLink  href='#projects-nav'>PROJECTS</AnchorLink>
                 </MDBNavItem>
               </MDBNavbarNav>
               <MDBNavbarNav right>

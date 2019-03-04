@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import User from './User.jsx';
 import Gateway from './Gateway.jsx';
+import Modal from './Modal.jsx';
 import styled from 'styled-components';
 
 export default class Main extends Component {
@@ -40,15 +41,15 @@ export default class Main extends Component {
       this.setState({project: 'My Map Pins'});
     }
     if (e === 'GitHub Repos') {
-      this.setState({project: 'GitHub Repos'});
+      this.setState({project: 'GitHub Repo Fetcher'});
     }
-
     this.setState({isOpen: true});
   };
 
   deSelectProject = () => {
     this.setState({isOpen: false, project: ''});
   };
+
 
   render() {
 
@@ -67,14 +68,21 @@ export default class Main extends Component {
         {!this.state.init &&
         <User onClick={this.handleClick} getUserName={this.getUserName} onEnterKey={this.handleKeyPress}/>
         }
-        {this.state.init &&
+        {
+          this.state.init &&
         <GatewayContainer>
           <Gateway user={this.state.guestName}
                    projectSelected={this.state.isOpen}
-                   clickProject={this.selectProject}
-                   deSelectProject={this.deSelectProject} />
+                   project={this.state.project}
+                   selectProject={this.selectProject}
+                   deSelectProject={this.deSelectProject}/>
+          <div>
+
+          </div>
         </GatewayContainer>
         }
+        {this.state.modal && <Modal/>}
+
       </div>
     );
   }
