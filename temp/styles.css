@@ -57,17 +57,20 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-.nav-item a {
-    color: white !important;
+li.nav-item a {
+    color: white;
 }
-div.dropdown-menu.show.dropdown {
-    display: inline-flex;
-    justify-content: center;
-}
-div.dropdown-menu.show.dropdown a {
+a.dropdown-item {
     color: black !important;
-    font-weight: 900;
 }
+/*div.dropdown-menu.show.dropdown {*/
+    /*display: inline-flex;*/
+    /*justify-content: center;*/
+/*}*/
+/*div.dropdown-menu.show.dropdown a {*/
+    /*color: black !important;*/
+    /*font-weight: 900;*/
+/*}*/
 
 /*
     CUSTOM SCROLLBAR - attached to parent container with overflowY
