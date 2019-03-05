@@ -9,7 +9,7 @@ export default class Main extends Component {
     super();
 
     this.state = {
-      init: true,
+      init: false,
       guestName: '',
       isOpen: false,
       project: ''

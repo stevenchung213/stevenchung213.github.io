@@ -63,14 +63,6 @@ li.nav-item a {
 a.dropdown-item {
     color: black !important;
 }
-/*div.dropdown-menu.show.dropdown {*/
-    /*display: inline-flex;*/
-    /*justify-content: center;*/
-/*}*/
-/*div.dropdown-menu.show.dropdown a {*/
-    /*color: black !important;*/
-    /*font-weight: 900;*/
-/*}*/
 
 /*
     CUSTOM SCROLLBAR - attached to parent container with overflowY
@@ -122,28 +114,9 @@ li.project-description-list-item {
     font-size: 2vh !important
 }
 
-/*span.carousel-control-prev-icon {*/
-    /*width: 17vh !important;*/
-    /*height: 17vw !important;*/
-/*}*/
-/*span.carousel-control-next-icon {*/
-    /*width: 17vw !important;*/
-    /*height: 17vh !important;*/
-/*}*/
-
 /*
-    CAROUSEL STYLES
+    BODY STYLES
 */
-/*div.carousel.carousel-slider {*/
-    /*height: 65vh;*/
-/*}*/
-/*li.slide.selected {*/
-    /*background: transparent !important;*/
-/*}*/
-/*img.mx-auto.w-responsive {*/
-    /*width: 70% !important;*/
-/*}*/
-
 html {
     overflow-x: hidden;
 }
