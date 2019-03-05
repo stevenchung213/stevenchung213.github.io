@@ -73,7 +73,7 @@ const About = ({user}) => {
                 Hello {user === '' ? 'there!' : user}
               </h3>
               <br/>
-              <p>I am a self-motivated and driven individual who derived my skill set through self study over a steady period.  I am constantly looking for improvement within myself and respect/love knowledge in all aspects.  From debugging to building out full stack applications, I enjoy every bit of software development wholeheartedly!
+              <p>I am a self-motivated and driven individual who derived my skill set through self study over a steady period.  I am constantly looking for improvement within myself and respect knowledge in all aspects.  From debugging to building out full stack applications, I enjoy every bit of software development wholeheartedly!
               </p>
               <br/>
               <p>
