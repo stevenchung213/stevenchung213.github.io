@@ -73,22 +73,10 @@ const About = ({user}) => {
                 Hello {user === '' ? 'there!' : user}
               </h3>
               <br/>
-              <p> I'm just another developer and I'm writing this just to fill in some space. I'm just another developer and I'm writing
-                this
-                just
-                to fill in some space. You developer and I'm writing this just to fill in some space. a s d f x c vd f gh h t erke kw l k op
-                i
-                u
-                y
-                t g h j k l m n b jh g j r h e j th j k l k j n b v c x z a s d f g h j t r e w q s d f g h j k b.
+              <p>I am a self-motivated and driven individual who derived my skill set through self study over a steady period.  I am constantly looking for improvement within myself and respect/love knowledge in all aspects.  From debugging to building out full stack applications, I enjoy every bit of software development wholeheartedly!
               </p>
               <br/>
               <p>
-                Maybe some more here....................I'm just another developer and I'm writing this just to fill in some space. I'm just
-                another developer and I'm writing this just to fill in some space. to fill in some space. You developer and I'm writing this
-                just to fill in some space. a s d f x c vd f gh h t erke kw l k op i u
-                y
-                t g h j k l m n b jh g j r h e j th j k l k j n b v c x z a s d f g h j t r e w q s d f g h j k b.
               </p>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
