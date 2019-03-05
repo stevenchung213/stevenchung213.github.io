@@ -145,7 +145,7 @@ export default class Modal extends Component {
                     {project.description.split('.').map((item, i) => {
                       return (
                         <li className='project-description-list-item' key={'listing' + i} style={listing}>
-                          <h5 className='h5-responsive'>{item}</h5>
+                         {item}
                         </li>
                       )
                     })}
@@ -163,7 +163,3 @@ export default class Modal extends Component {
     );
   }
 };
-
-
-
-
