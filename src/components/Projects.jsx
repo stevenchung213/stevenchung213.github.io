@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import {MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer} from "mdbreact";
+import Slider from "react-slick";
 import Modal from './Modal.jsx';
+import {Fade} from 'react-reveal';
+import Zoom from 'react-reveal/Zoom';
+import RubberBand from 'react-reveal/RubberBand';
 
 
 export default class Projects extends Component {
@@ -8,7 +11,7 @@ export default class Projects extends Component {
     super(props);
   }
 
-    render() {
+  render() {
     const general = {
       height: 'auto',
       width: '100%',
@@ -21,7 +24,9 @@ export default class Projects extends Component {
     const titleBox = {
       width: 'auto',
       display: 'flex',
+      flexDirection: 'column',
       padding: '1vh 1vw 1vh 1vw',
+      alignItems: 'center',
       justifyContent: 'center',
       color: 'white',
       marginBottom: 10
@@ -50,39 +55,39 @@ export default class Projects extends Component {
     ];
 
     return (
-      <div id='projects-container' style={general}>
-        <MDBContainer>
-          <div style={titleBox}>
-            <h3 className='h3-responsive' style={{fontWeight: 900}}>
-              - SOME OF MY PROJECTS -
-            </h3>
-          </div>
-          <MDBCarousel activeItem={1} multiItem={false}
-                       length={4} showControls={true}
-                       showIndicators={false} thumbnails={false}
-                       interval={false}>
-            <MDBCarouselInner>
-              {projects.map((project, i) =>
-                <MDBCarouselItem itemId={i + 1} key={'project' + i+1}>
-                  <div className="w-responsive mx-auto">
-                    <div>
-                      <MDBView className="w-auto">
-                        <img className="mx-auto w-responsive" src={project.src}
-                             alt={project.name}/>
-                      </MDBView>
+      <Fade big>
+        <div id='projects-container' style={general}>
+          <Zoom top>
+            <div style={titleBox}>
+              <h3 className='h3-responsive' style={{fontWeight: 900}}>
+                - SOME OF MY PROJECTS -
+              </h3>
+              <p>
+                {'. . . drag left or right . . .'}
+              </p>
+            </div>
+          </Zoom>
+          <Slider adaptiveHeight={true} arrows={true} centerMode={true}
+                  slidesToShow={2}>
+            {projects.map((project, i) =>
+              <RubberBand>
+                <div key={'project' + (i + 1)}>
+                  <div className="w-responsive mx-auto" style={{paddingBottom: '1.5vh'}}>
+                    <div className="w-auto">
+                      <img className="mx-auto w-responsive" src={project.src} alt={project.name}/>
                     </div>
                     <div className='w-responsive mx-auto text-center p-1 mt-1'>
                       <h4 className="h4-responsive" style={{color: 'white'}}>{project.name}</h4>
                       <p style={{color: 'white', marginBottom: 5}}>{project.description}</p>
-                      <Modal project={project.name} />
+                      <Modal project={project.name}/>
                     </div>
                   </div>
-                </MDBCarouselItem>
-              )}
-            </MDBCarouselInner>
-          </MDBCarousel>
-        </MDBContainer>
-      </div>
+                </div>
+              </RubberBand>
+            )}
+          </Slider>
+        </div>
+      </Fade>
     );
   }
 };

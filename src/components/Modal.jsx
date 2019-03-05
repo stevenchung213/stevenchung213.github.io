@@ -1,30 +1,23 @@
 import React, {Component} from 'react';
-import {MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter} from 'mdbreact';
-import $ from 'jquery';
+import ReactModal from 'react-modal';
+import {MDBBtn} from 'mdbreact';
+
 
 export default class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      showModal: false
     };
   }
 
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
+  handleOpenModal = () => {
+    this.setState({showModal: true});
   };
 
-  componentDidMount() {
-    if (this.state.modal) {
-      $('.carousel-control-prev').addClass('anchor-disabled');
-      $('.carousel-control-next').addClass('anchor-disabled');
-    } else {
-      $('.carousel-control-prev').removeClass('anchor-disabled');
-      $('.carousel-control-next').removeClass('anchor-disabled');
-    }
-  }
+  handleCloseModal = () => {
+    this.setState({showModal: false});
+  };
 
   render() {
 
@@ -78,6 +71,10 @@ export default class Modal extends Component {
       verticalAlign: 'center',
       justifyContent: 'center'
     };
+    const bodyTop = {
+      display: 'flex',
+      justifyContent: 'center'
+    };
     const image = {
       float: 'left',
       height: 'auto',
@@ -88,54 +85,64 @@ export default class Modal extends Component {
       objectFit: 'contain',
     };
     const list = {
-      marginTop: '2em'
+      marginTop: '4vh',
+      paddingLeft: '2vw',
+
     };
     const listing = {
-      paddingLeft: '2em',
       textAlign: 'left',
       fontWeight: 600,
-      paddingRight: '2em'
     };
     const footer = {
       display: 'flex',
       justifyContent: 'center'
     };
     return (
-      <MDBContainer>
+      <div id='modal-container'>
         {/* BUTTON */}
-        <MDBBtn color="white" onClick={this.toggle}>More Info</MDBBtn>
+        <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal}>More Info</MDBBtn>
         {/* MODAL */}
-        <MDBModal isOpen={this.state.modal} toggle={this.toggle}
-                  animation='bottom' size='lg' centered={true} autoFocus={true}
-                  backdrop={true} fullHeight position='bottom'>
-          <MDBModalHeader toggle={this.toggle}>{project.name}</MDBModalHeader>
-          <MDBModalBody style={body}>
-            <img src={project.src} alt={project.name} style={image}/>
-            <div id='project-info'>
-              <div id='tech-stack'>
-                <h5 className='h5-responsive' style={{marginBottom: '0.5em', marginTop: '1.5em', fontWeight: 700}}>
-                  Tech Stack
-                </h5>
-                <p style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em'}}>{project.tech}</p>
+        <ReactModal isOpen={this.state.showModal} shouldCloseOnEsc={true}
+                    shouldReturnFocusAfterClose={true} contentLabel="Minimal Modal Example"
+                    shouldCloseOnOverlayClick={true} ariaHideApp={true}
+        >
+          <div className='modal-header' style={{display: 'flex', justifyContent: 'center'}}>
+            <h4 className='h4-responsive pt-3' style={{fontWeight: 700, textAlign: 'center'}}>
+              {project.name}
+            </h4>
+          </div>
+          <div className='modal-body' style={body}>
+            <div className='modal-body-top' style={bodyTop}>
+              <div className='modal-image-container'>
+                <img src={project.src} alt={project.name} style={image}/>
               </div>
-              <div id='project-description'>
-                <ul id='project-description-list' style={list}>
-                {project.description.split('.').map(item => {
-                  return (
-                    <li className='project-description-list-item' style={listing}>
-                      {item}
-                    </li>
-                  )})}
-                </ul>
+              <div className='modal-project-info' style={{overflowY: 'auto', paddingLeft: '1vw'}}>
+                <div className='modal-tech-stack'>
+                  <h5 className='h5-responsive' style={{textAlign: 'center', marginBottom: '0.5em', marginTop: '1.5em', fontWeight: 700}}>
+                    Tech Stack
+                  </h5>
+                  <p style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</p>
+                </div>
+                <div className='modal-project-description'>
+                  <ul className='modal-project-description-list' style={list}>
+                    {project.description.split('.').map((item, i) => {
+                      return (
+                        <li className='project-description-list-item' key={'listing' + i} style={listing}>
+                          {item}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
               </div>
             </div>
-          </MDBModalBody>
-          <MDBModalFooter style={footer}>
-            <MDBBtn color="black" onClick={this.toggle}>Close</MDBBtn>
+          </div>
+          <div className='modal-footer' style={footer}>
+            <MDBBtn color="black" onClick={this.handleCloseModal} href='#projects-nav'>Close</MDBBtn>
             <MDBBtn color="black" target="_blank" rel="noopener noreferrer" href={project.href}>View Code</MDBBtn>
-          </MDBModalFooter>
-        </MDBModal>
-      </MDBContainer>
+          </div>
+        </ReactModal>
+      </div>
     );
   }
 };

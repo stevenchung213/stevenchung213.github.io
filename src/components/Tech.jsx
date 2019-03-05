@@ -1,5 +1,6 @@
 import React from "react";
 import {MDBView} from "mdbreact";
+import {Fade} from 'react-reveal';
 
 
 const Tech = () => {
@@ -35,7 +36,7 @@ const Tech = () => {
       'https://s3-us-west-1.amazonaws.com/my.portfolio/mac.png']
   };
   const general = {
-    minHeight: '60vh',
+    minHeight: 'auto',
     height: 'auto',
     width: '100%',
     backgroundColor: 'white',
@@ -56,7 +57,7 @@ const Tech = () => {
     width: '100%',
     justifyContent: 'center',
     alignContent: 'center',
-    overflow: 'auto'
+    overflowX: 'hidden'
   };
   const tech2 = {
     minHeight: '20vh',
@@ -64,7 +65,7 @@ const Tech = () => {
     width: '100%',
     justifyContent: 'center',
     alignContent: 'center',
-    overflow: 'auto',
+    overflowY: 'hidden',
     display: 'flex',
     paddingBottom: '1vh'
   };
@@ -126,83 +127,93 @@ const Tech = () => {
   const icon = {
     display: 'flex',
     width: 'auto%',
-    height: '100%',
+    height: '80%',
     justifyContent: 'center',
     alignItems: 'center'
   };
 
   return (
-    <div id='tech-container' style={general}>
-      <div id='tech1-sub' style={tech1}>
-        <div style={titleBox}>
-          <h3 className='h3-responsive' style={{fontWeight: 900}}>
-            - FAMILIAR TECHNOLOGIES -
-          </h3>
+    <Fade big>
+      <div id='tech-container' style={general}>
+        <div id='tech1-sub' style={tech1}>
+          <Fade top>
+            <div style={titleBox}>
+              <h3 className='h3-responsive' style={{fontWeight: 900}}>
+                - FAMILIAR TECHNOLOGIES -
+              </h3>
+            </div>
+          </Fade>
+          <Fade left>
+            <div id='frontend-container' style={{float: 'left', width: '45vw'}}>
+              <div style={subTitleBox}>
+                <h4 className='h4-responsive' style={categoryTitle}>{'< Front End >'}</h4>
+              </div>
+              <div className='category-container' style={front}>
+                {
+                  urls.front.map(url => {
+                    let split = url.split('/');
+                    let tech = split[split.length - 1].slice(0, -4);
+                    return (
+                      <MDBView hover zoom key={tech}>
+                        <div className='img-box' key={tech} style={iconBox}>
+                          <img src={url} alt={tech} style={icon}/>
+                        </div>
+                      </MDBView>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </Fade>
+          <Fade right>
+            <div id='backend-container' style={{float: 'right', width: '45vw'}}>
+              <div style={subTitleBox}>
+                <h4 className='h4-responsive' style={categoryTitle}>{'< Back End >'}</h4>
+              </div>
+              <div className='category-container' style={back}>
+                {
+                  urls.back.map(url => {
+                    let split = url.split('/');
+                    let tech = split[split.length - 1].slice(0, -4);
+                    return (
+                      <MDBView hover zoom key={tech}>
+                        <div className='img-box' key={tech} style={iconBox}>
+                          <img src={url} alt={tech} style={icon}/>
+                        </div>
+                      </MDBView>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </Fade>
         </div>
-        <div id='frontend-container' style={{float: 'left', width: '45vw'}}>
-          <div style={subTitleBox}>
-            <h4 className='h4-responsive' style={categoryTitle}>{'< Front End >'}</h4>
-          </div>
-          <div className='category-container' style={front}>
-            {
-              urls.front.map(url => {
-                let split = url.split('/');
-                let tech = split[split.length - 1].slice(0, -4);
-                return (
-                  <MDBView hover zoom key={tech}>
-                    <div className='img-box' key={tech} style={iconBox}>
-                      <img src={url} alt={tech} style={icon}/>
-                    </div>
-                  </MDBView>
-                )
-              })
-            }
-          </div>
-        </div>
-        <div id='backend-container' style={{float: 'right', width: '45vw'}}>
-          <div style={subTitleBox}>
-            <h4 className='h4-responsive' style={categoryTitle}>{'< Back End >'}</h4>
-          </div>
-          <div className='category-container' style={back}>
-            {
-              urls.back.map(url => {
-                let split = url.split('/');
-                let tech = split[split.length - 1].slice(0, -4);
-                return (
-                  <MDBView hover zoom key={tech}>
-                    <div className='img-box' key={tech} style={iconBox}>
-                      <img src={url} alt={tech} style={icon}/>
-                    </div>
-                  </MDBView>
-                )
-              })
-            }
-          </div>
+        <div id='tech2-sub' style={tech2}>
+          <Fade bottom>
+            <div id='dev-container' style={{width: '100%'}}>
+              <div style={subTitleBox}>
+                <h4 className='h4-responsive' style={categoryTitle}>{'< Dev Tools >'}</h4>
+              </div>
+              <div className='category-container' style={dev}>
+                {
+                  urls.dev.map(url => {
+                    let split = url.split('/');
+                    let tech = split[split.length - 1].slice(0, -4);
+                    return (
+                      <MDBView hover zoom key={tech}>
+                        <div className='img-box' key={tech} style={iconBox}>
+                          <img src={url} alt={tech} style={icon}/>
+                        </div>
+                      </MDBView>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </Fade>
         </div>
       </div>
-      <div id='tech2-sub' style={tech2}>
-        <div id='dev-container' style={{width: '100%'}}>
-          <div style={subTitleBox}>
-            <h4 className='h4-responsive' style={categoryTitle}>{'< Dev Tools >'}</h4>
-          </div>
-          <div className='category-container' style={dev}>
-            {
-              urls.dev.map(url => {
-                let split = url.split('/');
-                let tech = split[split.length - 1].slice(0, -4);
-                return (
-                  <MDBView hover zoom key={tech}>
-                    <div className='img-box' key={tech} style={iconBox}>
-                      <img src={url} alt={tech} style={icon}/>
-                    </div>
-                  </MDBView>
-                )
-              })
-            }
-          </div>
-        </div>
-      </div>
-    </div>
+    </Fade>
   );
 };
 
