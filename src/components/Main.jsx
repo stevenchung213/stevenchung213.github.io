@@ -50,6 +50,9 @@ export default class Main extends Component {
     this.setState({isOpen: false, project: ''});
   };
 
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return this.state.guestName === nextState.guestName;
+  }
 
   render() {
 

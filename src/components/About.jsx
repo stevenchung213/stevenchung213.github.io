@@ -37,6 +37,7 @@ const About = ({user}) => {
     marginTop: 25
   };
   const textBox = {
+    height: 'auto',
     width: '100%',
     overflow: 'auto',
     overflowX: 'hidden',
@@ -73,16 +74,13 @@ const About = ({user}) => {
                 Hello {user === '' ? 'there!' : user}
               </h3>
               <br/>
-              <p>I am a self-motivated and driven individual who derived my skill set through self study over a steady period.  I am constantly looking for improvement within myself and respect knowledge in all aspects.  From debugging to building out full stack applications, I enjoy every bit of software development wholeheartedly!
-              </p>
-              <br/>
-              <p>
-              </p>
+              <h5 className='h5-responsive'>I am a self-motivated and driven individual who derived my skill set through self study over a steady period.  I am constantly looking for improvement within myself and respect knowledge in all aspects.  From debugging to building out full stack applications, I enjoy every bit of software development wholeheartedly!
+              </h5>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
                     href='https://s3-us-west-1.amazonaws.com/my.portfolio/sc_resume.pdf'
                     style={button}>
-              <MDBIcon icon="file-pdf" className="mr-xl-1-4"/> Résumé
+              <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
             </MDBBtn>
           </div>
         </Bounce>

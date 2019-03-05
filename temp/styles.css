@@ -1,5 +1,20 @@
 /*
-    SLIGHTLY TRANSPARENT
+    BODY STYLES
+*/
+html {
+    overflow-x: hidden;
+}
+p {
+    font-size: 2vh !important;
+}
+@media screen and (min-width: 320px) {
+    p {
+        font-size: calc(1px * ((100vw - 320px) / 680));
+    }
+}
+
+/*
+    SLIGHTLY TRANSPARENT WALLPAPER
 */
 #about-container, #tech-container, #projects-container {
     position: relative;
@@ -25,7 +40,7 @@
 }
 
 /*
-    COMPLETELY TRANSPARENT
+    COMPLETELY TRANSPARENT WALLPAPER
 */
 #about, #tech, #projects, #contact, .anchors {
     position: relative;
@@ -90,50 +105,23 @@ a.dropdown-item {
 }
 
 /*
-    MODAL SIZING
+    CAROUSEL STYLES
 */
-.modal-content {
-    height: 65vh;
-    width: 100%;
-    z-index: 9999 !important;
-    position: fixed;
-    overflow: visible;
+li.slide {
+    background: transparent !important;
 }
-.modal-dialog.modal-lg.modal-full-height.modal-dialog-centered.modal-bottom {
-    width: auto;
-    max-width: 100%;
+li.slide.selected {
+    background: transparent;
 }
 
 /*
-    ALL <p> TEXT RESPONSIVE
+    MODAL STYLES
 */
-p {
-    font-size: 2vh !important;
+div.styles_modal__gNwvD {
+    height: auto;
+    max-width: 60vw;
+    width: 100%;
 }
 li.project-description-list-item {
     font-size: 2vh !important
-}
-
-/*
-    BODY STYLES
-*/
-html {
-    overflow-x: hidden;
-}
-.ReactModal__Body--open {
-    overflow: hidden;
-}
-div.ReactModal__Content.ReactModal__Content--after-open {
-    height: auto;
-    width: auto;
-    display: block;
-    justify-content: center;
-    overflow: hidden !important;
-}
-div.modal-image-container {
-    height: 100% !important;
-    width: 100% !important;
-}
-div.ReactModalPortal {
-    overflow-y: auto !important;
 }

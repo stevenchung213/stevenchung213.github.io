@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import ReactModal from 'react-modal';
+// import ReactModal from 'react-modal';
 import {MDBBtn} from 'mdbreact';
+import ResponsiveModal from 'react-responsive-modal';
 
 
 export default class Modal extends Component {
@@ -22,7 +23,8 @@ export default class Modal extends Component {
   render() {
 
     const sucasa = {
-      name: 'Su Casa - Rental & Lodging Application',
+      name: 'Su Casa',
+      caption: 'Rental & Lodging Application',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/sucasa.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | AWS EBS | AWS S3 | Jest | Enzyme',
       description: 'Constructed a clean UI/UX experience while focusing on modularity via React. All routes maintained through' +
@@ -31,7 +33,8 @@ export default class Modal extends Component {
       href: 'https://github.com/stevenchung213/overview-proxy/tree/DEMO_LOCALHOST'
     };
     const zillwoah = {
-      name: 'Zillwoah! - Real Estate Application',
+      name: 'Zillwoah!',
+      caption: 'Real Estate Application',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/zillwoah1.png',
       tech: 'React | Node | Express | PostgreSQL | CassandraDB | AWS EC2 | Nginx | K6 | New Relic | Loader.io',
       description: 'Efficiently scaled legacy codebase to handle 10 million records.' +
@@ -41,7 +44,8 @@ export default class Modal extends Component {
       href: 'https://github.com/SDC-8/steve'
     };
     const mymappins = {
-      name: 'My Map Pins - Create your own notes on geographical locations using Google Maps',
+      name: 'My Map Pins',
+      caption: 'Save your own labeled marker on Google Maps',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/mappins.PNG',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | Google Maps API',
       description: 'Implemented Google Maps API for user to have the ability to create and save pins containing user info based on' +
@@ -50,7 +54,8 @@ export default class Modal extends Component {
       href: 'https://github.com/stevenchung213/mvp'
     };
     const repofecther = {
-      name: 'Github Repo Fetcher - Retrieve all repos of a Github user',
+      name: 'Github Repo Fetcher',
+      caption: 'Retrieve all repos of a Github user',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/repofetcher.PNG',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | GitHub API',
       description: 'Designed a clean interface for users to search for and display a Github user\'s repos.' +
@@ -64,20 +69,32 @@ export default class Modal extends Component {
       this.props.project === 'Zillwoah!' ? project = zillwoah :
         this.props.project === 'My Map Pins' ? project = mymappins : project = repofecther;
 
+    const header = {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: '0 2vw',
+      width: '100%',
+      height: 'auto'
+    };
     const body = {
-      maxHeight: '65vh',
-      height: '65vh',
+      maxHeight: '75vh',
+      height: '100%',
+      width: '100%',
       display: 'inline-flex',
       verticalAlign: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      paddingTop: 0,
+      paddingBottom: 0
     };
     const bodyTop = {
       display: 'flex',
-      justifyContent: 'center'
+      flexDirection: 'column',
+      justifyContent: 'center',
+      width: '100%',
     };
     const image = {
-      float: 'left',
       height: 'auto',
+      maxWidth: '-webkit-fill-available',
       maxHeight: '90%',
       display: 'block',
       marginLeft: 'auto',
@@ -85,8 +102,9 @@ export default class Modal extends Component {
       objectFit: 'contain',
     };
     const list = {
-      marginTop: '4vh',
+      marginTop: '1vh',
       paddingLeft: '2vw',
+      paddingRight: '2vw'
 
     };
     const listing = {
@@ -95,40 +113,39 @@ export default class Modal extends Component {
     };
     const footer = {
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      height: 'auto',
+      width: '100%'
+
     };
     return (
       <div id='modal-container'>
         {/* BUTTON */}
         <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal}>More Info</MDBBtn>
         {/* MODAL */}
-        <ReactModal isOpen={this.state.showModal} shouldCloseOnEsc={true}
-                    shouldReturnFocusAfterClose={true} contentLabel="Minimal Modal Example"
-                    shouldCloseOnOverlayClick={true} ariaHideApp={true}
-        >
-          <div className='modal-header' style={{display: 'flex', justifyContent: 'center'}}>
-            <h4 className='h4-responsive pt-3' style={{fontWeight: 700, textAlign: 'center'}}>
-              {project.name}
-            </h4>
+        <ResponsiveModal open={this.state.showModal} onClose={this.handleCloseModal} center
+                         blockScroll={true} focusTrapped={true}>
+          <div className='modal-header' style={header}>
+            <h3 className='h3-responsive' style={{fontWeight: 700, textAlign: 'center'}}>
+              {project.name} <i style={{fontWeight: 500}}>{` - ${project.caption}`}</i>
+            </h3>
           </div>
           <div className='modal-body' style={body}>
             <div className='modal-body-top' style={bodyTop}>
-              <div className='modal-image-container'>
+              <div className='modal-image-container w-responsive'
+                   style={{display: 'flex', width: '100%', maxHeight: '', height: '100%', paddingTop: '1vh'}}>
                 <img src={project.src} alt={project.name} style={image}/>
               </div>
-              <div className='modal-project-info' style={{overflowY: 'auto', paddingLeft: '1vw'}}>
+              <div className='modal-project-info' style={{width: '100%', height: 'auto'}}>
                 <div className='modal-tech-stack'>
-                  <h5 className='h5-responsive' style={{textAlign: 'center', marginBottom: '0.5em', marginTop: '1.5em', fontWeight: 700}}>
-                    Tech Stack
-                  </h5>
-                  <p style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</p>
+                  <h4 className='h4-responsive' style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</h4>
                 </div>
                 <div className='modal-project-description'>
                   <ul className='modal-project-description-list' style={list}>
                     {project.description.split('.').map((item, i) => {
                       return (
                         <li className='project-description-list-item' key={'listing' + i} style={listing}>
-                          {item}
+                          <h5 className='h5-responsive'>{item}</h5>
                         </li>
                       )
                     })}
@@ -137,12 +154,16 @@ export default class Modal extends Component {
               </div>
             </div>
           </div>
-          <div className='modal-footer' style={footer}>
+          <div className='modal-footer w-auto' style={footer}>
             <MDBBtn color="black" onClick={this.handleCloseModal} href='#projects-nav'>Close</MDBBtn>
             <MDBBtn color="black" target="_blank" rel="noopener noreferrer" href={project.href}>View Code</MDBBtn>
           </div>
-        </ReactModal>
+        </ResponsiveModal>
       </div>
     );
   }
 };
+
+
+
+
