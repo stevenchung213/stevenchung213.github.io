@@ -69,7 +69,7 @@ export default class Projects extends Component {
                     centerMode={true} showThumbs={false} showStatus={false}
                     showIndicators={false}>
             {projects.map((project, i) =>
-              <RubberBand key={'project' + (i + 1)}>
+              <Fade big key={'project' + (i + 1)}>
                 <div>
                   <div className="w-responsive mx-auto" style={{paddingBottom: '1.5vh'}}>
                     <div className="mx-auto w-responsive">
@@ -82,7 +82,7 @@ export default class Projects extends Component {
                     </div>
                   </div>
                 </div>
-              </RubberBand>
+              </Fade>
             )}
           </Carousel>
         </div>
