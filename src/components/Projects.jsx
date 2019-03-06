@@ -5,7 +5,6 @@ import {Fade} from 'react-reveal';
 import Zoom from 'react-reveal/Zoom';
 
 
-
 export default class Projects extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +50,11 @@ export default class Projects extends Component {
         src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/repofetcher-small.png',
         name: 'Github Repo Fetcher',
         description: 'App using Github API'
+      },
+      {
+        src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio-small.png',
+        name: 'Portfolio',
+        description: 'My Portfolio Site'
       }
     ];
 

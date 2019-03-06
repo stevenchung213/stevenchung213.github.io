@@ -6,9 +6,9 @@ import About from './About.jsx';
 import Filler from './Filler.jsx';
 import Tech from './Tech.jsx';
 import Projects from './Projects.jsx';
-import Modal from './Modal.jsx';
 
-const Gateway = ({user, projectSelected, project, selectProject, deSelectProject}) => {
+
+const Gateway = ({user}) => {
 
   return (
     <div id='gateway-container'>
@@ -21,16 +21,7 @@ const Gateway = ({user, projectSelected, project, selectProject, deSelectProject
       <Tech/>
       <Filler section={'projects'}/>
       <Anchor section={'projects'}/>
-      <Projects projectSelected={projectSelected}
-                selectProject={selectProject}
-                deSelectProject={deSelectProject}/>
-      {/*{*/}
-        {/*projectSelected &&*/}
-        {/*<Modal projectSelected={projectSelected}*/}
-               {/*project={project}*/}
-               {/*selectProject={selectProject}*/}
-               {/*deSelectProject={deSelectProject}/>*/}
-      {/*}*/}
+      <Projects/>
       <Filler section={'contact'}/>
       <Anchor section={'contact'}/>
     </div>

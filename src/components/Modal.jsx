@@ -63,11 +63,21 @@ export default class Modal extends Component {
         'Lists top 25 repo\'s sorted by fork count when not searching for specific user',
       href: 'https://github.com/stevenchung213/hrr34-fullstack-review'
     };
+    const portfolio = {
+      name: 'Portfolio Site',
+      caption: '',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio.png',
+      tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
+      description: 'Completely responsive front end. Front end design bootstrapped using Material Design for React.' +
+        'Deployed on Github Pages. Files served by AWS S3',
+      href: 'https://github.com/stevenchung213/stevenchung213.github.io'
+    };
 
     let project;
     this.props.project === 'Su Casa' ? project = sucasa :
       this.props.project === 'Zillwoah!' ? project = zillwoah :
-        this.props.project === 'My Map Pins' ? project = mymappins : project = repofecther;
+        this.props.project === 'My Map Pins' ? project = mymappins :
+          this.props.project === 'Portfolio' ? project = portfolio : project = repofecther;
 
     const header = {
       display: 'flex',
@@ -138,14 +148,15 @@ export default class Modal extends Component {
               </div>
               <div className='modal-project-info' style={{width: '100%', height: 'auto'}}>
                 <div className='modal-tech-stack'>
-                  <h4 className='h4-responsive' style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</h4>
+                  <h4 className='h4-responsive'
+                      style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</h4>
                 </div>
                 <div className='modal-project-description'>
                   <ul className='modal-project-description-list' style={list}>
                     {project.description.split('.').map((item, i) => {
                       return (
                         <li className='project-description-list-item' key={'listing' + i} style={listing}>
-                         {item}
+                          {item}
                         </li>
                       )
                     })}

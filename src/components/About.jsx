@@ -74,7 +74,9 @@ const About = ({user}) => {
                 Hello {user === '' ? 'there!' : user}
               </h3>
               <br/>
-              <h5 className='h5-responsive'>I am a self-motivated and driven individual with technical skills that were derived over a lifetime.  I am constantly looking for improvement within myself and respect knowledge in all aspects.  From debugging to building out full stack applications, I enjoy every bit of software development!
+              <h5 className='h5-responsive'>I am a self-motivated and driven individual with technical skills that were derived over a
+                lifetime. I am constantly looking for improvement within myself and respect knowledge in all aspects. From debugging to
+                building out full stack applications, I enjoy every bit of software development!
               </h5>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"

@@ -73,16 +73,15 @@ export default class Main extends Component {
         }
         {
           this.state.init &&
-        <GatewayContainer>
-          <Gateway user={this.state.guestName}
-                   projectSelected={this.state.isOpen}
-                   project={this.state.project}
-                   selectProject={this.selectProject}
-                   deSelectProject={this.deSelectProject}/>
-          <div>
-
-          </div>
-        </GatewayContainer>
+          <GatewayContainer>
+            <Gateway user={this.state.guestName}
+                     projectSelected={this.state.isOpen}
+                     project={this.state.project}
+                     selectProject={this.selectProject}
+                     deSelectProject={this.deSelectProject}/>
+            <div>
+            </div>
+          </GatewayContainer>
         }
         {this.state.modal && <Modal/>}
 
