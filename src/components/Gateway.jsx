@@ -6,6 +6,7 @@ import About from './About.jsx';
 import Filler from './Filler.jsx';
 import Tech from './Tech.jsx';
 import Projects from './Projects.jsx';
+import Contact from './Contact.jsx';
 
 
 const Gateway = ({user}) => {
@@ -24,6 +25,7 @@ const Gateway = ({user}) => {
       <Projects/>
       <Filler section={'contact'}/>
       <Anchor section={'contact'}/>
+      <Contact/>
     </div>
   )
 };

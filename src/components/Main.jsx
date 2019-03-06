@@ -4,6 +4,7 @@ import Gateway from './Gateway.jsx';
 import Modal from './Modal.jsx';
 import styled from 'styled-components';
 
+
 export default class Main extends Component {
   constructor() {
     super();

@@ -1,6 +1,7 @@
 import React from "react";
 import {MDBBtn, MDBIcon} from "mdbreact";
-import {Bounce, Fade} from 'react-reveal';
+import {Roll, Fade} from 'react-reveal';
+
 
 const About = () => {
 
@@ -9,7 +10,7 @@ const About = () => {
     width: '100%',
     margin: '5vh 5w',
     backgroundColor: 'black',
-    padding: '5vh 6vw 5vh 1vw',
+    padding: '5vh 4vw 5vh 1vw',
     display: 'flex',
     flexDirection: 'row'
   };
@@ -19,13 +20,13 @@ const About = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 15
+    margin: 'auto'
   };
   const picStyle = {
     position: 'relative',
     verticalAlign: 'middle',
-    maxWidth: '80%',
-    maxHeight: '80%',
+    maxWidth: '60%',
+    maxHeight: '60%',
   };
   const info = {
     width: "60%",
@@ -57,17 +58,17 @@ const About = () => {
   };
 
   return (
-    <Fade big>
+    <Fade clear>
       <div id='about-container' style={general}>
-        <Bounce>
+        <Roll left>
           <div id='pic-container' style={picBox}>
             <img id='picture'
                  src='https://s3-us-west-1.amazonaws.com/my.portfolio/profile.png'
                  alt='profile-pic' style={picStyle}
             />
           </div>
-        </Bounce>
-        <Bounce>
+        </Roll>
+        <Roll right>
           <div id='about-info' style={info}>
             <div id='text-container' style={textBox}>
               <h5
@@ -80,7 +81,7 @@ const About = () => {
               <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
             </MDBBtn>
           </div>
-        </Bounce>
+        </Roll>
       </div>
     </Fade>
   );

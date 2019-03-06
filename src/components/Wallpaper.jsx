@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
-import {MDBBtn, MDBIcon, MDBNavItem} from "mdbreact";
+import {MDBIcon} from "mdbreact";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import {Bounce, Fade} from 'react-reveal';
+
 
 const Wallpaper = ({user}) => {
 
@@ -15,7 +17,7 @@ const Wallpaper = ({user}) => {
   `;
   const general = {
     position: 'absolute',
-    top: '40%',
+    top: '45%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -24,8 +26,9 @@ const Wallpaper = ({user}) => {
     margin: 'auto'
   };
   const intro = {
+    borderRadius: '2rem',
     background: 'white',
-    maxWidth: '55vw',
+    maxWidth: '56vw',
     height: 'auto',
     width: '100%',
     margin: 'auto',
@@ -52,29 +55,34 @@ const Wallpaper = ({user}) => {
   };
 
   return (
-    <div>
-      <div id='hello' style={general}>
-        <div id='intro' style={intro}>
-          <div>
-            <h1 className='h1-responsive' style={hello}>
-              HELLO {user === '' ? 'THERE,' : user + ','} I'M STEVE
-            </h1>
-          </div>
-          <div>
-            <p style={sub}>
-              - FULL STACK SOFTWARE ENGINEER -
-            </p>
-          </div>
+    <Fade clear>
+      <div>
+        <div id='hello' style={general}>
+          <Bounce top>
+            <div id='intro' style={intro}>
+              <div>
+                <h1 className='h1-responsive' style={hello}>
+                  HELLO {user === '' ? 'THERE,' : user + ','} I'M STEVE
+                </h1>
+              </div>
+              <div>
+                <p style={sub}>
+                  - FULL STACK SOFTWARE ENGINEER -
+                </p>
+              </div>
+            </div>
+          </Bounce>
+          <Bounce bottom>
+            <div id='down-arrow' style={arrow}>
+              <AnchorLink href='#about-nav'>
+                <MDBIcon icon="angle-double-down fa-6x" className='white-text'/>
+              </AnchorLink>
+            </div>
+          </Bounce>
         </div>
-        <div id='down-arrow' style={arrow}>
-          <AnchorLink href='#about-nav'>
-            <MDBIcon icon="angle-double-down fa-4x" className='white-text'/>
-          </AnchorLink>
-        </div>
+        <Background/>
       </div>
-      <Background/>
-
-    </div>
+    </Fade>
   );
 };
 

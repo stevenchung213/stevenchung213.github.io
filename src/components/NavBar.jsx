@@ -15,6 +15,7 @@ import {
 import {BrowserRouter as Router} from "react-router-dom";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+
 export default class Navbar extends Component {
   state = {
     isOpen: false

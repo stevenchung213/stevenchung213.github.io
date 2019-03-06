@@ -1,14 +1,11 @@
 import React from 'react';
 
+
 const Filler = ({section}) => {
 
   const general = {
-    height: '29vh',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: '10%'
+    height: '28vh',
+    width: '100%'
   };
 
   return (

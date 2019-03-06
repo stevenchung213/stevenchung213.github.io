@@ -1,6 +1,6 @@
 import React from "react";
 import {MDBView} from "mdbreact";
-import {Fade} from 'react-reveal';
+import {Fade, Slide} from 'react-reveal';
 
 
 const Tech = () => {
@@ -42,8 +42,7 @@ const Tech = () => {
     backgroundColor: 'white',
     padding: '2vh 2vw',
     justifyContent: 'center',
-    alignContent: 'center',
-    overflow: 'auto'
+    alignContent: 'center'
   };
   const titleBox = {
     width: 'auto',
@@ -132,14 +131,14 @@ const Tech = () => {
     <Fade big>
       <div id='tech-container' style={general}>
         <div id='tech1-sub' style={tech1}>
-          <Fade top>
+          <Slide top>
             <div style={titleBox}>
               <h3 className='h3-responsive' style={{fontWeight: 900}}>
                 - FAMILIAR TECHNOLOGIES -
               </h3>
             </div>
-          </Fade>
-          <Fade left>
+          </Slide>
+          <Slide left>
             <div id='frontend-container' style={{float: 'left', width: '45vw'}}>
               <div style={subTitleBox}>
                 <h4 className='h4-responsive' style={categoryTitle}>{'< Front End >'}</h4>
@@ -160,8 +159,8 @@ const Tech = () => {
                 }
               </div>
             </div>
-          </Fade>
-          <Fade right>
+          </Slide>
+          <Slide right>
             <div id='backend-container' style={{float: 'right', width: '45vw'}}>
               <div style={subTitleBox}>
                 <h4 className='h4-responsive' style={categoryTitle}>{'< Back End >'}</h4>
@@ -182,7 +181,7 @@ const Tech = () => {
                 }
               </div>
             </div>
-          </Fade>
+          </Slide>
         </div>
         <div id='tech2-sub' style={tech2}>
           <Fade bottom>

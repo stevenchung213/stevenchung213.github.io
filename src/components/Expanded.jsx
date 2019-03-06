@@ -1,6 +1,7 @@
 import React from 'react';
 import {MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter} from 'mdbreact';
 
+
 const Expanded = ({projectSelected, deSelectProject}) => {
 
     return (

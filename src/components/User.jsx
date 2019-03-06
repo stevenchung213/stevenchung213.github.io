@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {MDBInput} from "mdbreact";
+import {Fade, Slide} from 'react-reveal';
+
 
 const User = (props) => {
 
@@ -32,22 +34,28 @@ const User = (props) => {
   };
 
   return (
-    <Background>
+    <Fade clear>
+      <Background>
         <div id='user-container' style={userBox}>
           <form style={{marginTop: '65vh'}}>
-            <label>
-              <MDBInput label="enter name" icon="user" size="lg"
-                        onChange={props.getUserName}
-                        onKeyPress={props.onEnterKey}/>
-            </label>
-            <Button>
-              <input type='button' value='submit'
-                     onClick={props.onClick}
-                     style={button}/>
-            </Button>
+            <Slide left>
+              <label>
+                <MDBInput label="enter name" icon="user" size="lg"
+                          onChange={props.getUserName}
+                          onKeyPress={props.onEnterKey}/>
+              </label>
+            </Slide>
+            <Slide right>
+              <Button>
+                <input type='button' value='submit'
+                       onClick={props.onClick}
+                       style={button}/>
+              </Button>
+            </Slide>
           </form>
         </div>
-    </Background>
+      </Background>
+    </Fade>
   );
 };
 

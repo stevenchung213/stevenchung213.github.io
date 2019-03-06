@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import ReactModal from 'react-modal';
 import {MDBBtn} from 'mdbreact';
 import ResponsiveModal from 'react-responsive-modal';
 
@@ -130,14 +129,12 @@ export default class Modal extends Component {
     };
     return (
       <div id='modal-container'>
-        {/* BUTTON */}
         <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal}>More Info</MDBBtn>
-        {/* MODAL */}
         <ResponsiveModal open={this.state.showModal} onClose={this.handleCloseModal} center
                          blockScroll={true} focusTrapped={true}>
           <div className='modal-header' style={header}>
-            <h3 className='h3-responsive' style={{fontWeight: 700, textAlign: 'center'}}>
-              {project.name} <i style={{fontWeight: 500}}>{` - ${project.caption}`}</i>
+            <h3 className='h3-responsive' style={{fontWeight: 800, textAlign: 'center'}}>
+              {project.name} <i style={{fontWeight: 800}}>{` - ${project.caption}`}</i>
             </h3>
           </div>
           <div className='modal-body' style={body}>
@@ -149,7 +146,7 @@ export default class Modal extends Component {
               <div className='modal-project-info' style={{width: '100%', height: 'auto'}}>
                 <div className='modal-tech-stack'>
                   <h4 className='h4-responsive'
-                      style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</h4>
+                      style={{fontWeight: 400, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</h4>
                 </div>
                 <div className='modal-project-description'>
                   <ul className='modal-project-description-list' style={list}>

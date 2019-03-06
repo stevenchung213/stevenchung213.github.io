@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Carousel} from 'react-responsive-carousel';
 import Modal from './Modal.jsx';
-import {Fade} from 'react-reveal';
+import {Fade, Slide} from 'react-reveal';
+import Jump from 'react-reveal/Jump';
 import Zoom from 'react-reveal/Zoom';
 
 
@@ -59,33 +60,45 @@ export default class Projects extends Component {
     ];
 
     return (
-      <Fade big>
+      <Fade clear>
         <div id='projects-container' style={general}>
-          <Zoom top>
+          <Jump top>
             <div style={titleBox}>
               <h3 className='h3-responsive' style={{fontWeight: 900}}>
-                - SOME OF MY PROJECTS -
+                - SOME OF MY WORK -
               </h3>
             </div>
-          </Zoom>
+          </Jump>
           <Carousel infiniteLoop={true} useKeyboardArrows={true} dynamicHeight={false}
                     centerMode={true} showThumbs={false} showStatus={false}
                     showIndicators={false}>
             {projects.map((project, i) =>
-              <Fade big key={'project' + (i + 1)}>
+              <div key={'project' + (i + 1)}>
                 <div>
                   <div className="w-responsive mx-auto" style={{paddingBottom: '1.5vh'}}>
                     <div className="mx-auto w-responsive">
-                      <img className="mx-auto w-responsive" src={project.src} alt={project.name}/>
+                      <Zoom top>
+                        <img className="mx-auto w-responsive" src={project.src} alt={project.name}/>
+                      </Zoom>
                       <div className='w-responsive mx-auto text-center p-1 mt-1'>
-                        <h4 className="h4-responsive" style={{color: 'white'}}>{project.name}</h4>
-                        <h5 className='h5-responsive' style={{color: 'white', marginBottom: 5}}>{project.description}</h5>
-                        <Modal project={project.name}/>
+                        <Slide right>
+                          <h4 className="h4-responsive" style={{color: 'white'}}>
+                            {project.name}
+                          </h4>
+                        </Slide>
+                        <Slide left>
+                          <h5 className='h5-responsive' style={{color: 'white', marginBottom: 5}}>
+                            {project.description}
+                          </h5>
+                        </Slide>
+                        <Slide bottom>
+                          <Modal project={project.name}/>
+                        </Slide>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Fade>
+              </div>
             )}
           </Carousel>
         </div>
