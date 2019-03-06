@@ -76,7 +76,6 @@ const Tech = () => {
     justifyContent: 'center',
   };
   const categoryTitle = {
-    // background: 'rgba(255,255,255,0.8)',
     width: 'auto',
     margin: '0 auto',
     display: 'flex',
@@ -85,7 +84,6 @@ const Tech = () => {
     fontWeight: 900
   };
   const front = {
-    // background: 'rgba(255,255,255,0.8)',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -97,7 +95,6 @@ const Tech = () => {
     overflow: 'auto'
   };
   const back = {
-    // background: 'rgba(255,255,255,0.8)',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -110,7 +107,6 @@ const Tech = () => {
     overflow: 'auto'
   };
   const dev = {
-    // background: 'rgba(255,255,255,0.8)',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',

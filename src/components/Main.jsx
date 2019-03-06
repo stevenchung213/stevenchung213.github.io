@@ -22,11 +22,22 @@ export default class Main extends Component {
 
   handleClick = () => {
     this.setState({init: true});
+    localStorage.setItem('user', this.state.guestName);
   };
 
   handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       this.setState({init: true});
+    }
+  };
+
+  getLocalStorageUser = () => {
+    if (localStorage.hasOwnProperty('user')) {
+      let existingUser = localStorage.getItem('user');
+      this.setState({
+        guestName: existingUser,
+        init: true
+      });
     }
   };
 
@@ -52,6 +63,10 @@ export default class Main extends Component {
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return this.state.guestName === nextState.guestName;
+  }
+
+  componentWillMount() {
+    this.getLocalStorageUser();
   }
 
   render() {
