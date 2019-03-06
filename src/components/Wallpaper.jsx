@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import {MDBBtn, MDBIcon, MDBNavItem} from "mdbreact";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Wallpaper = ({user}) => {
 
@@ -12,40 +14,45 @@ const Wallpaper = ({user}) => {
     height: 100vh;
   `;
   const general = {
+    position: 'absolute',
+    top: '40%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: 'auto',
-    width: 'auto',
-    margin: 'auto',
-    backgroundColor: 'black',
+    height: 1,
+    width: '100%',
+    margin: 'auto'
   };
   const intro = {
-    background: 'black',
-    maxWidth: '45vw',
-    width: 'auto',
+    background: 'white',
+    maxWidth: '55vw',
     height: 'auto',
+    width: '100%',
     margin: 'auto',
-    padding: 'auto'
+    padding: '3vh',
+    marginBottom: '1vh'
   };
   const hello = {
-    color: 'white',
-    margin: '1vh 1vw',
-    fontSize: '200%',
+    color: 'black',
+    marginBottom: '1vh',
+    fontSize: '220%',
     textAlign: 'center',
-    fontWeight: 800
+    fontWeight: 900,
+    height: 'auto'
   };
   const sub = {
-    color: 'white',
+    color: 'black',
     margin: 'auto',
-    fontSize: '1rem',
+    fontSize: '0.9rem',
     textAlign: 'center',
-    fontWeight: 500
+    fontWeight: 900
+  };
+  const arrow = {
+    margin: 'auto'
   };
 
   return (
     <div>
-      <Background/>
       <div id='hello' style={general}>
         <div id='intro' style={intro}>
           <div>
@@ -59,7 +66,14 @@ const Wallpaper = ({user}) => {
             </p>
           </div>
         </div>
+        <div id='down-arrow' style={arrow}>
+          <AnchorLink href='#about-nav'>
+            <MDBIcon icon="angle-double-down fa-4x" className='white-text'/>
+          </AnchorLink>
+        </div>
       </div>
+      <Background/>
+
     </div>
   );
 };

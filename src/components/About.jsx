@@ -2,16 +2,14 @@ import React from "react";
 import {MDBBtn, MDBIcon} from "mdbreact";
 import {Bounce, Fade} from 'react-reveal';
 
-const About = ({user}) => {
-
-  user = user.length > 0 ? user + '!' : user;
+const About = () => {
 
   const general = {
-    height: '55vh',
+    height: 'auto',
     width: '100%',
     margin: '5vh 5w',
     backgroundColor: 'black',
-    padding: '3vh 6vw 5vh 1vw',
+    padding: '5vh 6vw 5vh 1vw',
     display: 'flex',
     flexDirection: 'row'
   };
@@ -20,7 +18,8 @@ const About = ({user}) => {
     width: '50%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: 15
   };
   const picStyle = {
     position: 'relative',
@@ -47,6 +46,7 @@ const About = ({user}) => {
     marginTop: 15,
     display: 'flex',
     flexDirection: 'column',
+    paddingLeft: '1em',
     paddingRight: '1em'
   };
   const button = {
@@ -70,11 +70,8 @@ const About = ({user}) => {
         <Bounce>
           <div id='about-info' style={info}>
             <div id='text-container' style={textBox}>
-              {/*<h3 className='h3-responsive'>*/}
-                {/*Hello {user === '' ? 'there!' : user}*/}
-              {/*</h3>*/}
-              {/*<br/>*/}
-              <h5 className='h5-responsive'>{`I am a self-taught and self-motivated individual with technical skills that were derived over more than a decade.  I had many years of hands-on hardware experience and now am focusing more on the software side.  I have developed a strong understanding of all things computer related and have a knack for problem solving.  From debugging and optimizing to building out full stack applications, I now enjoy every bit of software development!`}
+              <h5
+                className='h5-responsive'>{`I am a self-taught and self-motivated individual with technical skills that were derived over more than a decade.  I had many years of hands-on hardware experience and now am focusing more on the software side.  I have developed a strong understanding of all things computer related and have a knack for problem solving.  From debugging and optimizing to building out full stack applications, I now enjoy every bit of software development!`}
               </h5>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
