@@ -73,7 +73,7 @@ export default class Navbar extends Component {
                         <MDBIcon far icon="envelope"/> Gmail
                       </MDBDropdownItem>
                       <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                       href="https://s3-us-west-1.amazonaws.com/my.portfolio/sc_resume.pdf">
+                                       href="https://s3-us-west-1.amazonaws.com/my.portfolio/resume.pdf">
                         <MDBIcon icon="file-pdf"/> Résumé
                       </MDBDropdownItem>
                     </MDBDropdownMenu>

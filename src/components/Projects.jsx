@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-// import Slider from "react-slick";
 import {Carousel} from 'react-responsive-carousel';
 import Modal from './Modal.jsx';
 import {Fade} from 'react-reveal';
 import Zoom from 'react-reveal/Zoom';
-import RubberBand from 'react-reveal/RubberBand';
+
 
 
 export default class Projects extends Component {

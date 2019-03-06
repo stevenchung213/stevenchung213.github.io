@@ -78,7 +78,7 @@ const About = ({user}) => {
               </h5>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
-                    href='https://s3-us-west-1.amazonaws.com/my.portfolio/sc_resume.pdf'
+                    href='https://s3-us-west-1.amazonaws.com/my.portfolio/resume.pdf'
                     style={button}>
               <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
             </MDBBtn>
