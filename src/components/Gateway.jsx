@@ -13,7 +13,7 @@ const Gateway = ({user}) => {
   return (
     <div id='gateway-container'>
       <NavBar/>
-      <Wallpaper/>
+      <Wallpaper user={user}/>
       <Anchor section={'about'}/>
       <About user={user}/>
       <Filler section={'tech'}/>

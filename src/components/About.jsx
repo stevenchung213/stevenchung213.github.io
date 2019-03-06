@@ -70,17 +70,15 @@ const About = ({user}) => {
         <Bounce>
           <div id='about-info' style={info}>
             <div id='text-container' style={textBox}>
-              <h3 className='h3-responsive'>
-                Hello {user === '' ? 'there!' : user}
-              </h3>
-              <br/>
-              <h5 className='h5-responsive'>I am a self-motivated and driven individual with technical skills that were derived over a
-                lifetime. I am constantly looking for improvement within myself and respect knowledge in all aspects. From debugging to
-                building out full stack applications, I enjoy every bit of software development!
+              {/*<h3 className='h3-responsive'>*/}
+                {/*Hello {user === '' ? 'there!' : user}*/}
+              {/*</h3>*/}
+              {/*<br/>*/}
+              <h5 className='h5-responsive'>{`I am a self-taught and self-motivated individual with technical skills that were derived over more than a decade.  I had many years of hands-on hardware experience and now am focusing more on the software side.  I have developed a strong understanding of all things computer related and have a knack for problem solving.  From debugging and optimizing to building out full stack applications, I now enjoy every bit of software development!`}
               </h5>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
-                    href='https://s3-us-west-1.amazonaws.com/my.portfolio/resume.pdf'
+                    href='https://s3-us-west-1.amazonaws.com/my.portfolio/stevenchung_resume.pdf'
                     style={button}>
               <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
             </MDBBtn>

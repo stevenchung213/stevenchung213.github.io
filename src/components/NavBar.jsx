@@ -58,7 +58,7 @@ export default class Navbar extends Component {
                 <AnchorLink href='#tech-nav'>TECH</AnchorLink>
               </MDBNavItem>
               <MDBNavItem>
-                <AnchorLink href='#projects-nav'>PROJECTS</AnchorLink>
+                <AnchorLink href='#projects-nav'>PORTFOLIO</AnchorLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
@@ -81,7 +81,7 @@ export default class Navbar extends Component {
                       <MDBIcon far icon="envelope"/> Gmail
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://s3-us-west-1.amazonaws.com/my.portfolio/resume.pdf">
+                                     href="https://s3-us-west-1.amazonaws.com/my.portfolio/stevenchung_resume.pdf">
                       <MDBIcon icon="file-pdf"/> Résumé
                     </MDBDropdownItem>
                   </MDBDropdownMenu>
