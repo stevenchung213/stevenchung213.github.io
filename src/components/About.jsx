@@ -50,6 +50,10 @@ const About = () => {
     paddingLeft: '1em',
     paddingRight: '1em'
   };
+  const blurb = {
+    fontSize: '140%',
+    lineHeight: 1.5
+  };
   const button = {
     width: 143,
     borderRadius: 50,
@@ -72,7 +76,7 @@ const About = () => {
           <div id='about-info' style={info}>
             <div id='text-container' style={textBox}>
               <h5
-                className='h5-responsive'>{`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications  using the latest industry technologies. After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since. I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
+                className='h5-responsive' style={blurb}>{`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications  using the latest industry technologies. After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since. I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
               </h5>
             </div>
             <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"

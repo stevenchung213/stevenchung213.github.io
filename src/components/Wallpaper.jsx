@@ -62,7 +62,7 @@ const Wallpaper = ({user}) => {
             <div id='intro' style={intro}>
               <div>
                 <h1 className='h1-responsive' style={hello}>
-                  HEY THERE{user === '' ? '!' : ` ${user}!`}
+                  HEY THERE{user === '' ? '!' : ` ${user.toUpperCase()}!`}
                 </h1>
               </div>
               <div>
