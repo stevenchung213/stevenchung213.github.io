@@ -26,13 +26,13 @@ const Wallpaper = ({user}) => {
     margin: 'auto'
   };
   const intro = {
-    borderRadius: '2rem',
+    borderRadius: '5rem',
     background: 'white',
-    maxWidth: '56vw',
+    maxWidth: '100%',
     height: 'auto',
-    width: '100%',
+    width: 'auto',
     margin: 'auto',
-    padding: '3vh',
+    padding: '3vh 6vw',
     marginBottom: '1vh'
   };
   const hello = {
