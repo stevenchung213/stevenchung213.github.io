@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import {Bounce, Fade} from 'react-reveal';
 
 
-const Wallpaper = ({user, mobile}) => {
+const Wallpaper = ({user}) => {
 
   const Background = styled.div`
     height: 100vh;

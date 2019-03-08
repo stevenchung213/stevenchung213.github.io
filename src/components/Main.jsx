@@ -40,11 +40,11 @@ export default class Main extends Component {
     }
   };
 
-  checkWindowSize = () => {
-    this.setState({
-      mobile: window.innerWidth < window.innerHeight
-    });
-  };
+  // checkWindowSize = () => {
+  //   this.setState({
+  //     mobile: window.innerWidth < window.innerHeight
+  //   });
+  // };
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return this.state.guestName === nextState.guestName;
@@ -52,13 +52,13 @@ export default class Main extends Component {
 
   componentWillMount() {
     this.getLocalStorageUser();
-    this.checkWindowSize();
-    window.addEventListener("resize", this.checkWindowSize);
+    // this.checkWindowSize();
+    // window.addEventListener("resize", this.checkWindowSize);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.checkWindowSize);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("resize", this.checkWindowSize);
+  // }
 
   // componentDidMount() {
   //   this.checkWindowSize();
