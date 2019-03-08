@@ -16,7 +16,6 @@ h2, h3, h4 {
     #intro, #about-container, #tech-container, #projects-container, #contact-container {
         position: relative;
         z-index: 0;
-        /*background-color: #FFF;*/
     }
 
     #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
@@ -38,17 +37,19 @@ h2, h3, h4 {
     }
 }
 
+.react-reveal {
+    background: transparent;
+}
 /*
     MOBILE VERSION SLIGHTLY TRANSPARENT
 */
 @media (orientation: portrait) {
-    #intro, #about-container, #tech-container, #projects-container, #contact-container {
+    #intro, #about-nav, #about-container, #tech-container, #projects-container, #contact-container {
         position: relative;
         z-index: 0;
-        /*background-color: #FFF;*/
     }
 
-    #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
+    #intro:after, #about-nav:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
         content: "";
         position: absolute;
         top: 0;
@@ -77,7 +78,7 @@ h2, h3, h4 {
         /*background-color: #FFF;*/
     }
 
-    html, body, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+    html:after, body:after, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
         content: "";
         position: absolute;
         top: 0;
@@ -100,10 +101,9 @@ h2, h3, h4 {
     MOBILE VERSION COMPLETELY TRANSPARENT
 */
 @media (orientation: portrait) {
-    html, body, #about, #tech, #projects, #contact, #hello, .anchors {
+    #about, #tech, #projects, #contact, #hello, .anchors {
         position: relative;
         z-index: 0;
-        /*background-color: #FFF;*/
     }
 
     html, body, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {

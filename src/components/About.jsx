@@ -6,11 +6,15 @@ import {Roll, Fade} from 'react-reveal';
 const About = () => {
 
   const general = {
+    minHeight: 'auto',
     height: 'auto',
     width: '100%',
     margin: '5vh 5w',
     backgroundColor: 'black',
     padding: '5vh 4vw 5vh 1vw',
+    alignContent: 'center'
+  };
+  const about = {
     display: 'flex',
     flexDirection: 'row'
   };
@@ -23,7 +27,6 @@ const About = () => {
     margin: 'auto'
   };
   const picStyle = {
-    position: 'relative',
     verticalAlign: 'middle',
     maxWidth: '60%',
     maxHeight: '60%',
@@ -39,8 +42,6 @@ const About = () => {
   const textBox = {
     height: 'auto',
     width: '100%',
-    overflow: 'auto',
-    overflowX: 'hidden',
     fontFamily: 'Montserrat, serif',
     fontSize: '1em',
     color: 'white',
@@ -64,28 +65,31 @@ const About = () => {
   return (
     <Fade clear>
       <div id='about-container' style={general}>
-        <Roll left>
-          <div id='pic-container' style={picBox}>
-            <img id='picture'
-                 src='https://s3-us-west-1.amazonaws.com/my.portfolio/profile.png'
-                 alt='profile-pic' style={picStyle}
-            />
-          </div>
-        </Roll>
-        <Roll right>
-          <div id='about-info' style={info}>
-            <div id='text-container' style={textBox}>
-              <h5
-                className='h5-responsive' style={blurb}>{`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications  using the latest industry technologies. After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since. I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
-              </h5>
+        <div id='about-inner-container' style={about}>
+          <Roll left>
+            <div id='pic-container' style={picBox}>
+              <img id='picture'
+                   src='https://s3-us-west-1.amazonaws.com/my.portfolio/profile.png'
+                   alt='profile-pic' style={picStyle}
+              />
             </div>
-            <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
-                    href='https://s3-us-west-1.amazonaws.com/my.portfolio/stevenchung_resume.pdf'
-                    style={button}>
-              <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
-            </MDBBtn>
-          </div>
-        </Roll>
+          </Roll>
+          <Roll right>
+            <div id='about-info' style={info}>
+              <div id='text-container' style={textBox}>
+                <h5
+                  className='h5-responsive'
+                  style={blurb}>{`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications  using the latest industry technologies. After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since. I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
+                </h5>
+              </div>
+              <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
+                      href='https://s3-us-west-1.amazonaws.com/my.portfolio/stevenchung_resume.pdf'
+                      style={button}>
+                <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
+              </MDBBtn>
+            </div>
+          </Roll>
+        </div>
       </div>
     </Fade>
   );
