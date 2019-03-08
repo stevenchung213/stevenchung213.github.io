@@ -77,8 +77,9 @@ export default class Main extends Component {
 
     return (
       <div id="main-container" style={general}>
-        {!this.state.init &&
-        <User onClick={this.handleClick} getUserName={this.getUserName} onEnterKey={this.handleKeyPress}/>
+        {
+          !this.state.init &&
+          <User onClick={this.handleClick} getUserName={this.getUserName} onEnterKey={this.handleKeyPress}/>
         }
         {
           this.state.init &&

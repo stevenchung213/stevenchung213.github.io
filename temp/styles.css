@@ -33,6 +33,33 @@ h2, h3, h4 {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=10);
 }
+/*
+    MOBILE VERSION
+*/
+@media (orientation: portrait) {
+    #intro, #about-container, #tech-container, #projects-container, #contact-container {
+        position: relative;
+        z-index: 0;
+        background-color: #FFF;
+    }
+    #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=10);
+    }
+}
 
 /*
     COMPLETELY TRANSPARENT WALLPAPER
@@ -58,6 +85,33 @@ h2, h3, h4 {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=1);
+}
+/*
+    MOBILE VERSION
+*/
+@media (orientation: portrait) {
+    #about, #tech, #projects, #contact, #hello, .anchors {
+        position: relative;
+        z-index: 0;
+        background-color: #FFF;
+    }
+    #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=1);
+    }
 }
 
 /*
