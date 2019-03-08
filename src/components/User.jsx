@@ -10,7 +10,7 @@ const User = (props) => {
     background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/background2.png");
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: contain;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
