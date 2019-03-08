@@ -72,7 +72,8 @@ export default class Modal extends Component {
       description: 'Developed as a Progressive Web App with fully responsive design * Front end bootstrapped using Material Design' +
         ' for' +
         ' React * ' +
-        'Deployed on Github Pages with conditional React rendering * All files served by AWS S3',
+        'Deployed on Github Pages with conditional React rendering * All files served by AWS S3 * Not Cross-browser compliant (best' +
+        ' viewed on Chrome) ',
       href: 'https://github.com/stevenchung213/stevenchung213.github.io'
     };
 
