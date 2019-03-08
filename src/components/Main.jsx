@@ -51,20 +51,20 @@ export default class Main extends Component {
     return this.state.guestName === nextState.guestName;
   }
 
-  componentWillMount() {
-    this.getLocalStorageUser();
-    this.checkWindowSize();
-    window.addEventListener("resize", this.checkWindowSize);
-  }
+  // componentWillMount() {
+  //   this.getLocalStorageUser();
+  //   this.checkWindowSize();
+  //   window.addEventListener("resize", this.checkWindowSize);
+  // }
 
   // componentWillUnmount() {
   //   window.removeEventListener("resize", this.checkWindowSize);
   // }
 
-  // componentDidMount() {
-  //   this.checkWindowSize();
-  //   window.addEventListener("resize", this.checkWindowSize);
-  // }
+  componentDidMount() {
+    this.checkWindowSize();
+    window.addEventListener("resize", this.checkWindowSize);
+  }
 
   render() {
 
