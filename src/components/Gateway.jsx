@@ -9,12 +9,12 @@ import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
 
 
-const Gateway = ({user}) => {
+const Gateway = ({user, mobile}) => {
 
   return (
     <div id='gateway-container'>
       <NavBar/>
-      <Wallpaper user={user}/>
+      <Wallpaper user={user} mobile={mobile}/>
       <Anchor section={'about'}/>
       <About user={user}/>
       <Filler section={'tech'}/>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import User from './User.jsx';
 import Gateway from './Gateway.jsx';
-import Modal from './Modal.jsx';
 import styled from 'styled-components';
 
 
@@ -12,8 +11,7 @@ export default class Main extends Component {
     this.state = {
       init: false,
       guestName: '',
-      isOpen: false,
-      project: ''
+      mobile: false
     };
   }
 
@@ -42,24 +40,10 @@ export default class Main extends Component {
     }
   };
 
-  selectProject = (e) => {
-    if (e === 'Su Casa') {
-      this.setState({project: 'Su Casa'});
-    }
-    if (e === 'Zillwoah!') {
-      this.setState({project: 'Zillwoah!'});
-    }
-    if (e === 'My Map Pins') {
-      this.setState({project: 'My Map Pins'});
-    }
-    if (e === 'GitHub Repos') {
-      this.setState({project: 'GitHub Repo Fetcher'});
-    }
-    this.setState({isOpen: true});
-  };
-
-  deSelectProject = () => {
-    this.setState({isOpen: false, project: ''});
+  checkWindowSize = () => {
+    this.setState({
+      mobile: window.innerWidth < window.innerHeight
+    });
   };
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -68,6 +52,12 @@ export default class Main extends Component {
 
   componentWillMount() {
     this.getLocalStorageUser();
+    window.removeEventListener("resize", this.checkWindowSize);
+  }
+
+  componentDidMount() {
+    this.checkWindowSize();
+    window.addEventListener("resize", this.checkWindowSize);
   }
 
   render() {
@@ -90,17 +80,11 @@ export default class Main extends Component {
         {
           this.state.init &&
           <GatewayContainer>
-            <Gateway user={this.state.guestName}
-                     projectSelected={this.state.isOpen}
-                     project={this.state.project}
-                     selectProject={this.selectProject}
-                     deSelectProject={this.deSelectProject}/>
+            <Gateway user={this.state.guestName} mobile={this.state.mobile}/>
             <div>
             </div>
           </GatewayContainer>
         }
-        {this.state.modal && <Modal/>}
-
       </div>
     );
   }

@@ -5,10 +5,18 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import {Bounce, Fade} from 'react-reveal';
 
 
-const Wallpaper = ({user}) => {
+const Wallpaper = ({user, mobile}) => {
 
   const Background = styled.div`
     background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  `;
+  const Mobile = styled.div`
+    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -80,7 +88,9 @@ const Wallpaper = ({user}) => {
             </div>
           </Bounce>
         </div>
-        <Background/>
+        {
+          mobile ? <Mobile/> : <Background/>
+        }
       </div>
     </Fade>
   );
