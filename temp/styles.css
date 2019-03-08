@@ -3,6 +3,11 @@
 */
 html {
     overflow-x: hidden;
+    background-color: transparent;
+}
+
+body {
+    background-color: transparent;
 }
 
 h2, h3, h4 {
@@ -16,7 +21,7 @@ h2, h3, h4 {
     #intro, #about-container, #tech-container, #projects-container, #contact-container {
         position: relative;
         z-index: 0;
-        background-color: #FFF;
+        /*background-color: #FFF;*/
     }
 
     #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
@@ -39,13 +44,13 @@ h2, h3, h4 {
 }
 
 /*
-    MOBILE VERSION
+    MOBILE VERSION SLIGHTLY TRANSPARENT
 */
 @media (orientation: portrait) {
     #intro, #about-container, #tech-container, #projects-container, #contact-container {
         position: relative;
         z-index: 0;
-        background-color: #FFF;
+        /*background-color: #FFF;*/
     }
 
     #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
@@ -71,13 +76,13 @@ h2, h3, h4 {
     COMPLETELY TRANSPARENT WALLPAPER
 */
 @media (orientation: landscape) {
-    #about, #tech, #projects, #contact, #hello, .anchors {
+    body, #about, #tech, #projects, #contact, #hello, .anchors {
         position: relative;
         z-index: 0;
-        background-color: #FFF;
+        /*background-color: #FFF;*/
     }
 
-    #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+    body, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
         content: "";
         position: absolute;
         top: 0;
@@ -97,16 +102,16 @@ h2, h3, h4 {
 }
 
 /*
-    MOBILE VERSION
+    MOBILE VERSION COMPLETELY TRANSPARENT
 */
 @media (orientation: portrait) {
-    #about, #tech, #projects, #contact, #hello, .anchors {
+    body, #about, #tech, #projects, #contact, #hello, .anchors {
         position: relative;
         z-index: 0;
-        background-color: #FFF;
+        /*background-color: #FFF;*/
     }
 
-    #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+    body, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
         content: "";
         position: absolute;
         top: 0;

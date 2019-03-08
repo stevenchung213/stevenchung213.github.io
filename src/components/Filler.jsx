@@ -5,7 +5,8 @@ const Filler = ({section}) => {
 
   const general = {
     height: '28vh',
-    width: '100%'
+    width: '100%',
+    backgroundColor: 'transparent'
   };
 
   return (

@@ -8,7 +8,8 @@ const Anchor = ({section}) => {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'transparent'
   };
 
   return (

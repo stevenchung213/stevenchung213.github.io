@@ -12,7 +12,7 @@ import Contact from './Contact.jsx';
 const Gateway = ({user, mobile}) => {
 
   return (
-    <div id='gateway-container'>
+    <div id='gateway-container' style={{backgroundColor: 'transparent'}}>
       <NavBar/>
       <Wallpaper user={user} mobile={mobile}/>
       <Anchor section={'about'}/>
