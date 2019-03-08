@@ -44,7 +44,7 @@ const User = (props) => {
     <Background>
       <div style={warning}>
         <MDBIcon icon="exclamation-triangle fa-lg" className='white-text' style={{paddingRight: '1vw', paddingTop: '0.5vh'}}/>
-        <h5 className='h5-responsive' style={{color: 'white', fontWeight: 900}}>
+        <h5 className='h5-responsive' style={{color: 'white', fontWeight: 900, paddingTop: '0.25vh'}}>
           DESIGNED FOR CHROME
         </h5>
         <MDBIcon icon="exclamation-triangle fa-lg" className='white-text' style={{paddingLeft: '1vw', paddingTop: '0.5vh'}}/>
