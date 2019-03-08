@@ -17,18 +17,11 @@ const Contact = () => {
     alignContent: 'center',
     flexDirection: 'column'
   };
-  const titleBox = {
-    width: 'auto',
-    display: 'flex',
-    padding: '1vh 1vw 1vh 1vw',
-    justifyContent: 'center'
-  };
   const icons = {
     display: 'inline-flex',
     width: '15vw',
     justifyContent: 'space-evenly'
   };
-  const icon = {};
   const trademark = {
     position: 'relative',
     display: 'inline-flex',
@@ -39,7 +32,7 @@ const Contact = () => {
       <div id='contact-container' style={general}>
         <div className='contact-icons mx-auto' style={icons}>
           <Spin>
-            <div className='' style={icon}>
+            <div className="contact-icons">
               <a target="_blank" rel="noopener noreferrer"
                  href='https://www.linkedin.com/in/stevenchung-213'>
                 <MDBIcon fab icon="linkedin-in fa-2x" className='black-text'/>
@@ -47,7 +40,7 @@ const Contact = () => {
             </div>
           </Spin>
           <Spin>
-            <div style={icon}>
+            <div className="contact-icons">
               <a target="_blank" rel="noopener noreferrer"
                  href='https://www.github.com/stevenchung213'>
                 <MDBIcon fab icon="github fa-2x" className='black-text'/>
@@ -55,7 +48,7 @@ const Contact = () => {
             </div>
           </Spin>
           <Spin>
-            <div style={icon}>
+            <div className="contact-icons">
               <a target="_blank" rel="noopener noreferrer"
                  href='mailto:stevenchung.213@gmail.com'>
                 <MDBIcon far icon="envelope fa-2x" className='black-text'/>
@@ -63,7 +56,7 @@ const Contact = () => {
             </div>
           </Spin>
           <Spin>
-            <div style={icon}>
+            <div className='contact-icons'>
               <a target="_blank" rel="noopener noreferrer"
                  href='https://www.instagram.com/heartonmysteve/'>
                 <MDBIcon fab icon="instagram fa-2x" className='black-text'/>

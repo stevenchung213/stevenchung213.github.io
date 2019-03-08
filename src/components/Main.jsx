@@ -28,6 +28,7 @@ export default class Main extends Component {
     if (e.key === 'Enter') {
       this.setState({init: true});
     }
+    localStorage.setItem('user', this.state.guestName);
   };
 
   getLocalStorageUser = () => {
