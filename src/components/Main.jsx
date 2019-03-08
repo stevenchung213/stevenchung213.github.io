@@ -68,7 +68,24 @@ export default class Main extends Component {
 
   render() {
 
-    const general = {
+    const General = styled.div`
+      height: '100vh',
+      fontFamily: 'Montserrat, serif',
+      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg")',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    `;
+    const GatewayContainer = styled.div`
+      background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;  
+      height: 100vh;
+    `;
+    const GeneralMobile = styled.div`
       height: '100vh',
       fontFamily: 'Montserrat, serif',
       backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg")',
@@ -76,8 +93,8 @@ export default class Main extends Component {
       backgroundAttachment: 'fixed',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
-    };
-    const GatewayContainer = styled.div`
+    `;
+    const GatewayContainerMobile = styled.div`
       background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg");
       background-size: cover;
       background-attachment: fixed;
@@ -86,21 +103,40 @@ export default class Main extends Component {
       height: 100vh;
     `;
 
-    return (
-      <div id="main-container" style={general}>
-        {
-          !this.state.init &&
-          <User onClick={this.handleClick} getUserName={this.getUserName} onEnterKey={this.handleKeyPress}/>
-        }
-        {
-          this.state.init &&
-          <GatewayContainer>
-            <Gateway user={this.state.guestName} mobile={this.state.mobile}/>
-            <div>
-            </div>
-          </GatewayContainer>
-        }
-      </div>
-    );
+    let general;
+
+    !this.state.mobile ? general =
+        (<General>
+          {
+            !this.state.init &&
+            <User onClick={this.handleClick} getUserName={this.getUserName} onEnterKey={this.handleKeyPress}/>
+          }
+          {
+            this.state.init &&
+            <GatewayContainer>
+              <Gateway user={this.state.guestName} mobile={this.state.mobile}/>
+              <div>
+              </div>
+            </GatewayContainer>
+          }
+        </General>)
+      :
+      general =
+        (<GeneralMobile>
+          {
+            !this.state.init &&
+            <User onClick={this.handleClick} getUserName={this.getUserName} onEnterKey={this.handleKeyPress}/>
+          }
+          {
+            this.state.init &&
+            <GatewayContainerMobile>
+              <Gateway user={this.state.guestName} mobile={this.state.mobile}/>
+              <div>
+              </div>
+            </GatewayContainerMobile>
+          }
+        </GeneralMobile>);
+
+    return (general);
   }
 }
