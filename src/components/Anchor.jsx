@@ -4,7 +4,7 @@ import React from 'react';
 const Anchor = ({section}) => {
 
   const general = {
-    height: '62px',
+    height: '60px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',

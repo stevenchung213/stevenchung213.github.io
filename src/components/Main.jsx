@@ -69,11 +69,19 @@ export default class Main extends Component {
 
     const general = {
       height: '100vh',
-      backgroundColor: 'transparent',
       fontFamily: 'Montserrat, serif',
+      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg")',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
     };
     const GatewayContainer = styled.div`
-      background-color: transparent;
+      background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;  
       height: 100vh;
     `;
 
