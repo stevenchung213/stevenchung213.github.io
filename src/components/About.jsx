@@ -2,11 +2,28 @@ import React from "react";
 import {MDBBtn, MDBIcon} from "mdbreact";
 import {Fade} from 'react-reveal';
 import Jump from 'react-reveal/Jump';
-import Flash from 'react-reveal/Flash';
 import Swing from 'react-reveal/Swing';
+import posed from 'react-pose';
+import SplitText from 'react-pose-text';
 
 
 const About = () => {
+
+  const TextBox = posed.div({
+    exit: {
+      x: '-100%'
+    },
+    enter: {
+      x: '0%',
+      beforeChildren: true,
+      staggerChildren: 15
+    }
+  });
+
+  const charPoses = {
+    exit: {opacity: 0},
+    enter: {opacity: 1}
+  };
 
   const general = {
     minHeight: 'auto',
@@ -76,14 +93,13 @@ const About = () => {
             </div>
           </Jump>
           <div id='about-info' style={info}>
-            <Flash>
-              <div id='text-container' style={textBox}>
-                <h5
-                  className='h5-responsive'
-                  style={blurb}>{`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications  using the latest industry technologies. After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since. I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
-                </h5>
-              </div>
-            </Flash>
+            <TextBox id='text-container' initialPose="exit" pose="enter" style={textBox}>
+              <h5 className='h5-responsive' style={blurb}>
+                <SplitText charPoses={charPoses}>
+                  {`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications  using the latest industry technologies. After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since. I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
+                </SplitText>
+              </h5>
+            </TextBox>
             <Swing>
               <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
                       href='https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf'

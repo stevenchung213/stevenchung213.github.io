@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {MDBBtn} from 'mdbreact';
 import ResponsiveModal from 'react-responsive-modal';
+import posed from 'react-pose';
+import SplitText from 'react-pose-text';
 
 
 export default class Modal extends Component {
@@ -20,6 +22,22 @@ export default class Modal extends Component {
   };
 
   render() {
+
+    const TextBox = posed.div({
+      exit: {
+        x: '-100%'
+      },
+      enter: {
+        x: '0%',
+        beforeChildren: true,
+        staggerChildren: 15
+      }
+    });
+
+    const charPoses = {
+      exit: {opacity: 0},
+      enter: {opacity: 1}
+    };
 
     const sucasa = {
       name: 'Su Casa',
@@ -139,7 +157,10 @@ export default class Modal extends Component {
                          blockScroll={true} focusTrapped={true}>
           <div className='modal-header' style={header}>
             <h3 className='h3-responsive' style={{fontWeight: 800, textAlign: 'center'}}>
-              {project.name} <i style={{fontWeight: 800}}>{` - ${project.caption}`}</i>
+              {project.name}
+              <i style={{fontWeight: 800}}>
+                {` - ${project.caption}`}
+              </i>
             </h3>
           </div>
           <div className='modal-body' style={body}>
@@ -151,7 +172,9 @@ export default class Modal extends Component {
               <div className='modal-project-info' style={{width: '100%', height: 'auto'}}>
                 <div className='modal-tech-stack'>
                   <h4 className='h4-responsive'
-                      style={{fontWeight: 400, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>{project.tech}</h4>
+                      style={{fontWeight: 400, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>
+                    {project.tech}
+                  </h4>
                 </div>
                 <div className='modal-project-description'>
                   <ul className='modal-project-description-list' style={list}>

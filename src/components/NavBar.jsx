@@ -14,6 +14,8 @@ import {
 } from "mdbreact";
 import {BrowserRouter as Router} from "react-router-dom";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import posed from 'react-pose';
+import SplitText from 'react-pose-text';
 
 
 export default class Navbar extends Component {
@@ -26,6 +28,22 @@ export default class Navbar extends Component {
   };
 
   render() {
+
+    const TextBox = posed.div({
+      exit: {
+        x: '-100%'
+      },
+      enter: {
+        x: '0%',
+        beforeChildren: true,
+        staggerChildren: 100
+      }
+    });
+
+    const charPoses = {
+      exit: {opacity: 0},
+      enter: {opacity: 1}
+    };
 
     const navBarStyle = {
       position: 'fixed',
@@ -46,20 +64,44 @@ export default class Navbar extends Component {
         <MDBNavbar color="black" dark scrolling scrollingNavbarOffset={10} expand="md" style={navBarStyle} transparent>
           <MDBNavbarBrand style={name}>
             <AnchorLink href='#main' style={{fontWeight: 900}}>
-              <strong className="white-text">STEVEN CHUNG</strong>
+              <TextBox initialPose="exit" pose="enter">
+                <strong className="white-text">
+                  <SplitText charPoses={charPoses}>
+                    STEVEN CHUNG
+                  </SplitText>
+                </strong>
+              </TextBox>
             </AnchorLink>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse}/>
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav right>
               <MDBNavItem>
-                <AnchorLink href='#about-nav'>ABOUT</AnchorLink>
+                <AnchorLink href='#about-nav'>
+                  <TextBox initialPose="exit" pose="enter">
+                    <SplitText charPoses={charPoses}>
+                      ABOUT
+                    </SplitText>
+                  </TextBox>
+                </AnchorLink>
               </MDBNavItem>
               <MDBNavItem>
-                <AnchorLink href='#tech-nav'>TECH</AnchorLink>
+                <AnchorLink href='#tech-nav'>
+                  <TextBox initialPose="exit" pose="enter">
+                    <SplitText charPoses={charPoses}>
+                      TECH
+                    </SplitText>
+                  </TextBox>
+                </AnchorLink>
               </MDBNavItem>
               <MDBNavItem>
-                <AnchorLink href='#projects-nav'>PORTFOLIO</AnchorLink>
+                <AnchorLink href='#projects-nav'>
+                  <TextBox initialPose="exit" pose="enter">
+                    <SplitText charPoses={charPoses}>
+                      PORTFOLIO
+                    </SplitText>
+                  </TextBox>
+                </AnchorLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
