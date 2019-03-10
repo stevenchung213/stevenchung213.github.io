@@ -53,13 +53,13 @@ export default class Main extends Component {
 
   componentWillMount() {
     this.getLocalStorageUser();
-    // this.checkWindowSize();
-    // window.addEventListener("resize", this.checkWindowSize);
+    this.checkWindowSize();
+    window.addEventListener("resize", this.checkWindowSize);
   }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener("resize", this.checkWindowSize);
-  // }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.checkWindowSize);
+  }
 
   // componentDidMount() {
   //   this.checkWindowSize();

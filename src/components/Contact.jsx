@@ -19,7 +19,7 @@ const Contact = () => {
   };
   const icons = {
     display: 'inline-flex',
-    width: '15vw',
+    width: '25vw',
     justifyContent: 'space-evenly'
   };
   const trademark = {
