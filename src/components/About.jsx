@@ -96,7 +96,7 @@ const About = () => {
             <TextBox id='text-container' initialPose="exit" pose="enter" style={textBox}>
               <h5 className='h5-responsive' style={blurb}>
                 <SplitText charPoses={charPoses}>
-                  {`I’m Steve and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications using the latest industry technologies.  After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since.  I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
+                  {`I’m Steve, a Full Stack Software Engineer, and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications using the latest industry technologies.  After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since.  I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
                 </SplitText>
               </h5>
             </TextBox>

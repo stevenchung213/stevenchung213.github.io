@@ -46,11 +46,11 @@ const Wallpaper = ({user, mobile}) => {
   };
   const hello = {
     color: 'black',
-    marginBottom: '1vh',
     fontSize: '220%',
     textAlign: 'center',
     fontWeight: 900,
-    height: 'auto'
+    height: 'auto',
+    marginBottom: 0
   };
   const sub = {
     color: 'black',
@@ -75,9 +75,6 @@ const Wallpaper = ({user, mobile}) => {
                 </h1>
               </div>
               <div>
-                <p style={sub}>
-                  - FULL STACK SOFTWARE ENGINEER -
-                </p>
               </div>
             </div>
           </Bounce>

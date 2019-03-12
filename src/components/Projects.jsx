@@ -65,8 +65,8 @@ const Projects = () => {
           </div>
         </Jump>
         <Carousel infiniteLoop={true} useKeyboardArrows={true} dynamicHeight={false}
-                  centerMode={true} showThumbs={false} showStatus={false}
-                  showIndicators={false}>
+                                                   centerMode={true} showThumbs={false} showStatus={false}
+                                                   showIndicators={false}>
           {projects.map((project, i) =>
             <div key={'project' + (i + 1)}>
               <div>

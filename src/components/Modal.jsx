@@ -150,6 +150,7 @@ export default class Modal extends Component {
       width: '100%'
 
     };
+
     return (
       <div id='modal-container'>
         <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal}>More Info</MDBBtn>
