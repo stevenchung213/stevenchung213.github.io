@@ -103,7 +103,7 @@ h2, h3, h4 {
     MOBILE VERSION COMPLETELY TRANSPARENT
 */
 @media (orientation: portrait) {
-    #about-nav, #about, #tech, #projects, #contact, #hello, .anchors {
+    html, body, #about-nav, #about, #tech, #projects, #contact, #hello, .anchors {
         position: relative;
         z-index: 0;
     }
