@@ -51,7 +51,7 @@ h2, h3, h4 {
         /*background-color: #FFF;*/
     }
 
-    html:after, body:after, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+    html, body, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
         content: "";
         position: absolute;
         top: 0;
