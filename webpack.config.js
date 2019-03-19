@@ -1,37 +1,6 @@
-//ssr start
-// const webpack = require('webpack');
-// const nodeExternals = require('webpack-node-externals');
-// const path = require('path');
-//
-// module.exports = {
-//   entry: './server/index.js',
-//   output: {
-//     path: path.resolve(__dirname, 'server'),
-//     filename: 'ssrIndex.js',
-//     publicPath: '/'
-//   },
-//   target: 'node',
-//   externals: nodeExternals(),
-//   plugins: [
-//     new webpack.DefinePlugin({
-//       'process.env': {
-//         NODE_ENV: `'production'`
-//       }
-//     })
-//   ],
-//   module: {
-//     rules: [
-//       {
-//         test: /\.(js|jsx)$/,
-//         exclude: /node_modules/,
-//         use: {
-//           loader: "babel-loader"
-//         }
-//       }
-//     ]
-//   }
-// };
-//ssr end
+const webpack = require('webpack');
+const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 //non-ssr
 module.exports = {
@@ -58,6 +27,36 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true
+        },
+        sourceMap: true
+      })
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new CompressionPlugin({
+      filename: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
+  ],
   output: {
     filename: 'bundle.js',
     path: __dirname + '/temp'

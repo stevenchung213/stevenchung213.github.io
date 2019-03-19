@@ -87,7 +87,7 @@ export default class Modal extends Component {
       caption: '',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio.png',
       tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
-      description: 'Developed as a Progressive Web App with fully responsive design * Front end bootstrapped using Material Design' +
+      description: 'Front end bootstrapped using Material Design' +
         ' for' +
         ' React * ' +
         'Deployed on Github Pages with conditional React rendering * All files served by AWS S3 * Not Cross-browser compliant (best' +
