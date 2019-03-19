@@ -53,8 +53,7 @@ export default class Navbar extends Component {
       width: '100%'
     };
     const name = {
-      fontSize: '28px',
-      fontFamily: 'Montserrat !important',
+      fontSize: '1.7rem',
       cursor: 'pointer',
       color: 'white'
     };

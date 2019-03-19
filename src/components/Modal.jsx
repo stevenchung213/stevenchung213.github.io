@@ -89,9 +89,9 @@ export default class Modal extends Component {
       tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
       description: 'Front end bootstrapped using Material Design' +
         ' for' +
-        ' React * ' +
-        'Deployed on Github Pages with conditional React rendering * All files served by AWS S3 * Not Cross-browser compliant (best' +
-        ' viewed on Chrome) ',
+        ' React * Webpack gzip compression, image compression and caching enabled for optimal loading speeds* ' +
+        'Deployed using Github Pages with conditional React rendering * All image files hosted by S3 with caching enabled * Best viewed' +
+        ' on Chrome due to transparent background with parallax effect ',
       href: 'https://github.com/stevenchung213/stevenchung213.github.io'
     };
 
@@ -152,10 +152,10 @@ export default class Modal extends Component {
     };
 
     return (
-      <div id='modal-container'>
+      <div>
         <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal}>More Info</MDBBtn>
-        <ResponsiveModal open={this.state.showModal} onClose={this.handleCloseModal} center
-                         blockScroll={true} focusTrapped={true}>
+        <ResponsiveModal open={this.state.showModal} onClose={this.handleCloseModal} center={true}
+                         blockScroll={true} focusTrapped={false} closeOnEsc={true} >
           <div className='modal-header' style={header}>
             <h3 className='h3-responsive' style={{fontWeight: 800, textAlign: 'center'}}>
               {project.name}
@@ -172,10 +172,10 @@ export default class Modal extends Component {
               </div>
               <div className='modal-project-info' style={{width: '100%', height: 'auto'}}>
                 <div className='modal-tech-stack'>
-                  <h4 className='h4-responsive'
-                      style={{fontWeight: 400, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>
+                  <h5 className='h5-responsive'
+                      style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>
                     {project.tech}
-                  </h4>
+                  </h5>
                 </div>
                 <div className='modal-project-description'>
                   <ul className='modal-project-description-list' style={list}>

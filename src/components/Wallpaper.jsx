@@ -52,13 +52,6 @@ const Wallpaper = ({user, mobile}) => {
     height: 'auto',
     marginBottom: 0
   };
-  const sub = {
-    color: 'black',
-    margin: 'auto',
-    fontSize: '0.9rem',
-    textAlign: 'center',
-    fontWeight: 900
-  };
   const arrow = {
     margin: 'auto'
   };

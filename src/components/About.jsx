@@ -62,7 +62,7 @@ const About = () => {
   const textBox = {
     height: 'auto',
     width: '100%',
-    fontFamily: 'Montserrat, serif',
+    // fontFamily: 'Montserrat, serif',
     fontSize: '1em',
     color: 'white',
     marginTop: 15,

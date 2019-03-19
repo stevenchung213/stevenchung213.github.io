@@ -30,7 +30,7 @@ const User = (props) => {
     height: 40,
     color: 'black',
     fontSize: 20,
-    fontFamily: 'Montserrat, serif',
+    // fontFamily: 'Montserrat, serif',
     backgroundColor: 'white'
   };
   const warning = {

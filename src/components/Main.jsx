@@ -70,7 +70,6 @@ export default class Main extends Component {
 
     const General = styled.div`
       height: '100vh',
-      fontFamily: 'Montserrat, serif',
       backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg")',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
@@ -87,7 +86,6 @@ export default class Main extends Component {
     `;
     const GeneralMobile = styled.div`
       height: '100vh',
-      fontFamily: 'Montserrat, serif',
       backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg")',
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
