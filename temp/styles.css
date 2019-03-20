@@ -9,8 +9,12 @@ body {
     font-family: Montserrat, serif !important;
 }
 
-h2, h3, h4 {
+h2, h3 {
     font-size: 200% !important;
+}
+
+h4 {
+    font-size: 160% !important;
 }
 
 /*
@@ -188,10 +192,19 @@ li.slide.selected {
 */
 div.styles_modal__gNwvD {
     height: auto;
-    max-width: 60vw;
     width: 100%;
+    padding: 0.5rem;
 }
 
 li.project-description-list-item {
     font-size: 1rem;
+}
+
+div.modal-footer.w-auto {
+    padding-top: 0.5rem ;
+    padding-bottom: 0;
+}
+
+a.btn.btn-black.Ripple-parent {
+    padding: 0.5rem 1rem;
 }

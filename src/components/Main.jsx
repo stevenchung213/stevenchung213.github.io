@@ -70,14 +70,14 @@ export default class Main extends Component {
 
     const General = styled.div`
       height: '100vh',
-      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg")',
+
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     `;
     const GatewayContainer = styled.div`
-      background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg");
+
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -86,14 +86,14 @@ export default class Main extends Component {
     `;
     const GeneralMobile = styled.div`
       height: '100vh',
-      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg")',
+
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     `;
     const GatewayContainerMobile = styled.div`
-      background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg");
+
       background-size: cover;
       background-attachment: fixed;
       background-position: center;

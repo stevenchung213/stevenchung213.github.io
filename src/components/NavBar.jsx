@@ -62,7 +62,7 @@ export default class Navbar extends Component {
       <Router>
         <MDBNavbar color="black" dark scrolling scrollingNavbarOffset={10} expand="md" style={navBarStyle} transparent>
           <MDBNavbarBrand style={name}>
-            <AnchorLink href='#main' style={{fontWeight: 900}}>
+            <AnchorLink href='#main' style={{fontWeight: 300}}>
               <TextBox initialPose="exit" pose="enter">
                 <strong className="white-text">
                   <SplitText charPoses={charPoses}>
@@ -77,7 +77,7 @@ export default class Navbar extends Component {
             <MDBNavbarNav right>
               <MDBNavItem>
                 <AnchorLink href='#about-nav'>
-                  <TextBox initialPose="exit" pose="enter">
+                  <TextBox initialPose="exit" pose="enter" style={{fontWeight: 500}}>
                     <SplitText charPoses={charPoses}>
                       ABOUT
                     </SplitText>
@@ -86,7 +86,7 @@ export default class Navbar extends Component {
               </MDBNavItem>
               <MDBNavItem>
                 <AnchorLink href='#tech-nav'>
-                  <TextBox initialPose="exit" pose="enter">
+                  <TextBox initialPose="exit" pose="enter" style={{fontWeight: 500}}>
                     <SplitText charPoses={charPoses}>
                       TECH
                     </SplitText>
@@ -95,7 +95,7 @@ export default class Navbar extends Component {
               </MDBNavItem>
               <MDBNavItem>
                 <AnchorLink href='#projects-nav'>
-                  <TextBox initialPose="exit" pose="enter">
+                  <TextBox initialPose="exit" pose="enter" style={{fontWeight: 500}}>
                     <SplitText charPoses={charPoses}>
                       PORTFOLIO
                     </SplitText>
@@ -111,19 +111,19 @@ export default class Navbar extends Component {
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown">
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://www.linkedin.com/in/stevenchung-213">
+                                     href="https://www.linkedin.com/in/stevenchung-213" style={{fontWeight: 600}}>
                       <MDBIcon fab icon="linkedin"/> LinkedIn
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://www.github.com/stevenchung213">
+                                     href="https://www.github.com/stevenchung213" style={{fontWeight: 600}}>
                       <MDBIcon fab icon="github"/> Github
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="mailto:stevechung.213@gmail.com">
+                                     href="mailto:stevechung.213@gmail.com" style={{fontWeight: 600}}>
                       <MDBIcon far icon="envelope"/> Gmail
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf">
+                                     href="https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf" style={{fontWeight: 600}}>
                       <MDBIcon icon="file-pdf"/> Résumé
                     </MDBDropdownItem>
                   </MDBDropdownMenu>

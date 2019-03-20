@@ -79,8 +79,8 @@ const Tech = () => {
     margin: '0 auto',
     display: 'flex',
     padding: '1vh 1vw 1vh 1vw',
-    justifyContent: 'center',
-    fontWeight: 900
+    textAlign: 'center',
+    fontWeight: 400
   };
   const front = {
     display: 'flex',
@@ -133,7 +133,7 @@ const Tech = () => {
         <div id='tech1-sub' style={tech1}>
           <Slide top>
             <div style={titleBox}>
-              <h3 className='h3-responsive' style={{fontWeight: 900}}>
+              <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
                 - FAMILIAR TECHNOLOGIES -
               </h3>
             </div>

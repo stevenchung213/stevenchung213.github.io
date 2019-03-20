@@ -59,7 +59,7 @@ const Projects = () => {
       <div id='projects-container' style={general}>
         <Jump top>
           <div style={titleBox}>
-            <h3 className='h3-responsive' style={{fontWeight: 900}}>
+            <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
               - SOME OF MY WORK -
             </h3>
           </div>
@@ -77,13 +77,15 @@ const Projects = () => {
                     </Zoom>
                     <div className='w-responsive mx-auto text-center p-1 mt-1'>
                       <Slide right>
-                        <h4 className="h4-responsive" style={{color: 'white'}}>
+                        <h4 className="h4-responsive" style={{color: 'white', fontWeight: 500}}>
                           {project.name}
                         </h4>
                       </Slide>
                       <Slide left>
                         <h5 className='h5-responsive' style={{color: 'white', marginBottom: 5}}>
-                          {project.description}
+                          <i>
+                            {project.description}
+                          </i>
                         </h5>
                       </Slide>
                       <Slide bottom>

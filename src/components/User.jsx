@@ -26,11 +26,11 @@ const User = (props) => {
   };
   const button = {
     borderRadius: 20,
-    width: '10vw',
+    width: 'auto',
     height: 40,
     color: 'black',
     fontSize: 20,
-    // fontFamily: 'Montserrat, serif',
+    fontWeight: 600,
     backgroundColor: 'white'
   };
   const warning = {

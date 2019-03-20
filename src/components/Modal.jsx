@@ -83,8 +83,8 @@ export default class Modal extends Component {
       href: 'https://github.com/stevenchung213/hrr34-fullstack-review'
     };
     const portfolio = {
-      name: 'Portfolio Site',
-      caption: '',
+      name: 'Personal Site',
+      caption: 'Portfolio',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio.png',
       tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
       description: 'Front end bootstrapped using Material Design' +
@@ -109,25 +109,22 @@ export default class Modal extends Component {
       height: 'auto'
     };
     const body = {
-      maxHeight: '75vh',
-      height: '100%',
+      height: 'auto',
       width: '100%',
       display: 'inline-flex',
-      verticalAlign: 'center',
-      justifyContent: 'center',
-      paddingTop: 0,
+
+      paddingTop: '0.5vh',
       paddingBottom: 0
     };
     const bodyTop = {
-      display: 'flex',
+      display: 'inline-flex',
       flexDirection: 'column',
-      justifyContent: 'center',
       width: '100%',
+      height: 'auto'
     };
     const image = {
       height: 'auto',
       maxWidth: '-webkit-fill-available',
-      maxHeight: '90%',
       display: 'block',
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -135,13 +132,13 @@ export default class Modal extends Component {
     };
     const list = {
       marginTop: '1vh',
-      paddingLeft: '2vw',
+      paddingLeft: '4vw',
       paddingRight: '2vw'
 
     };
     const listing = {
       textAlign: 'left',
-      fontWeight: 600,
+      fontWeight: 400,
     };
     const footer = {
       display: 'flex',
@@ -153,27 +150,31 @@ export default class Modal extends Component {
 
     return (
       <div>
-        <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal}>More Info</MDBBtn>
+        <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal} style={{fontWeight: 800}}>More Info</MDBBtn>
         <ResponsiveModal open={this.state.showModal} onClose={this.handleCloseModal} center={true}
-                         blockScroll={true} focusTrapped={false} closeOnEsc={true} >
+                         blockScroll={true} focusTrapped={false} closeOnEsc={true} showCloseIcon={false}>
           <div className='modal-header' style={header}>
-            <h3 className='h3-responsive' style={{fontWeight: 800, textAlign: 'center'}}>
-              {project.name}
-              <i style={{fontWeight: 800}}>
-                {` - ${project.caption}`}
-              </i>
-            </h3>
+            <div className='modal-title-box' style={{display: 'flex', flexDirection: 'column'}}>
+              <h3 className='h3-responsive' style={{fontWeight: 600, textAlign: 'center', marginBlockEnd: 0}}>
+                {project.name}
+              </h3>
+              <div className='modal-subtitle-box' style={{display: 'flex', justifyContent: 'center'}}>
+                <i style={{fontSize: '1rem', fontWeight: 500, textAlign: 'center'}}>
+                  {project.caption}
+                </i>
+              </div>
+            </div>
           </div>
           <div className='modal-body' style={body}>
             <div className='modal-body-top' style={bodyTop}>
               <div className='modal-image-container w-responsive'
-                   style={{display: 'flex', width: '100%', maxHeight: '', height: '100%', paddingTop: '1vh'}}>
+                   style={{width: '100%', height: 'auto'}}>
                 <img src={project.src} alt={project.name} style={image}/>
               </div>
-              <div className='modal-project-info' style={{width: '100%', height: 'auto'}}>
+              <div className='modal-project-info' style={{width: '100%', height: 'auto', paddingTop: '0.2vh'}}>
                 <div className='modal-tech-stack'>
                   <h5 className='h5-responsive'
-                      style={{fontWeight: 600, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center'}}>
+                      style={{fontWeight: 500, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center', marginTop: '1vh'}}>
                     {project.tech}
                   </h5>
                 </div>

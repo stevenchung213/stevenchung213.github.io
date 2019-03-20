@@ -46,7 +46,7 @@ const Wallpaper = ({user, mobile}) => {
   };
   const hello = {
     color: 'black',
-    fontSize: '220%',
+    fontSize: '270%',
     textAlign: 'center',
     fontWeight: 900,
     height: 'auto',
