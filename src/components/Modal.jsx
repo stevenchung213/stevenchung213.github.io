@@ -89,8 +89,10 @@ export default class Modal extends Component {
       tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
       description: 'Front end bootstrapped using Material Design' +
         ' for' +
-        ' React * Webpack gzip compression, image compression and caching enabled for optimal loading speeds* ' +
-        'Deployed using Github Pages with conditional React rendering * All image files hosted by S3 with caching enabled * Best viewed' +
+        ' React * Webpack gzip compression, image compression and caching enabled for optimal loading speeds * ' +
+        'Deployed using Github Pages with conditional React rendering * Service worker implemented for offline availability (currently' +
+        ' disabled since Github Pages deployment does not support service' +
+        ' workers) * All image files hosted by S3 with caching enabled * Best viewed' +
         ' on Chrome due to fixed transparent background',
       href: 'https://github.com/stevenchung213/stevenchung213.github.io'
     };
