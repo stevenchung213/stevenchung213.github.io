@@ -5,8 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Steven Chung">
 	<meta name="Description" content="Portfolio Site">
-	<meta name="theme-color" content="#000000">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+	<meta name="theme-color" content="#000000"/>
+	<link rel="manifest" href="./dist/manifest.json">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="./dist/styles.css">
 	<link rel="shortcut icon" href="#">
 	<title>~ WELCOME ~</title>
@@ -15,5 +16,16 @@
 <div id="main"></div>
 <noscript>JavaScript REQUIRED!</noscript>
 <script src="./dist/bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/dist/service-worker.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
+</script>
 </body>
 </html>

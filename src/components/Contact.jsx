@@ -34,7 +34,8 @@ const Contact = () => {
           <Spin>
             <div className="contact-icons">
               <a target="_blank" rel="noopener noreferrer"
-                 href='https://www.linkedin.com/in/stevenchung-213'>
+                 href='https://www.linkedin.com/in/stevenchung-213'
+                 aria-label="contact-LinkedIn">
                 <MDBIcon fab icon="linkedin-in fa-2x" className='black-text'/>
               </a>
             </div>
@@ -42,7 +43,8 @@ const Contact = () => {
           <Spin>
             <div className="contact-icons">
               <a target="_blank" rel="noopener noreferrer"
-                 href='https://www.github.com/stevenchung213'>
+                 href='https://www.github.com/stevenchung213'
+                 aria-label="contact-Github">
                 <MDBIcon fab icon="github fa-2x" className='black-text'/>
               </a>
             </div>
@@ -50,7 +52,8 @@ const Contact = () => {
           <Spin>
             <div className="contact-icons">
               <a target="_blank" rel="noopener noreferrer"
-                 href='mailto:stevenchung.213@gmail.com'>
+                 href='mailto:stevenchung.213@gmail.com'
+                 aria-label="contact-Gmail">
                 <MDBIcon far icon="envelope fa-2x" className='black-text'/>
               </a>
             </div>
@@ -58,7 +61,8 @@ const Contact = () => {
           <Spin>
             <div className='contact-icons'>
               <a target="_blank" rel="noopener noreferrer"
-                 href='https://www.instagram.com/heartonmysteve/'>
+                 href='https://www.instagram.com/heartonmysteve/'
+                 aria-label="contact-Instagram">
                 <MDBIcon fab icon="instagram fa-2x" className='black-text'/>
               </a>
             </div>

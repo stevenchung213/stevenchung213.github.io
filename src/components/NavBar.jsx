@@ -36,10 +36,9 @@ export default class Navbar extends Component {
       enter: {
         x: '0%',
         beforeChildren: true,
-        staggerChildren: 100
+        staggerChildren: 85
       }
     });
-
     const charPoses = {
       exit: {opacity: 0},
       enter: {opacity: 1}
@@ -72,7 +71,7 @@ export default class Navbar extends Component {
               </TextBox>
             </AnchorLink>
           </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse}/>
+          <MDBNavbarToggler onClick={this.toggleCollapse} aria-label="collapsedDropdown"/>
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav right>
               <MDBNavItem>
@@ -111,19 +110,23 @@ export default class Navbar extends Component {
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown">
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://www.linkedin.com/in/stevenchung-213" style={{fontWeight: 600}}>
+                                     href="https://www.linkedin.com/in/stevenchung-213"
+                                     aria-label="navLinkedIn" style={{fontWeight: 600}}>
                       <MDBIcon fab icon="linkedin"/> LinkedIn
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://www.github.com/stevenchung213" style={{fontWeight: 600}}>
+                                     href="https://www.github.com/stevenchung213"
+                                     aria-label="navGithub" style={{fontWeight: 600}}>
                       <MDBIcon fab icon="github"/> Github
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="mailto:stevechung.213@gmail.com" style={{fontWeight: 600}}>
+                                     href="mailto:stevechung.213@gmail.com"
+                                     aria-label="navGmail" style={{fontWeight: 600}}>
                       <MDBIcon far icon="envelope"/> Gmail
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
-                                     href="https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf" style={{fontWeight: 600}}>
+                                     href="https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf"
+                                     aria-label="navResume" style={{fontWeight: 600}}>
                       <MDBIcon icon="file-pdf"/> Résumé
                     </MDBDropdownItem>
                   </MDBDropdownMenu>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {MDBBtn} from 'mdbreact';
 import ResponsiveModal from 'react-responsive-modal';
+import {Fade} from 'react-reveal';
 import posed from 'react-pose';
 import SplitText from 'react-pose-text';
 
@@ -33,7 +34,6 @@ export default class Modal extends Component {
         staggerChildren: 15
       }
     });
-
     const charPoses = {
       exit: {opacity: 0},
       enter: {opacity: 1}
@@ -91,7 +91,7 @@ export default class Modal extends Component {
         ' for' +
         ' React * Webpack gzip compression, image compression and caching enabled for optimal loading speeds* ' +
         'Deployed using Github Pages with conditional React rendering * All image files hosted by S3 with caching enabled * Best viewed' +
-        ' on Chrome due to transparent background with parallax effect ',
+        ' on Chrome due to fixed transparent background',
       href: 'https://github.com/stevenchung213/stevenchung213.github.io'
     };
 
@@ -155,36 +155,54 @@ export default class Modal extends Component {
                          blockScroll={true} focusTrapped={false} closeOnEsc={true} showCloseIcon={false}>
           <div className='modal-header' style={header}>
             <div className='modal-title-box' style={{display: 'flex', flexDirection: 'column'}}>
-              <h3 className='h3-responsive' style={{fontWeight: 600, textAlign: 'center', marginBlockEnd: 0}}>
-                {project.name}
-              </h3>
+              <TextBox initialPose="exit" pose="enter">
+                <h3 className='h3-responsive' style={{fontWeight: 600, textAlign: 'center', marginBlockEnd: 0}}>
+                  <SplitText charPoses={charPoses}>
+                    {project.name}
+                  </SplitText>
+                </h3>
+              </TextBox>
               <div className='modal-subtitle-box' style={{display: 'flex', justifyContent: 'center'}}>
-                <i style={{fontSize: '1rem', fontWeight: 500, textAlign: 'center'}}>
-                  {project.caption}
-                </i>
+                <TextBox initialPose="exit" pose="enter">
+                  <i style={{fontSize: '1rem', fontWeight: 500, textAlign: 'center'}}>
+                    <SplitText charPoses={charPoses}>
+                      {project.caption}
+                    </SplitText>
+                  </i>
+                </TextBox>
               </div>
             </div>
           </div>
           <div className='modal-body' style={body}>
             <div className='modal-body-top' style={bodyTop}>
-              <div className='modal-image-container w-responsive'
-                   style={{width: '100%', height: 'auto'}}>
-                <img src={project.src} alt={project.name} style={image}/>
-              </div>
+              <Fade big>
+                <div className='modal-image-container w-responsive'
+                     style={{width: '100%', height: 'auto'}}>
+                  <img src={project.src} alt={project.name} style={image}/>
+                </div>
+              </Fade>
               <div className='modal-project-info' style={{width: '100%', height: 'auto', paddingTop: '0.2vh'}}>
                 <div className='modal-tech-stack'>
-                  <h5 className='h5-responsive'
-                      style={{fontWeight: 500, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center', marginTop: '1vh'}}>
-                    {project.tech}
-                  </h5>
+                  <TextBox initialPose="exit" pose="enter">
+                    <h5 className='h5-responsive'
+                        style={{fontWeight: 500, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center', marginTop: '1vh'}}>
+                      <SplitText charPoses={charPoses}>
+                        {project.tech}
+                      </SplitText>
+                    </h5>
+                  </TextBox>
                 </div>
                 <div className='modal-project-description'>
                   <ul className='modal-project-description-list' style={list}>
                     {project.description.split('*').map((item, i) => {
                       return (
-                        <li className='project-description-list-item' key={'listing' + i} style={listing}>
-                          {item}
-                        </li>
+                        <TextBox initialPose="exit" pose="enter">
+                          <li className='project-description-list-item' key={'listing' + i} style={listing}>
+                            <SplitText charPoses={charPoses}>
+                              {item}
+                            </SplitText>
+                          </li>
+                        </TextBox>
                       )
                     })}
                   </ul>

@@ -1,6 +1,7 @@
-const webpack = require('webpack');
-const CompressionPlugin = require('compression-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack'),
+  CompressionPlugin = require('compression-webpack-plugin'),
+  UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
+  WorkboxPlugin = require('workbox-webpack-plugin');
 
 //non-ssr
 module.exports = {
@@ -8,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.jsx$/],
+        test: [/\.jsx$/, /\.js$/],
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -56,7 +57,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
       }
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
@@ -66,10 +67,28 @@ module.exports = {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new WorkboxPlugin.GenerateSW({
+      swDest: __dirname + '/dist/service-worker.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      include: [/\.html$/, /\.js$/, /\.css$/],
+      precacheManifestFilename: 'sc-manifest.[manifestHash].js',
+      cleanupOutdatedCaches: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('/'),
+          handler: 'StaleWhileRevalidate'
+        },
+        // {
+        //   urlPattern: new RegExp('https://s3-us-west-1.amazonaws.com/my.portfolio/'),
+        //   handler: 'StaleWhileRevalidate'
+        // }
+      ]
     })
   ],
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/temp'
+    path: __dirname + '/dist'
   }
 };

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import {MDBIcon} from "mdbreact";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import {Bounce, Fade} from 'react-reveal';
+import posed from 'react-pose';
+import SplitText from 'react-pose-text';
 
 
 const Wallpaper = ({user, mobile}) => {
@@ -24,6 +26,22 @@ const Wallpaper = ({user, mobile}) => {
     background-repeat: no-repeat;
     height: 100vh;
   `;
+
+  const TextBox = posed.div({
+    exit: {
+      x: '-100%'
+    },
+    enter: {
+      x: '0%',
+      beforeChildren: true,
+      staggerChildren: 60
+    }
+  });
+  const charPoses = {
+    exit: {opacity: 0},
+    enter: {opacity: 1}
+  };
+
   const general = {
     position: 'absolute',
     top: '45%',
@@ -55,6 +73,7 @@ const Wallpaper = ({user, mobile}) => {
   const arrow = {
     margin: 'auto'
   };
+  let userName = user === '' ? '!' : ` ${user.toUpperCase()}!`;
 
   return (
     <Fade clear>
@@ -63,9 +82,13 @@ const Wallpaper = ({user, mobile}) => {
           <Bounce top>
             <div id='intro' style={intro}>
               <div>
-                <h1 className='h1-responsive' style={hello}>
-                  HEY THERE{user === '' ? '!' : ` ${user.toUpperCase()}!`}
-                </h1>
+                <TextBox initialPose="exit" pose="enter">
+                  <h1 className='h1-responsive' style={hello}>
+                    <SplitText charPoses={charPoses}>
+                      {`HEY THERE${userName}`}
+                    </SplitText>
+                  </h1>
+                </TextBox>
               </div>
               <div>
               </div>
@@ -73,7 +96,7 @@ const Wallpaper = ({user, mobile}) => {
           </Bounce>
           <Bounce bottom>
             <div id='down-arrow' style={arrow}>
-              <AnchorLink href='#about-nav'>
+              <AnchorLink href='#about-nav' aria-label="downArrow">
                 <MDBIcon icon="angle-double-down fa-6x" className='white-text'/>
               </AnchorLink>
             </div>
