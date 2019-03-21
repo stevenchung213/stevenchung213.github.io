@@ -1,9 +1,24 @@
 import React from "react";
-import {MDBView} from "mdbreact";
+import {MDBTooltip} from "mdbreact";
 import {Fade, Slide} from 'react-reveal';
+import posed from 'react-pose';
 
 
 const Tech = () => {
+
+  const Box = posed.div({
+    hoverable: true,
+    pressable: true,
+    init: {
+      scale: 1
+    },
+    hover: {
+      scale: 1.7
+    },
+    press: {
+      scale: 1
+    }
+  });
 
   const urls = {
     front: ['https://s3-us-west-1.amazonaws.com/my.portfolio/png/javascript.png',
@@ -55,8 +70,7 @@ const Tech = () => {
     height: 'auto',
     width: '100%',
     justifyContent: 'center',
-    alignContent: 'center',
-    overflowX: 'hidden'
+    alignContent: 'center'
   };
   const tech2 = {
     minHeight: '20vh',
@@ -64,7 +78,6 @@ const Tech = () => {
     width: '100%',
     justifyContent: 'center',
     alignContent: 'center',
-    overflowY: 'hidden',
     display: 'flex',
     paddingBottom: '1vh'
   };
@@ -90,8 +103,7 @@ const Tech = () => {
     alignContent: 'space-around',
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: '2vh 3vw 0 3vw',
-    overflow: 'auto'
+    padding: '2vh 3vw 0 3vw'
   };
   const back = {
     display: 'flex',
@@ -102,8 +114,7 @@ const Tech = () => {
     marginRight: 'auto',
     marginLeft: 'auto',
     padding: '2vh 1vw 0 1vw',
-    order: 2,
-    overflow: 'auto'
+    order: 2
   };
   const dev = {
     display: 'flex',
@@ -112,8 +123,7 @@ const Tech = () => {
     justifyContent: 'space-around',
     alignContent: 'space-around',
     padding: '10px 20px',
-    order: 3,
-    overflow: 'auto'
+    order: 3
   };
   const iconBox = {
     height: '8vh',
@@ -149,11 +159,14 @@ const Tech = () => {
                     let split = url.split('/');
                     let tech = split[split.length - 1].slice(0, -4);
                     return (
-                      <MDBView hover zoom key={tech}>
-                        <div className='img-box' key={tech} style={iconBox}>
-                          <img src={url} alt={tech} style={icon}/>
-                        </div>
-                      </MDBView>
+                      <MDBTooltip placement="bottom"
+                                  tooltipContent={tech.toUpperCase()}>
+                        <Box key={tech}>
+                          <div className='img-box' key={tech} style={iconBox}>
+                            <img src={url} alt={tech} style={icon}/>
+                          </div>
+                        </Box>
+                      </MDBTooltip>
                     )
                   })
                 }
@@ -171,11 +184,14 @@ const Tech = () => {
                     let split = url.split('/');
                     let tech = split[split.length - 1].slice(0, -4);
                     return (
-                      <MDBView hover zoom key={tech}>
-                        <div className='img-box' key={tech} style={iconBox}>
-                          <img src={url} alt={tech} style={icon}/>
-                        </div>
-                      </MDBView>
+                      <MDBTooltip placement="bottom"
+                                  tooltipContent={tech.toUpperCase()}>
+                        <Box key={tech}>
+                          <div className='img-box' key={tech} style={iconBox}>
+                            <img src={url} alt={tech} style={icon}/>
+                          </div>
+                        </Box>
+                      </MDBTooltip>
                     )
                   })
                 }
@@ -195,11 +211,14 @@ const Tech = () => {
                     let split = url.split('/');
                     let tech = split[split.length - 1].slice(0, -4);
                     return (
-                      <MDBView hover zoom key={tech}>
-                        <div className='img-box' key={tech} style={iconBox}>
-                          <img src={url} alt={tech} style={icon}/>
-                        </div>
-                      </MDBView>
+                      <MDBTooltip placement="bottom"
+                                  tooltipContent={tech.toUpperCase()}>
+                        <Box key={tech}>
+                          <div className='img-box' key={tech} style={iconBox}>
+                            <img src={url} alt={tech} style={icon}/>
+                          </div>
+                        </Box>
+                      </MDBTooltip>
                     )
                   })
                 }
