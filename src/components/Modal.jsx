@@ -42,7 +42,7 @@ export default class Modal extends Component {
     const sucasa = {
       name: 'Su Casa',
       caption: 'Rental & Lodging Application',
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/sucasa.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/sucasa.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | AWS EBS | AWS S3 | Jest | Enzyme',
       description: 'Constructed a clean UI/UX experience while focusing on modularity via React * Optimized page load speeds from 3' +
         ' seconds to less than 1 second using image resizing/compression and minifying * Developed using Agile methodologies and tested' +
@@ -52,7 +52,7 @@ export default class Modal extends Component {
     const zillwoah = {
       name: 'Zillwoah!',
       caption: 'Real Estate Application',
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/zillwoah1.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/zillwoah.png',
       tech: 'React | Node | Express | PostgreSQL | CassandraDB | AWS EC2 | Nginx | K6 | New Relic | Loader.io',
       description: 'Efficiently scaled legacy codebase to handle 10 million records *' +
         'Created a seed script which randomly generated and populated PostgreSQL with 10 million records in less than 10 minutes;' +
@@ -65,7 +65,7 @@ export default class Modal extends Component {
     const mymappins = {
       name: 'My Map Pins',
       caption: 'Save your own labeled marker on Google Maps',
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/mappins.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/mappins.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | Google Maps API',
       description: 'MVP application designed with Bootstrap in the front end *' + 'Rendered maps utilizing the Google-Maps-React library' +
         ' along with Google Maps API * Added functionality for user to attach a note to specified geographical Markers *' + " Saved" +
@@ -75,7 +75,7 @@ export default class Modal extends Component {
     const repofecther = {
       name: 'Github Repo Fetcher',
       caption: 'Retrieve all repos of a Github user',
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/repofetcher.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/repofetcher.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | GitHub API',
       description: 'Designed a clean interface for users to search for and display a Github user\'s repos * ' +
         'Saves all user\'s repos to MongoDB * ' +
@@ -85,14 +85,14 @@ export default class Modal extends Component {
     const portfolio = {
       name: 'Personal Site',
       caption: 'Portfolio',
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/portfolio.png',
       tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
       description: 'Front end bootstrapped using Material Design' +
         ' for' +
         ' React * Webpack gzip compression, image compression and caching enabled for optimal loading speeds * ' +
         'Deployed using Github Pages with conditional React rendering * Service worker implemented for offline availability (currently' +
         ' disabled since Github Pages deployment does not support service' +
-        ' workers) * All image files hosted by S3 with caching enabled * Designed for Chrome due to webp image format',
+        ' workers) * All image files hosted by S3 with caching enabled * Designed for Chrome',
       href: 'https://github.com/stevenchung213/stevenchung213.github.io'
     };
 

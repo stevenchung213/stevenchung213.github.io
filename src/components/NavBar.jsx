@@ -58,15 +58,17 @@ export default class Navbar extends Component {
       fontWeight: 800
     };
     const hamburgerMenu = {
-      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/hamburger_icon.webp")',
+      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/png/hamburger_icon.png")',
       backgroundRepeat: 'no-repeat',
       backgroundSize: '50% 80%',
       backgroundPosition: 'center'
     };
 
+    const windowHeight = window.innerHeight;
+
     return (
       <Router>
-        <MDBNavbar color="white" scrolling scrollingNavbarOffset={10} expand="lg" style={navBarStyle} transparent >
+        <MDBNavbar color="white" scrolling scrollingNavbarOffset={windowHeight} expand="lg" style={navBarStyle} transparent >
           <MDBNavbarBrand style={name}>
             <AnchorLink href='#main'>
               <TextBox className="black-text" initialPose="exit" pose="enter" style={{fontWeight: 900}}>

@@ -5,6 +5,7 @@ import {Fade, Slide} from 'react-reveal';
 import Jump from 'react-reveal/Jump';
 import Zoom from 'react-reveal/Zoom';
 
+
 const Projects = () => {
 
   const general = {
@@ -28,27 +29,27 @@ const Projects = () => {
   };
   const projects = [
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/sucasa-small.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/sucasa-small.png',
       name: 'Su Casa',
       description: 'Rental & Lodging App'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/zillwoah-small1.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/zillwoah-small.png',
       name: 'Zillwoah!',
       description: 'Real Estate App'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/mappins-small.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/mappins-small.png',
       name: 'My Map Pins',
       description: 'App using Google Maps API'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/repofetcher-small.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/repofetcher-small.png',
       name: 'Github Repo Fetcher',
       description: 'App using Github API'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio-small.webp',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/portfolio-small.png',
       name: 'Portfolio',
       description: 'My Portfolio Site'
     }

@@ -12,14 +12,14 @@ const Wallpaper = ({user, mobile}) => {
   const Background = styled.div`
     height: 100vh;
     background-color: transparent;
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.webp");
+    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
   `;
   const Mobile = styled.div`
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.webp");
+    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline_mobile.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;

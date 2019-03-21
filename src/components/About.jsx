@@ -62,7 +62,6 @@ const About = () => {
   const textBox = {
     height: 'auto',
     width: '100%',
-    // fontFamily: 'Montserrat, serif',
     fontSize: '1em',
     color: 'white',
     marginTop: 15,
@@ -87,9 +86,8 @@ const About = () => {
           <Jump>
             <div id='pic-container' style={picBox}>
               <img id='picture'
-                   src='https://s3-us-west-1.amazonaws.com/my.portfolio/profile.webp'
-                   alt='profile-pic' style={picStyle}
-              />
+                   src='https://s3-us-west-1.amazonaws.com/my.portfolio/png/profile.png'
+                   alt='profile-pic' style={picStyle}/>
             </div>
           </Jump>
           <div id='about-info' style={info}>
