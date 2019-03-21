@@ -34,7 +34,7 @@ h4 {
         bottom: 0;
         left: 0;
         z-index: -1;
-        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg);
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.webp);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -63,7 +63,7 @@ h4 {
         bottom: 0;
         left: 0;
         z-index: -1;
-        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg);
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.webp);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -92,7 +92,7 @@ h4 {
         bottom: 0;
         left: 0;
         z-index: -1;
-        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg);
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.webp);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -120,7 +120,7 @@ h4 {
         bottom: 0;
         left: 0;
         z-index: -1;
-        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg);
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.webp);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -134,13 +134,17 @@ h4 {
 /*
     NAVBAR changes
 */
+.navbar {
+    box-shadow: none !important;
+}
+
 .navbar-nav li {
     padding-left: 15px;
     padding-right: 15px;
 }
 
 li.nav-item a {
-    color: white;
+    font-size: 1.2rem;
 }
 
 a.dropdown-item {

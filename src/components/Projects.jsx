@@ -28,27 +28,27 @@ const Projects = () => {
   };
   const projects = [
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/sucasa-small.png',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/sucasa-small.webp',
       name: 'Su Casa',
       description: 'Rental & Lodging App'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/zillwoah-small1.png',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/zillwoah-small1.webp',
       name: 'Zillwoah!',
       description: 'Real Estate App'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/mappins-small.png',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/mappins-small.webp',
       name: 'My Map Pins',
       description: 'App using Google Maps API'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/repofetcher-small.png',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/repofetcher-small.webp',
       name: 'Github Repo Fetcher',
       description: 'App using Github API'
     },
     {
-      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio-small.png',
+      src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/portfolio-small.webp',
       name: 'Portfolio',
       description: 'My Portfolio Site'
     }

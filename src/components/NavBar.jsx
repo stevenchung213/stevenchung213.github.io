@@ -20,7 +20,9 @@ import SplitText from 'react-pose-text';
 
 export default class Navbar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    collapse1: false,
+    collapseID: ''
   };
 
   toggleCollapse = () => {
@@ -46,37 +48,40 @@ export default class Navbar extends Component {
 
     const navBarStyle = {
       position: 'fixed',
-      backgroundColor: 'black',
-      opacity: '1',
+      opacity: '0.95',
       zIndex: 10000,
       width: '100%'
     };
     const name = {
       fontSize: '1.7rem',
       cursor: 'pointer',
-      color: 'white'
+      fontWeight: 800
+    };
+    const hamburgerMenu = {
+      backgroundImage: 'url("https://s3-us-west-1.amazonaws.com/my.portfolio/hamburger_icon.webp")',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '50% 80%',
+      backgroundPosition: 'center'
     };
 
     return (
       <Router>
-        <MDBNavbar color="black" dark scrolling scrollingNavbarOffset={10} expand="md" style={navBarStyle} transparent>
+        <MDBNavbar color="white" scrolling scrollingNavbarOffset={10} expand="lg" style={navBarStyle} transparent >
           <MDBNavbarBrand style={name}>
-            <AnchorLink href='#main' style={{fontWeight: 300}}>
-              <TextBox initialPose="exit" pose="enter">
-                <strong className="white-text">
-                  <SplitText charPoses={charPoses}>
-                    STEVEN CHUNG
-                  </SplitText>
-                </strong>
+            <AnchorLink href='#main'>
+              <TextBox className="black-text" initialPose="exit" pose="enter" style={{fontWeight: 900}}>
+                <SplitText charPoses={charPoses}>
+                  STEVEN CHUNG
+                </SplitText>
               </TextBox>
             </AnchorLink>
           </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} aria-label="collapsedDropdown"/>
+          <MDBNavbarToggler onClick={this.toggleCollapse} aria-label="collapsedDropdown" style={hamburgerMenu}/>
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav right>
               <MDBNavItem>
                 <AnchorLink href='#about-nav'>
-                  <TextBox initialPose="exit" pose="enter" style={{fontWeight: 500}}>
+                  <TextBox className="black-text" initialPose="exit" pose="enter" style={{fontWeight: 900}}>
                     <SplitText charPoses={charPoses}>
                       ABOUT
                     </SplitText>
@@ -85,7 +90,7 @@ export default class Navbar extends Component {
               </MDBNavItem>
               <MDBNavItem>
                 <AnchorLink href='#tech-nav'>
-                  <TextBox initialPose="exit" pose="enter" style={{fontWeight: 500}}>
+                  <TextBox className="black-text" initialPose="exit" pose="enter" style={{fontWeight: 900}}>
                     <SplitText charPoses={charPoses}>
                       TECH
                     </SplitText>
@@ -94,7 +99,7 @@ export default class Navbar extends Component {
               </MDBNavItem>
               <MDBNavItem>
                 <AnchorLink href='#projects-nav'>
-                  <TextBox initialPose="exit" pose="enter" style={{fontWeight: 500}}>
+                  <TextBox className="black-text" initialPose="exit" pose="enter" style={{fontWeight: 900}}>
                     <SplitText charPoses={charPoses}>
                       PORTFOLIO
                     </SplitText>
@@ -104,9 +109,9 @@ export default class Navbar extends Component {
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>
-                <MDBDropdown>
-                  <MDBDropdownToggle nav caret>
-                    <MDBIcon far icon="address-card fa-2x"/>
+                <MDBDropdown className="black-text">
+                  <MDBDropdownToggle nav caret className="black-text">
+                    <MDBIcon className="black-text" far icon="address-card fa-2x"/>
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown">
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"

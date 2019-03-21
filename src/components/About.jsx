@@ -87,7 +87,7 @@ const About = () => {
           <Jump>
             <div id='pic-container' style={picBox}>
               <img id='picture'
-                   src='https://s3-us-west-1.amazonaws.com/my.portfolio/profile.png'
+                   src='https://s3-us-west-1.amazonaws.com/my.portfolio/profile.webp'
                    alt='profile-pic' style={picStyle}
               />
             </div>

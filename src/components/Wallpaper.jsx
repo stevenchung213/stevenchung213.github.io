@@ -12,14 +12,14 @@ const Wallpaper = ({user, mobile}) => {
   const Background = styled.div`
     height: 100vh;
     background-color: transparent;
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.jpg");
+    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline.webp");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
   `;
   const Mobile = styled.div`
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.jpg");
+    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/city_skyline_mobile.webp");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -54,7 +54,7 @@ const Wallpaper = ({user, mobile}) => {
   };
   const intro = {
     borderRadius: '5rem',
-    background: 'white',
+    background: 'transparent',
     maxWidth: '100%',
     height: 'auto',
     width: 'auto',
@@ -97,7 +97,7 @@ const Wallpaper = ({user, mobile}) => {
           <Bounce bottom>
             <div id='down-arrow' style={arrow}>
               <AnchorLink href='#about-nav' aria-label="downArrow">
-                <MDBIcon icon="angle-double-down fa-6x" className='white-text'/>
+                <MDBIcon icon="angle-double-down fa-6x" className='black-text'/>
               </AnchorLink>
             </div>
           </Bounce>

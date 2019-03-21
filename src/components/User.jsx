@@ -7,7 +7,7 @@ import {Slide} from 'react-reveal';
 const User = (props) => {
 
   const Background = styled.div`
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/background2.png");
+    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/background.webp");
     background-size: contain;
     background-attachment: fixed;
     background-position: center;
