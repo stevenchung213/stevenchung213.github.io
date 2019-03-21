@@ -19,8 +19,11 @@ const Contact = () => {
   };
   const icons = {
     display: 'inline-flex',
-    width: '25vw',
+    width: 'auto',
     justifyContent: 'space-evenly'
+  };
+  const icon = {
+    margin: '0 2vw'
   };
   const trademark = {
     position: 'relative',
@@ -32,7 +35,7 @@ const Contact = () => {
       <div id='contact-container' style={general}>
         <div className='contact-icons mx-auto' style={icons}>
           <Spin>
-            <div className="contact-icons">
+            <div className="contact-icons" style={icon}>
               <a target="_blank" rel="noopener noreferrer"
                  href='https://www.linkedin.com/in/stevenchung-213'
                  aria-label="contact-LinkedIn">
@@ -41,7 +44,7 @@ const Contact = () => {
             </div>
           </Spin>
           <Spin>
-            <div className="contact-icons">
+            <div className="contact-icons" style={icon}>
               <a target="_blank" rel="noopener noreferrer"
                  href='https://www.github.com/stevenchung213'
                  aria-label="contact-Github">
@@ -50,7 +53,7 @@ const Contact = () => {
             </div>
           </Spin>
           <Spin>
-            <div className="contact-icons">
+            <div className="contact-icons" style={icon}>
               <a target="_blank" rel="noopener noreferrer"
                  href='mailto:stevenchung.213@gmail.com'
                  aria-label="contact-Gmail">
@@ -59,7 +62,7 @@ const Contact = () => {
             </div>
           </Spin>
           <Spin>
-            <div className='contact-icons'>
+            <div className='contact-icons' style={icon}>
               <a target="_blank" rel="noopener noreferrer"
                  href='https://www.instagram.com/heartonmysteve/'
                  aria-label="contact-Instagram">
