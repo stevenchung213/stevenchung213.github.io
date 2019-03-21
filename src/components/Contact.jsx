@@ -61,15 +61,6 @@ const Contact = () => {
               </a>
             </div>
           </Spin>
-          <Spin>
-            <div className='contact-icons' style={icon}>
-              <a target="_blank" rel="noopener noreferrer"
-                 href='https://www.instagram.com/heartonmysteve/'
-                 aria-label="contact-Instagram">
-                <MDBIcon fab icon="instagram fa-2x" className='black-text'/>
-              </a>
-            </div>
-          </Spin>
         </div>
         <div style={trademark}>
           <h5 className='h5-responsive' style={{fontWeight: 500}}>

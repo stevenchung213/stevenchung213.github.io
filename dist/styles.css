@@ -146,11 +146,15 @@ html, body, #about:after, #tech:after, #projects:after, #contact:after, #hello:a
 }
 
 li.nav-item a {
-    font-size: 1.2rem;
+    font-size: 1.43rem;
 }
 
 a.dropdown-item {
     color: black !important;
+}
+
+.dropdown-menu {
+    min-width: auto !important;
 }
 
 /*

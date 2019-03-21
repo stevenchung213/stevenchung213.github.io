@@ -29,7 +29,7 @@ const Wallpaper = ({user, mobile}) => {
 
   const TextBox = posed.div({
     exit: {
-      x: '-100%'
+      x: '0%'
     },
     enter: {
       x: '0%',
@@ -73,27 +73,24 @@ const Wallpaper = ({user, mobile}) => {
   const arrow = {
     margin: 'auto'
   };
+
   let userName = user === '' ? '!' : ` ${user.toUpperCase()}!`;
 
   return (
     <Fade clear>
       <div>
         <div id='hello' style={general}>
-          <Bounce top>
-            <div id='intro' style={intro}>
-              <div>
-                <TextBox initialPose="exit" pose="enter">
-                  <h1 className='h1-responsive' style={hello}>
-                    <SplitText charPoses={charPoses}>
-                      {`HEY THERE${userName}`}
-                    </SplitText>
-                  </h1>
-                </TextBox>
-              </div>
-              <div>
-              </div>
+          <div id='intro' style={intro}>
+            <div>
+              <TextBox initialPose="exit" pose="enter">
+                <h1 className='h1-responsive' style={hello}>
+                  <SplitText charPoses={charPoses}>
+                    {`HEY THERE${userName}`}
+                  </SplitText>
+                </h1>
+              </TextBox>
             </div>
-          </Bounce>
+          </div>
           <Bounce bottom>
             <div id='down-arrow' style={arrow}>
               <AnchorLink href='#about-nav' aria-label="downArrow">

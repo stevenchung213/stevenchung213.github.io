@@ -26,7 +26,7 @@ export default class Modal extends Component {
 
     const TextBox = posed.div({
       exit: {
-        x: '-100%'
+        x: '0%'
       },
       enter: {
         x: '0%',
@@ -44,9 +44,9 @@ export default class Modal extends Component {
       caption: 'Rental & Lodging Application',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/sucasa.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | AWS EBS | AWS S3 | Jest | Enzyme',
-      description: 'Constructed a clean UI/UX experience while focusing on modularity via React * Optimized page load speeds from 3' +
-        ' seconds to less than 1 second using image resizing/compression and minifying * Developed using Agile methodologies and tested' +
-        ' with Jest/Enzyme * Deployed application using AWS Elastic Beanstalk, AWS S3 and Mongo Cloud Atlas',
+      description: 'Constructed a clean UI/UX experience while focusing on modularity via React *Optimized page load speeds from 3' +
+        ' seconds to less than 1 second using image resizing/compression and minifying *Developed using Agile methodologies and tested' +
+        ' with Jest/Enzyme *Deployed application using AWS Elastic Beanstalk, AWS S3 and Mongo Cloud Atlas',
       href: 'https://github.com/stevenchung213/overview-proxy/tree/DEMO_LOCALHOST'
     };
     const zillwoah = {
@@ -56,10 +56,10 @@ export default class Modal extends Component {
       tech: 'React | Node | Express | PostgreSQL | CassandraDB | AWS EC2 | Nginx | K6 | New Relic | Loader.io',
       description: 'Efficiently scaled legacy codebase to handle 10 million records *' +
         'Created a seed script which randomly generated and populated PostgreSQL with 10 million records in less than 10 minutes;' +
-        ' Cassandra in less than 20 minutes * ' +
-        'Reduced database query times to less than 0.5ms through indexing on Postgresql; less than 1ms on Cassandra * ' +
+        ' Cassandra in less than 20 minutes *' +
+        'Reduced database query times to less than 0.5ms through indexing on Postgresql; less than 1ms on Cassandra *' +
         'Stress-tested and horizontally scaled micro-service to 4 servers using NGINX load balancer to handle 15,000 requests/second *' +
-        ' Deployed application using multiple AWS EC2 T2.micro instances',
+        'Deployed application using multiple AWS EC2 T2.micro instances',
       href: 'https://github.com/SDC-8/steve'
     };
     const mymappins = {
@@ -68,7 +68,7 @@ export default class Modal extends Component {
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/mappins.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | Google Maps API',
       description: 'MVP application designed with Bootstrap in the front end *' + 'Rendered maps utilizing the Google-Maps-React library' +
-        ' along with Google Maps API * Added functionality for user to attach a note to specified geographical Markers *' + " Saved" +
+        ' along with Google Maps API *Added functionality for user to attach a note to specified geographical Markers *' + "Saved" +
         " user's personalized note along with assigned coordinates using MongoDB",
       href: 'https://github.com/stevenchung213/mvp'
     };
@@ -77,8 +77,8 @@ export default class Modal extends Component {
       caption: 'Retrieve all repos of a Github user',
       src: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/repofetcher.png',
       tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | GitHub API',
-      description: 'Designed a clean interface for users to search for and display a Github user\'s repos * ' +
-        'Saves all user\'s repos to MongoDB * ' +
+      description: 'Designed a clean interface for users to search for and display a Github user\'s repos *' +
+        'Saves all user\'s repos to MongoDB *' +
         'Lists top 25 repo\'s sorted by fork count when not searching for specific user',
       href: 'https://github.com/stevenchung213/hrr34-fullstack-review'
     };
@@ -89,10 +89,10 @@ export default class Modal extends Component {
       tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
       description: 'Front end bootstrapped using Material Design' +
         ' for' +
-        ' React * Webpack gzip compression, image compression and caching enabled for optimal loading speeds * ' +
-        'Deployed using Github Pages with conditional React rendering * Service worker implemented for offline availability (currently' +
+        ' React *Webpack gzip compression, image compression and caching enabled for optimal loading speeds *' +
+        'Deployed using Github Pages with conditional React rendering *Service worker implemented for offline availability (currently' +
         ' disabled since Github Pages deployment does not support service' +
-        ' workers) * All image files hosted by S3 with caching enabled * Designed for Chrome',
+        ' workers) *All image files hosted by S3 with caching enabled * Designed for Chrome',
       href: 'https://github.com/stevenchung213/stevenchung213.github.io'
     };
 

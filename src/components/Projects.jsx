@@ -4,9 +4,26 @@ import Modal from './Modal.jsx';
 import {Fade, Slide} from 'react-reveal';
 import Jump from 'react-reveal/Jump';
 import Zoom from 'react-reveal/Zoom';
+import posed from "react-pose";
+import SplitText from "react-pose-text";
 
 
 const Projects = () => {
+
+  const TextBox = posed.div({
+    exit: {
+      x: '0%'
+    },
+    enter: {
+      x: '0%',
+      beforeChildren: true,
+      staggerChildren: 100
+    }
+  });
+  const charPoses = {
+    exit: {opacity: 0},
+    enter: {opacity: 1}
+  };
 
   const general = {
     height: 'auto',
@@ -58,13 +75,17 @@ const Projects = () => {
   return (
     <Fade clear>
       <div id='projects-container' style={general}>
-        <Jump top>
+        <Fade top>
           <div style={titleBox}>
-            <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
-              - SOME OF MY WORK -
-            </h3>
+            <TextBox className="white-text" initialPose="exit" pose="enter">
+              <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
+                <SplitText charPoses={charPoses}>
+                  - SOME OF MY WORK -
+                </SplitText>
+              </h3>
+            </TextBox>
           </div>
-        </Jump>
+        </Fade>
         <Carousel infiniteLoop={true} useKeyboardArrows={true}
                   dynamicHeight={false} centerMode={true}
                   showThumbs={false} showStatus={false}

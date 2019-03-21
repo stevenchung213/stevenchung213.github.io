@@ -33,12 +33,22 @@ export default class Navbar extends Component {
 
     const TextBox = posed.div({
       exit: {
-        x: '-100%'
+        x: '0%'
       },
       enter: {
         x: '0%',
         beforeChildren: true,
         staggerChildren: 85
+      }
+    });
+    const Contact = posed.div({
+      exit: {
+        x: '0%'
+      },
+      enter: {
+        x: '0%',
+        beforeChildren: true,
+        staggerChildren: 20
       }
     });
     const charPoses = {
@@ -53,7 +63,7 @@ export default class Navbar extends Component {
       width: '100%'
     };
     const name = {
-      fontSize: '1.7rem',
+      fontSize: '2rem',
       cursor: 'pointer',
       fontWeight: 800
     };
@@ -64,11 +74,11 @@ export default class Navbar extends Component {
       backgroundPosition: 'center'
     };
 
-    const windowHeight = window.innerHeight;
+    const windowHeight = window.innerHeight - 10;
 
     return (
       <Router>
-        <MDBNavbar color="white" scrolling scrollingNavbarOffset={windowHeight} expand="lg" style={navBarStyle} transparent >
+        <MDBNavbar color="white" scrolling scrollingNavbarOffset={windowHeight} expand="lg" style={navBarStyle} transparent>
           <MDBNavbarBrand style={name}>
             <AnchorLink href='#main'>
               <TextBox className="black-text" initialPose="exit" pose="enter" style={{fontWeight: 900}}>
@@ -119,22 +129,42 @@ export default class Navbar extends Component {
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
                                      href="https://www.linkedin.com/in/stevenchung-213"
                                      aria-label="navLinkedIn" style={{fontWeight: 600}}>
-                      <MDBIcon fab icon="linkedin"/> LinkedIn
+                      <Contact className="black-text" initialPose="exit" pose="enter" style={{display: 'inline'}}>
+                        <MDBIcon fab icon="linkedin"/>
+                        <SplitText charPoses={charPoses}>
+                          {`  LinkedIn`}
+                        </SplitText>
+                      </Contact>
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
                                      href="https://www.github.com/stevenchung213"
                                      aria-label="navGithub" style={{fontWeight: 600}}>
-                      <MDBIcon fab icon="github"/> Github
+                      <Contact className="black-text" initialPose="exit" pose="enter" style={{display: 'inline'}}>
+                        <MDBIcon fab icon="github"/>
+                        <SplitText charPoses={charPoses}>
+                          {`  Github`}
+                        </SplitText>
+                      </Contact>
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
                                      href="mailto:stevechung.213@gmail.com"
                                      aria-label="navGmail" style={{fontWeight: 600}}>
-                      <MDBIcon far icon="envelope"/> Gmail
+                      <Contact className="black-text" initialPose="exit" pose="enter" style={{display: 'inline'}}>
+                        <MDBIcon far icon="envelope"/>
+                        <SplitText charPoses={charPoses}>
+                          {`  Gmail`}
+                        </SplitText>
+                      </Contact>
                     </MDBDropdownItem>
                     <MDBDropdownItem target="_blank" rel="noopener noreferrer"
                                      href="https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf"
                                      aria-label="navResume" style={{fontWeight: 600}}>
-                      <MDBIcon icon="file-pdf"/> Résumé
+                      <Contact className="black-text" initialPose="exit" pose="enter" style={{display: 'inline'}}>
+                        <MDBIcon icon="file-pdf"/>
+                        <SplitText charPoses={charPoses}>
+                          {`  Résumé`}
+                        </SplitText>
+                      </Contact>
                     </MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>

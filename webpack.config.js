@@ -78,7 +78,13 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: new RegExp('/'),
-          handler: 'StaleWhileRevalidate'
+          handler: 'StaleWhileRevalidate',
+          // options: {
+          //   expiration: {
+          //     maxEntries: 10,
+          //     maxAgeSeconds: 604800,
+          //   }
+          // }
         },
         // {
         //   urlPattern: new RegExp('https://s3-us-west-1.amazonaws.com/my.portfolio/'),
