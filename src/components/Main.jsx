@@ -53,7 +53,6 @@ export default class Main extends Component {
 
   componentWillMount() {
     this.getLocalStorageUser();
-    this.checkWindowSize();
     // window.addEventListener("resize", this.checkWindowSize);
   }
 
@@ -69,15 +68,13 @@ export default class Main extends Component {
   render() {
 
     const General = styled.div`
-      height: '100vh',
-
-      backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
     `;
     const GatewayContainer = styled.div`
-
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -85,15 +82,13 @@ export default class Main extends Component {
       height: 100vh;
     `;
     const GeneralMobile = styled.div`
-      height: '100vh',
-
-      backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
     `;
     const GatewayContainerMobile = styled.div`
-
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
