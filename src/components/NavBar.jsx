@@ -74,7 +74,7 @@ export default class Navbar extends Component {
       backgroundPosition: 'center'
     };
 
-    const windowHeight = window.innerHeight - 10;
+    const windowHeight = window.innerHeight - (window.innerHeight * 0.2);
 
     return (
       <Router>
