@@ -63,7 +63,7 @@ export default class Navbar extends Component {
       width: '100%'
     };
     const name = {
-      fontSize: '2rem',
+      fontSize: '1.5rem',
       cursor: 'pointer',
       fontWeight: 800
     };

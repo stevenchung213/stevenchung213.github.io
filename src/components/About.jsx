@@ -16,7 +16,7 @@ const About = () => {
     enter: {
       x: '0%',
       beforeChildren: true,
-      staggerChildren: 15
+      staggerChildren: 10
     }
   });
 

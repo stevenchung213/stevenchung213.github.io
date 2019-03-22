@@ -80,7 +80,7 @@ const Projects = () => {
             <TextBox className="white-text" initialPose="exit" pose="enter">
               <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
                 <SplitText charPoses={charPoses}>
-                  - SOME OF MY WORK -
+                  SOME OF MY WORK
                 </SplitText>
               </h3>
             </TextBox>

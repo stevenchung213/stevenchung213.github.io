@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/nonssr.js",
-    "ssr": "nodemon server/ssrIndex.js",
+    "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "build:prod": "webpack --mode production --watch"
   },
@@ -32,6 +31,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-dom": "^16.8.3",
     "react-loadable": "^5.5.0",
+    "react-loading": "^2.0.3",
     "react-pose": "^4.0.8",
     "react-pose-text": "^3.1.0",
     "react-responsive-carousel": "^3.1.47",

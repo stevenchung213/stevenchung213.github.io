@@ -7,26 +7,11 @@ import posed from 'react-pose';
 import SplitText from 'react-pose-text';
 
 
-const Wallpaper = ({user, mobile}) => {
+const Wallpaper = ({user}) => {
 
   const Background = styled.div`
     height: 100vh;
-    background-color: transparent;
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
   `;
-  const Mobile = styled.div`
-    background-image: url("https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline_mobile.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-  `;
-
   const TextBox = posed.div({
     exit: {
       x: '0%'
@@ -99,9 +84,7 @@ const Wallpaper = ({user, mobile}) => {
             </div>
           </Bounce>
         </div>
-        {
-          mobile ? <Mobile/> : <Background/>
-        }
+        <Background/>
       </div>
     </Fade>
   );

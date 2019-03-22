@@ -3,7 +3,6 @@ const webpack = require('webpack'),
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   WorkboxPlugin = require('workbox-webpack-plugin');
 
-//non-ssr
 module.exports = {
   entry: __dirname + '/src/index.jsx',
   module: {
@@ -30,7 +29,6 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      // we specify a custom UglifyJsPlugin here to get source maps in production
       new UglifyJsPlugin({
         cache: true,
         parallel: true,

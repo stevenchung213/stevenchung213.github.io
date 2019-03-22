@@ -250,7 +250,7 @@ const Tech = () => {
               <TextBox className="black-text" initialPose="exit" pose="enter">
                 <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
                   <SplitText charPoses={charPoses}>
-                    - FAMILIAR TECHNOLOGIES -
+                    FAMILIAR TECHNOLOGIES
                   </SplitText>
                 </h3>
               </TextBox>
@@ -262,7 +262,7 @@ const Tech = () => {
                 <TextBox className="black-text" initialPose="exit" pose="enter">
                   <h4 className='h4-responsive' style={categoryTitle}>
                     <SplitText charPoses={charPoses}>
-                      {'< Front End >'}
+                      Front End
                     </SplitText>
                   </h4>
                 </TextBox>
@@ -293,7 +293,7 @@ const Tech = () => {
                 <TextBox className="black-text" initialPose="exit" pose="enter">
                   <h4 className='h4-responsive' style={categoryTitle}>
                     <SplitText charPoses={charPoses}>
-                      {'< Back End >'}
+                      Back End
                     </SplitText>
                   </h4>
                 </TextBox>
@@ -326,7 +326,7 @@ const Tech = () => {
                 <TextBox className="black-text" initialPose="exit" pose="enter">
                   <h4 className='h4-responsive' style={categoryTitle}>
                     <SplitText charPoses={charPoses}>
-                      {'< Dev Tools >'}
+                      Dev Tools
                     </SplitText>
                   </h4>
                 </TextBox>
