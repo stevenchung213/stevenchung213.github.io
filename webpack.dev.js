@@ -27,7 +27,13 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-        loader: 'url-loader?limit=100000'
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10 * 1024,
+            name:'[name].[ext]'
+          }
+        }
       },
       {
         test: /\.(js|jsx)$/,
@@ -46,21 +52,41 @@ module.exports = {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
       }
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      swDest: __dirname + '/dist/service-worker.js',
-      clientsClaim: true,
-      skipWaiting: true,
-      include: [/\.html$/, /\.js$/, /\.css$/],
-      precacheManifestFilename: 'sc-manifest.[manifestHash].js',
-      cleanupOutdatedCaches: true,
-      runtimeCaching: [
-        {
-          urlPattern: new RegExp('/'),
-          handler: 'StaleWhileRevalidate'
-        },
-      ]
-    })
+    new ImageminPlugin({
+        bail: false,
+        cache: true,
+        imageminOptions: {
+          plugins: [
+            imageminGifsicle({
+              interlaced: true
+            }),
+            imageminJpegtran({
+              progressive: true
+            }),
+            imageminOptipng({
+              optimizationLevel: 5
+            }),
+            imageminSvgo({
+              removeViewBox: true
+            })
+          ]
+        }
+      },
+      new webpack.HotModuleReplacementPlugin(),
+      new WorkboxPlugin.GenerateSW({
+        swDest: __dirname + '/dist/service-worker.js',
+        clientsClaim: true,
+        skipWaiting: true,
+        include: [/\.html$/, /\.js$/, /\.css$/],
+        precacheManifestFilename: 'sc-manifest.[manifestHash].js',
+        cleanupOutdatedCaches: true,
+        runtimeCaching: [
+          {
+            urlPattern: new RegExp('/'),
+            handler: 'StaleWhileRevalidate'
+          },
+        ]
+      })
   ],
   output: {
     filename: 'bundle.js',

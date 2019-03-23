@@ -32,25 +32,13 @@ module.exports = env => {
           loader: 'style-loader!css-loader'
         },
         {
-          test: /\.(jpg|png|gif|svg)$/,
-          loader: 'image-webpack-loader',
-          enforce: 'pre'
-        },
-        {
           test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
           use: {
             loader: 'url-loader',
             options: {
-              limit: 10 * 1024
+              limit: 10 * 1024,
+              name:'[name].[ext]'
             }
-          }
-        },
-        {
-          test: /\.svg$/,
-          loader: 'svg-url-loader',
-          options: {
-            limit: 10 * 1024,
-            noquotes: true,
           }
         }
       ]
