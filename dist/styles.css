@@ -156,7 +156,7 @@ MOBILE VERSION SLIGHTLY TRANSPARENT
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: scroll;
         opacity: 0.1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
         filter: alpha(opacity=10);
@@ -184,7 +184,7 @@ MOBILE VERSION COMPLETELY TRANSPARENT
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: scroll;
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
         filter: alpha(opacity=1);
