@@ -3,8 +3,8 @@ node_modules
 config
 .idea
 dist/*
-dist/images/*
 !dist/bundle.js
 !dist/bundle.js.gz
 !dist/index.html
 !dist/styles.css
+images

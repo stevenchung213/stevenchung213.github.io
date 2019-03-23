@@ -1,8 +1,9 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {MDBTooltip} from "mdbreact";
 import {Fade, Slide} from 'react-reveal';
 import posed from 'react-pose';
 import SplitText from 'react-pose-text';
+import {DataContext} from "../providers/Data.jsx";
 
 
 const Tech = () => {
@@ -241,119 +242,132 @@ const Tech = () => {
     alignItems: 'center'
   };
 
+  const techFront = [], techBack = [], techDev = [];
+
   return (
-    <Fade big>
-      <div id='tech-container' style={general}>
-        <div id='tech1-sub' style={tech1}>
-          <Slide top>
-            <div style={titleBox}>
-              <TextBox className="black-text" initialPose="exit" pose="enter">
-                <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
-                  <SplitText charPoses={charPoses}>
-                    FAMILIAR TECHNOLOGIES
-                  </SplitText>
-                </h3>
-              </TextBox>
-            </div>
-          </Slide>
-          <Slide left>
-            <div id='frontend-container' style={{float: 'left', width: '45vw'}}>
-              <div style={subTitleBox}>
-                <TextBox className="black-text" initialPose="exit" pose="enter">
-                  <h4 className='h4-responsive' style={categoryTitle}>
-                    <SplitText charPoses={charPoses}>
-                      Front End
-                    </SplitText>
-                  </h4>
-                </TextBox>
-              </div>
-              <div className='category-container' style={front}>
-                {
-                  technologies.front.map(tech => {
-                    let split = tech.url.split('/');
-                    let name = split[split.length - 1].slice(0, -4);
-                    return (
-                      <MDBTooltip placement="bottom"
-                                  tooltipContent={tech.tooltip}>
-                        <Box key={name}>
-                          <div className='img-box' key={name} style={iconBox}>
-                            <img src={tech.url} alt={name} style={icon}/>
-                          </div>
-                        </Box>
-                      </MDBTooltip>
-                    )
-                  })
-                }
-              </div>
-            </div>
-          </Slide>
-          <Slide right>
-            <div id='backend-container' style={{float: 'right', width: '45vw'}}>
-              <div style={subTitleBox}>
-                <TextBox className="black-text" initialPose="exit" pose="enter">
-                  <h4 className='h4-responsive' style={categoryTitle}>
-                    <SplitText charPoses={charPoses}>
-                      Back End
-                    </SplitText>
-                  </h4>
-                </TextBox>
-              </div>
-              <div className='category-container' style={back}>
-                {
-                  technologies.back.map(tech => {
-                    let split = tech.url.split('/');
-                    let name = split[split.length - 1].slice(0, -4);
-                    return (
-                      <MDBTooltip placement="bottom"
-                                  tooltipContent={tech.tooltip}>
-                        <Box key={name}>
-                          <div className='img-box' key={name} style={iconBox}>
-                            <img src={tech.url} alt={name} style={icon}/>
-                          </div>
-                        </Box>
-                      </MDBTooltip>
-                    )
-                  })
-                }
-              </div>
-            </div>
-          </Slide>
-        </div>
-        <div id='tech2-sub' style={tech2}>
-          <Fade bottom>
-            <div id='dev-container' style={{width: '100%'}}>
-              <div style={subTitleBox}>
-                <TextBox className="black-text" initialPose="exit" pose="enter">
-                  <h4 className='h4-responsive' style={categoryTitle}>
-                    <SplitText charPoses={charPoses}>
-                      Dev Tools
-                    </SplitText>
-                  </h4>
-                </TextBox>
-              </div>
-              <div className='category-container' style={dev}>
-                {
-                  technologies.dev.map(tech => {
-                    let split = tech.url.split('/');
-                    let name = split[split.length - 1].slice(0, -4);
-                    return (
-                      <MDBTooltip placement="bottom"
-                                  tooltipContent={tech.tooltip}>
-                        <Box key={name}>
-                          <div className='img-box' key={name} style={iconBox}>
-                            <img src={tech.url} alt={name} style={icon}/>
-                          </div>
-                        </Box>
-                      </MDBTooltip>
-                    )
-                  })
-                }
-              </div>
-            </div>
-          </Fade>
-        </div>
-      </div>
-    </Fade>
+    <DataContext.Consumer>
+      {
+        context => {
+
+          return (
+            <Fragment>
+              <Fade big>
+                <div id='tech-container' style={general}>
+                  <div id='tech1-sub' style={tech1}>
+                    <Slide top>
+                      <div style={titleBox}>
+                        <TextBox className="black-text" initialPose="exit" pose="enter">
+                          <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
+                            <SplitText charPoses={charPoses}>
+                              FAMILIAR TECHNOLOGIES
+                            </SplitText>
+                          </h3>
+                        </TextBox>
+                      </div>
+                    </Slide>
+                    <Slide left>
+                      <div id='frontend-container' style={{float: 'left', width: '45vw'}}>
+                        <div style={subTitleBox}>
+                          <TextBox className="black-text" initialPose="exit" pose="enter">
+                            <h4 className='h4-responsive' style={categoryTitle}>
+                              <SplitText charPoses={charPoses}>
+                                Front End
+                              </SplitText>
+                            </h4>
+                          </TextBox>
+                        </div>
+                        <div className='category-container' style={front}>
+                          {
+                            context.technologies.front.map(tech => {
+                              let split = tech.url.split('/');
+                              let name = split[split.length - 1].slice(0, -4);
+                              return (
+                                <MDBTooltip placement="bottom"
+                                            tooltipContent={tech.tooltip}>
+                                  <Box key={name}>
+                                    <div className='img-box' key={name} style={iconBox}>
+                                      <img src={tech.url} alt={name} style={icon}/>
+                                    </div>
+                                  </Box>
+                                </MDBTooltip>
+                              )
+                            })
+                          }
+                        </div>
+                      </div>
+                    </Slide>
+                    <Slide right>
+                      <div id='backend-container' style={{float: 'right', width: '45vw'}}>
+                        <div style={subTitleBox}>
+                          <TextBox className="black-text" initialPose="exit" pose="enter">
+                            <h4 className='h4-responsive' style={categoryTitle}>
+                              <SplitText charPoses={charPoses}>
+                                Back End
+                              </SplitText>
+                            </h4>
+                          </TextBox>
+                        </div>
+                        <div className='category-container' style={back}>
+                          {
+                            context.technologies.back.map(tech => {
+                              let split = tech.url.split('/');
+                              let name = split[split.length - 1].slice(0, -4);
+                              return (
+                                <MDBTooltip placement="bottom"
+                                            tooltipContent={tech.tooltip}>
+                                  <Box key={name}>
+                                    <div className='img-box' key={name} style={iconBox}>
+                                      <img src={tech.url} alt={name} style={icon}/>
+                                    </div>
+                                  </Box>
+                                </MDBTooltip>
+                              )
+                            })
+                          }
+                        </div>
+                      </div>
+                    </Slide>
+                  </div>
+                  <div id='tech2-sub' style={tech2}>
+                    <Fade bottom>
+                      <div id='dev-container' style={{width: '100%'}}>
+                        <div style={subTitleBox}>
+                          <TextBox className="black-text" initialPose="exit" pose="enter">
+                            <h4 className='h4-responsive' style={categoryTitle}>
+                              <SplitText charPoses={charPoses}>
+                                Dev Tools
+                              </SplitText>
+                            </h4>
+                          </TextBox>
+                        </div>
+                        <div className='category-container' style={dev}>
+                          {
+                            context.technologies.dev.map(tech => {
+                              let split = tech.url.split('/');
+                              let name = split[split.length - 1].slice(0, -4);
+                              return (
+                                <MDBTooltip placement="bottom"
+                                            tooltipContent={tech.tooltip}>
+                                  <Box key={name}>
+                                    <div className='img-box' key={name} style={iconBox}>
+                                      <img src={tech.url} alt={name} style={icon}/>
+                                    </div>
+                                  </Box>
+                                </MDBTooltip>
+                              )
+                            })
+                          }
+                        </div>
+                      </div>
+                    </Fade>
+                  </div>
+                </div>
+              </Fade>
+            </Fragment>
+          )
+        }
+      }
+    </DataContext.Consumer>
   );
 };
 

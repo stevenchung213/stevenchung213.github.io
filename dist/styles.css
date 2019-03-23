@@ -202,7 +202,8 @@ li.slide.selected {
 */
 div.styles_modal__gNwvD {
     height: auto;
-    width: 100%;
+    max-width: none;
+    width: auto;
     padding: 0.5rem;
 }
 

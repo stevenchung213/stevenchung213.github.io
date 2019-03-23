@@ -1,10 +1,12 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {MDBBtn, MDBIcon} from "mdbreact";
 import {Fade} from 'react-reveal';
 import Jump from 'react-reveal/Jump';
 import Swing from 'react-reveal/Swing';
 import posed from 'react-pose';
 import SplitText from 'react-pose-text';
+
+import {DataContext} from "../providers/Data.jsx";
 
 
 const About = () => {
@@ -80,35 +82,42 @@ const About = () => {
   };
 
   return (
-    <Fade clear>
-      <div id='about-container' style={general}>
-        <div id='about-inner-container' style={about}>
-          <Jump>
-            <div id='pic-container' style={picBox}>
-              <img id='picture'
-                   src='https://s3-us-west-1.amazonaws.com/my.portfolio/png/profile.png'
-                   alt='profile-pic' style={picStyle}/>
-            </div>
-          </Jump>
-          <div id='about-info' style={info}>
-            <TextBox id='text-container' initialPose="exit" pose="enter" style={textBox}>
-              <h5 className='h5-responsive' style={blurb}>
-                <SplitText charPoses={charPoses}>
-                  {`I’m Steve, a Full Stack Software Engineer, and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications using the latest industry technologies.  After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since.  I am a self-taught, motivated individual with technical skills that span over more than a decade.`}
-                </SplitText>
-              </h5>
-            </TextBox>
-            <Swing>
-              <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
-                      href='https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf'
-                      style={button}>
-                <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
-              </MDBBtn>
-            </Swing>
-          </div>
-        </div>
-      </div>
-    </Fade>
+    <DataContext.Consumer>
+      {
+        context =>
+          <Fragment>
+            <Fade clear>
+              <div id='about-container' style={general}>
+                <div id='about-inner-container' style={about}>
+                  <Jump>
+                    <div id='pic-container' style={picBox}>
+                      <img id='picture'
+                           src={context.profileImg}
+                           alt='profile-pic' style={picStyle}/>
+                    </div>
+                  </Jump>
+                  <div id='about-info' style={info}>
+                    <TextBox id='text-container' initialPose="exit" pose="enter" style={textBox}>
+                      <h5 className='h5-responsive' style={blurb}>
+                        <SplitText charPoses={charPoses}>
+                          {context.about.blurb}
+                        </SplitText>
+                      </h5>
+                    </TextBox>
+                    <Swing>
+                      <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
+                              href={context.contact.resume}
+                              style={button}>
+                        <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
+                      </MDBBtn>
+                    </Swing>
+                  </div>
+                </div>
+              </div>
+            </Fade>
+          </Fragment>
+      }
+    </DataContext.Consumer>
   );
 };
 
