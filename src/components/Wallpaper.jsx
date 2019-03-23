@@ -11,6 +11,7 @@ const Wallpaper = ({user}) => {
 
   const Background = styled.div`
     height: 100vh;
+    width: 100vw;
   `;
   const TextBox = posed.div({
     exit: {
