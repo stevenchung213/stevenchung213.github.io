@@ -1,5 +1,10 @@
 const webpack = require('webpack'),
-  WorkboxPlugin = require('workbox-webpack-plugin');
+  WorkboxPlugin = require('workbox-webpack-plugin'),
+  ImageminPlugin = require("imagemin-webpack"),
+  imageminGifsicle = require("imagemin-gifsicle"),
+  imageminJpegtran = require("imagemin-jpegtran"),
+  imageminOptipng = require("imagemin-optipng"),
+  imageminSvgo = require("imagemin-svgo");
 
 module.exports = {
 
@@ -31,7 +36,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 10 * 1024,
-            name:'[name].[ext]'
+            name: '[name].[ext]'
           }
         }
       },
@@ -53,40 +58,40 @@ module.exports = {
       }
     }),
     new ImageminPlugin({
-        bail: false,
-        cache: true,
-        imageminOptions: {
-          plugins: [
-            imageminGifsicle({
-              interlaced: true
-            }),
-            imageminJpegtran({
-              progressive: true
-            }),
-            imageminOptipng({
-              optimizationLevel: 5
-            }),
-            imageminSvgo({
-              removeViewBox: true
-            })
-          ]
-        }
-      },
-      new webpack.HotModuleReplacementPlugin(),
-      new WorkboxPlugin.GenerateSW({
-        swDest: __dirname + '/dist/service-worker.js',
-        clientsClaim: true,
-        skipWaiting: true,
-        include: [/\.html$/, /\.js$/, /\.css$/],
-        precacheManifestFilename: 'sc-manifest.[manifestHash].js',
-        cleanupOutdatedCaches: true,
-        runtimeCaching: [
-          {
-            urlPattern: new RegExp('/'),
-            handler: 'StaleWhileRevalidate'
-          },
+      bail: false,
+      cache: true,
+      imageminOptions: {
+        plugins: [
+          imageminGifsicle({
+            interlaced: true
+          }),
+          imageminJpegtran({
+            progressive: true
+          }),
+          imageminOptipng({
+            optimizationLevel: 5
+          }),
+          imageminSvgo({
+            removeViewBox: true
+          })
         ]
-      })
+      }
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new WorkboxPlugin.GenerateSW({
+      swDest: __dirname + '/dist/service-worker.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      include: [/\.html$/, /\.js$/, /\.css$/],
+      precacheManifestFilename: 'sc-manifest.[manifestHash].js',
+      cleanupOutdatedCaches: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('/'),
+          handler: 'StaleWhileRevalidate'
+        },
+      ]
+    })
   ],
   output: {
     filename: 'bundle.js',

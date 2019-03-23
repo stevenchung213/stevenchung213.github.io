@@ -78,9 +78,67 @@ h4 {
 
 
 /*
+TABLET VERSION SLIGHTLY TRANSPARENT
+*/
+@media (orientation: portrait) and (min-width: 480px){
+    #intro, #about-container, #tech-container, #projects-container, #contact-container {
+        position: relative;
+        z-index: 0;
+    }
+
+    #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline_tablet.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=10);
+    }
+}
+
+/*
+TABLET VERSION COMPLETELY TRANSPARENT
+*/
+@media (orientation: portrait) and (min-width: 480px){
+    html, body, #about-nav, #about, #tech, #projects, #contact, #hello, .anchors {
+        position: relative;
+        z-index: 0;
+    }
+
+    html, body, #about-nav:after, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline_tablet.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=1);
+    }
+}
+
+
+
+/*
 MOBILE VERSION SLIGHTLY TRANSPARENT
 */
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 479px) {
     #intro, #about-container, #tech-container, #projects-container, #contact-container {
         position: relative;
         z-index: 0;
@@ -108,7 +166,7 @@ MOBILE VERSION SLIGHTLY TRANSPARENT
 /*
 MOBILE VERSION COMPLETELY TRANSPARENT
 */
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 479px) {
     html, body, #about-nav, #about, #tech, #projects, #contact, #hello, .anchors {
         position: relative;
         z-index: 0;
