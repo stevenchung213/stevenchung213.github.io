@@ -153,10 +153,10 @@ MOBILE VERSION SLIGHTLY TRANSPARENT
         left: 0;
         z-index: -1;
         background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline_mobile_device.jpg);
-        background-size: cover;
-        background-position: center;
+        background-size: contain;
+        background-position: center center;
         background-repeat: no-repeat;
-        background-attachment: scroll;
+        background-attachment: fixed;
         opacity: 0.1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
         filter: alpha(opacity=10);
@@ -181,10 +181,10 @@ MOBILE VERSION COMPLETELY TRANSPARENT
         left: 0;
         z-index: -1;
         background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline_mobile_device.jpg);
-        background-size: cover;
-        background-position: center;
+        background-size: contain;
+        background-position: center center;
         background-repeat: no-repeat;
-        background-attachment: scroll;
+        background-attachment: fixed;
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
         filter: alpha(opacity=1);
