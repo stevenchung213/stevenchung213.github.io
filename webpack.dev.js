@@ -7,7 +7,11 @@ const webpack = require('webpack'),
   imageminSvgo = require("imagemin-svgo");
 
 module.exports = {
-
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+  },
   mode: 'development',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
