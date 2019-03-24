@@ -6,7 +6,9 @@ const webpack = require('webpack'),
   imageminGifsicle = require("imagemin-gifsicle"),
   imageminJpegtran = require("imagemin-jpegtran"),
   imageminOptipng = require("imagemin-optipng"),
-  imageminSvgo = require("imagemin-svgo");
+  imageminSvgo = require("imagemin-svgo"),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+  OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = env => {
 
@@ -15,54 +17,15 @@ module.exports = env => {
   return {
     mode: 'development',
     entry: __dirname + '/src/index.jsx',
-    module: {
-      rules: [
-        {
-          test: [/\.jsx$/, /\.js$/],
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-react', '@babel/preset-env']
-            }
-          }
-        },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader'
-        },
-        {
-          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-          use: {
-            loader: 'url-loader',
-            options: {
-              limit: 10 * 1024,
-              name:'[name].[ext]'
-            }
-          }
-        }
-      ]
-    },
     optimization: {
       minimizer: [
         new TerserPlugin({
           cache: true,
           parallel: true,
           sourceMap: false,
-        })
+        }),
+        new OptimizeCSSAssetsPlugin({})
       ],
-      namedModules: false,
-      namedChunks: false,
-      nodeEnv: 'production',
-      removeEmptyChunks: true,
-      flagIncludedChunks: true,
-      occurrenceOrder: true,
-      sideEffects: true,
-      usedExports: true,
-      concatenateModules: true,
-      noEmitOnErrors: true,
-      checkWasmTypes: true,
-      minimize: true,
     },
     plugins: [
       new webpack.optimize.AggressiveMergingPlugin(),
@@ -86,6 +49,9 @@ module.exports = env => {
           ]
         }
       }),
+      new MiniCssExtractPlugin({
+        filename: "styles.css"
+      }),
       new CompressionPlugin({
         filename: "[path].gz[query]",
         algorithm: "gzip",
@@ -108,8 +74,50 @@ module.exports = env => {
         ]
       })
     ],
+    module: {
+      rules: [
+        {
+          test: [/\.jsx$/, /\.js$/],
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react', '@babel/preset-env']
+            }
+          }
+        },
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader'
+          ],
+        },
+        {
+          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 10 * 1024,
+              name: '[name].[ext]'
+            }
+          }
+        },
+        {
+          test: /\.bundle\.js$/,
+          use: {
+            loader: 'bundle-loader',
+            options: {
+              name: 'sc'
+            }
+          }
+        }
+      ]
+    },
     output: {
-      filename: 'bundle.js',
+      filename: '[name]_bundle.js',
+      chunkFilename: '[id]_bundle.js',
       path: __dirname + '/dist'
     }
   }

@@ -1,0 +1,259 @@
+/*
+    BODY STYLES
+*/
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Montserrat, serif !important;
+}
+
+h2, h3 {
+    font-size: 200% !important;
+}
+
+h4 {
+    font-size: 160% !important;
+}
+
+h5 {
+    font-size: 120% !important;
+}
+
+/*
+    SLIGHTLY TRANSPARENT WALLPAPER
+*/
+@media (orientation: landscape) {
+    #intro, #about-container, #tech-container, #projects-container, #contact-container {
+        position: relative;
+        z-index: 0;
+    }
+
+    #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=10);
+    }
+
+}
+
+/*
+    COMPLETELY TRANSPARENT WALLPAPER
+*/
+@media (orientation: landscape) {
+    html, body, #about, #tech, #projects, #contact, #hello, .anchors {
+        position: relative;
+        z-index: 0;
+        /*background-color: #FFF;*/
+    }
+
+    html, body, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=1);
+    }
+
+}
+
+
+/*
+TABLET SLIGHTLY TRANSPARENT
+*/
+@media (orientation: portrait) and (min-aspect-ratio: 7/9){
+    #intro, #about-container, #tech-container, #projects-container, #contact-container {
+        position: relative;
+        z-index: 0;
+    }
+
+    #intro:after, #about-container:after, #tech-container:after, #projects-container:after, #contact-container:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=10);
+    }
+}
+
+/*
+TABLET COMPLETELY TRANSPARENT
+*/
+@media (orientation: portrait) and (min-aspect-ratio: 7/9){
+    html, body, #about-nav, #about, #tech, #projects, #contact, #hello, .anchors {
+        position: relative;
+        z-index: 0;
+    }
+
+    html, body, #about-nav:after, #about:after, #tech:after, #projects:after, #contact:after, #hello:after, .anchors:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://s3-us-west-1.amazonaws.com/my.portfolio/png/city_skyline.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=1);
+    }
+}
+
+
+
+/*
+MOBILE DEVICE
+*/
+@media (orientation: portrait) and (max-aspect-ratio: 7/9) {
+
+    #about-inner-container {
+        flex-direction: column !important;
+    }
+
+    #pic-container, #about-info {
+        width: 100vw !important;
+    }
+
+    #text-container {
+        text-align: center !important;
+    }
+
+    #tech-container {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #frontend-container, #backend-container {
+        float: none !important;
+        width: auto !important;
+    }
+
+    #tech, #projects, #contact  {
+        height: 0 !important;
+    }
+}
+
+/*
+    NAVBAR changes
+*/
+.navbar {
+    box-shadow: none !important;
+}
+
+.navbar-nav li {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+li.nav-item a {
+    font-size: 1.1rem;
+}
+
+a.dropdown-item {
+    color: black !important;
+}
+
+.dropdown-menu {
+    min-width: auto !important;
+}
+
+/*
+    CUSTOM SCROLLBAR - attached to parent container with overflowY
+*/
+#text-container::-webkit-scrollbar {
+    width: 10px;
+    height: 30px;
+    background-color: transparent;
+}
+
+#text-container::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+#text-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #e4e4e4);
+    border: 1px solid #aaa;
+}
+
+#text-container::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
+
+#text-container::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+
+/*
+    CAROUSEL STYLES
+*/
+li.slide {
+    background: transparent !important;
+}
+
+li.slide.selected {
+    background: transparent;
+}
+
+/*
+    MODAL STYLES
+*/
+div.styles_modal__gNwvD {
+    height: auto;
+    max-width: none;
+    width: auto;
+    padding: 0.5rem;
+}
+
+li.project-description-list-item {
+    font-size: 1rem;
+}
+
+div.modal-footer.w-auto {
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+}
+
+a.btn.btn-black.Ripple-parent {
+    padding: 0.5rem 1rem;
+}

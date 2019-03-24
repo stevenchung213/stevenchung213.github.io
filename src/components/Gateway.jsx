@@ -1,31 +1,64 @@
 import React from 'react';
-import NavBar from './NavBar.jsx';
 import Wallpaper from './Wallpaper.jsx';
 import Anchor from './Anchor.jsx';
-import About from './About.jsx';
 import Filler from './Filler.jsx';
-import Tech from './Tech.jsx';
-import Projects from './Projects.jsx';
-import Contact from './Contact.jsx';
+import Loadable from 'react-loadable';
+import ReactLoading from './Loading.jsx';
 
 
-const Gateway = ({user}) => {
+const LoadableNavBar = Loadable({
+    loader: () => import(`./NavBar.jsx`),
+    loading() {
+        return <ReactLoading/>
+    },
+    delay: 3000
+});
+
+const LoadableAbout = Loadable({
+    loader: () => import(`./About.jsx`),
+    loading() {
+        return <ReactLoading/>
+    }
+});
+
+const LoadableTech = Loadable({
+    loader: () => import(`./Tech.jsx`),
+    loading() {
+        return <ReactLoading/>
+    }
+});
+
+const LoadableProjects = Loadable({
+    loader: () => import(`./Projects.jsx`),
+    loading() {
+        return <ReactLoading/>
+    }
+});
+
+const LoadableContact = Loadable({
+    loader: () => import(`./Contact.jsx`),
+    loading() {
+        return <ReactLoading/>
+    }
+});
+
+const Gateway = ({user, mobile}) => {
 
   return (
     <div id='gateway-container'>
-      <NavBar/>
-      <Wallpaper user={user}/>
+      <LoadableNavBar/>
+      <Wallpaper user={user} mobile={mobile}/>
       <Anchor section={'about'}/>
-      <About user={user}/>
+      <LoadableAbout user={user}/>
       <Filler section={'tech'}/>
       <Anchor section={'tech'}/>
-      <Tech/>
+      <LoadableTech/>
       <Filler section={'projects'}/>
       <Anchor section={'projects'}/>
-      <Projects/>
+      <LoadableProjects/>
       <Filler section={'contact'}/>
       <Anchor section={'contact'}/>
-      <Contact/>
+      <LoadableContact/>
     </div>
   )
 };

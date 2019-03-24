@@ -4,11 +4,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import style from './styles.css';
 import Main from './components/Main.jsx';
 import {AppContainer} from "react-hot-loader";
 
 const render = Component => {
-
   ReactDOM.render(
     <AppContainer>
       <Component />
@@ -24,5 +24,3 @@ if (module.hot) {
     render(Main);
   });
 }
-
-// ReactDOM.render(<Main/>, document.getElementById('main'));

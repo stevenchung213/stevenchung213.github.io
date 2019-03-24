@@ -1,22 +1,20 @@
-const webpack = require('webpack'),
-  WorkboxPlugin = require('workbox-webpack-plugin'),
-  ImageminPlugin = require("imagemin-webpack"),
-  imageminGifsicle = require("imagemin-gifsicle"),
-  imageminJpegtran = require("imagemin-jpegtran"),
-  imageminOptipng = require("imagemin-optipng"),
-  imageminSvgo = require("imagemin-svgo");
+const webpack = require('webpack');
 
 module.exports = {
-  resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
-  },
+
   mode: 'development',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/only-dev-server',
     __dirname + '/src/index.jsx'
+  ],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+      }
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -32,7 +30,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              hmr: true
+            }
+          },
+          "css-loader",
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
@@ -52,54 +58,21 @@ module.exports = {
           cacheDirectory: true,
           plugins: ['react-hot-loader/babel']
         }
+      },
+      {
+        test: /\.bundle\.js$/,
+        use: {
+          loader: 'bundle-loader',
+          options: {
+            name: 'sc'
+          }
+        }
       }
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
-      }
-    }),
-    new ImageminPlugin({
-      bail: false,
-      cache: true,
-      imageminOptions: {
-        plugins: [
-          imageminGifsicle({
-            interlaced: true
-          }),
-          imageminJpegtran({
-            progressive: true
-          }),
-          imageminOptipng({
-            optimizationLevel: 5
-          }),
-          imageminSvgo({
-            removeViewBox: true
-          })
-        ]
-      }
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      swDest: __dirname + '/dist/service-worker.js',
-      clientsClaim: true,
-      skipWaiting: true,
-      include: [/\.html$/, /\.js$/, /\.css$/],
-      precacheManifestFilename: 'sc-manifest.[manifestHash].js',
-      cleanupOutdatedCaches: true,
-      runtimeCaching: [
-        {
-          urlPattern: new RegExp('/'),
-          handler: 'StaleWhileRevalidate'
-        },
-      ]
-    })
-  ],
   output: {
-    filename: 'bundle.js',
+    filename: '[name]_bundle.js',
+    chunkFilename: '[id]_bundle.js',
     path: __dirname + '/dist'
   }
 };
-

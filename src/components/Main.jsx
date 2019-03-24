@@ -1,8 +1,18 @@
 import React, {Component, Fragment} from 'react';
-import DataProvider from '../providers/Data.jsx';
 import User from './User.jsx';
-import Gateway from './Gateway.jsx';
 import {hot} from 'react-hot-loader/root';
+import Loadable from 'react-loadable';
+import ReactLoading from './Loading.jsx';
+import DataProvider from '../providers/Data.jsx';
+
+
+const LoadableGateway = Loadable({
+  loader: () => import('./Gateway.jsx'),
+  loading() {
+    return <ReactLoading/>
+  }
+});
+
 
 class Main extends Component {
 
@@ -57,7 +67,7 @@ class Main extends Component {
           }
           {
             this.state.init &&
-            <Gateway user={this.state.guestName} mobile={this.state.mobile}/>
+            <LoadableGateway user={this.state.guestName} mobile={this.state.mobile}/>
           }
         </Fragment>
       </DataProvider>

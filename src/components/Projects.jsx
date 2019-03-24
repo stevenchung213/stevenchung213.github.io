@@ -1,11 +1,20 @@
 import React, {Fragment} from 'react';
 import {Carousel} from 'react-responsive-carousel';
-import Modal from './Modal.jsx';
 import {Fade, Slide} from 'react-reveal';
 import Zoom from 'react-reveal/Zoom';
 import posed from "react-pose";
 import SplitText from "react-pose-text";
+import Loadable from 'react-loadable';
+import ReactLoading from './Loading.jsx';
 import {DataContext} from "../providers/Data.jsx";
+
+
+const LoadableModal = Loadable({
+  loader: () => import(`./Modal.jsx`),
+  loading() {
+    return <ReactLoading/>
+  }
+});
 
 
 const Projects = () => {
@@ -98,7 +107,7 @@ const Projects = () => {
                                     </h5>
                                   </Slide>
                                   <Slide bottom>
-                                    <Modal project={project.name}/>
+                                    <LoadableModal project={project.name}/>
                                   </Slide>
                                 </div>
                               </div>
