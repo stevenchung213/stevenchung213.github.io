@@ -67,17 +67,18 @@ const About = () => {
     fontSize: '1em',
     color: 'white',
     marginTop: 15,
+    marginBottom: 20,
     paddingLeft: '1em',
     paddingRight: '1em'
   };
   const blurb = {
     fontSize: '140%',
-    lineHeight: 1.5
+    lineHeight: 1.5,
   };
   const button = {
-    width: 143,
+    display: 'flex',
+    flexDirection: 'column',
     borderRadius: 50,
-    bottom: -20,
     paddingTop: 9,
     color: 'white'
   };
@@ -109,7 +110,7 @@ const About = () => {
                       <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
                               href={context.contact.resume}
                               style={button}>
-                        <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4 white-text"/> Résumé
+                        <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4" style={{marginBottom: '0.2em'}}/> Résumé
                       </MDBBtn>
                     </Swing>
                   </div>
