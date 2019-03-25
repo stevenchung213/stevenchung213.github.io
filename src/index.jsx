@@ -8,6 +8,7 @@ import style from './styles.css';
 import Main from './components/Main.jsx';
 import {AppContainer} from "react-hot-loader";
 
+
 const render = Component => {
   ReactDOM.render(
     <AppContainer>
@@ -16,16 +17,6 @@ const render = Component => {
     document.getElementById('main')
   );
 };
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('../dist/assets/service-worker.js').then(registration => {
-      console.log('SW registered: ', registration);
-    }).catch(registrationError => {
-      console.log('SW registration failed: ', registrationError);
-    });
-  });
-}
 
 render(Main);
 

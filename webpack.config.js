@@ -101,8 +101,7 @@ module.exports = env => {
       }),
       new HtmlWebpackPlugin({
         inject: false,
-        filename: 'in' +
-          'dex.html',
+        filename: 'index.html',
         template: require('html-webpack-template'),
         minify: true,
         cache: true,
@@ -117,18 +116,20 @@ module.exports = env => {
             content: 'Steven Chung'
           },
           {
-            name : 'description',
+            name: 'description',
             content: 'Portfolio Site'
-          },
-          {
-            name: 'theme-color',
-            content: '#000000'
           }
         ],
         links: ["https://fonts.googleapis.com/css?family=Montserrat"
         ],
         appMountId: 'main',
-        bodyHtmlSnippet: '<noscript>Please enable JavaScript...</noscript>'
+        bodyHtmlSnippet: `<noscript>Please enable JavaScript...</noscript>`,
+        scripts: [
+          {
+            src: 'registerSW.js',
+            type: 'text/javascript'
+          }
+        ]
       }),
       new WebpackPwaManifest({
         inject: true,
@@ -140,7 +141,7 @@ module.exports = env => {
         start_url: 'index.html',
         theme_color: '#ffffff',
         background_color: '#000000',
-        crossorigin: null, //can be null, use-credentials or anonymous
+        crossorigin: null,
         icons: [
           {
             src: './src/assets/profile.png',
@@ -150,12 +151,12 @@ module.exports = env => {
         ],
       }),
       new WorkboxPlugin.GenerateSW({
-        swDest: '/assets/service-worker.js',
+        swDest: 'service-worker.js',
         clientsClaim: true,
         skipWaiting: true,
-        include: [/\.html$/, /\.js$/, /\.css$/],
-        precacheManifestFilename: '/assets/sc-manifest.[manifestHash].js',
         cleanupOutdatedCaches: true,
+        include: [/\.html$/, /\.js$/, /\.css$/],
+        precacheManifestFilename: 'sc-precache-manifest.[manifestHash].js',
         runtimeCaching: [
           {
             urlPattern: new RegExp('/'),
@@ -215,11 +216,14 @@ module.exports = env => {
           }
         },
       ]
-    },
+    }
+    ,
     output: {
       filename: '[name].bundle.js',
-      chunkFilename: '[name].bundle.js',
-      path: __dirname + '/dist'
+      chunkFilename:
+        '[name].bundle.js',
+      path:
+        __dirname + '/dist'
     }
   }
 };

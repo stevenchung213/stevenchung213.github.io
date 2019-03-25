@@ -17,16 +17,5 @@
 <noscript>JavaScript REQUIRED!</noscript>
 <script src="vendors~main.bundle.js"></script>
 <script src="main.bundle.js"></script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./dist/assets/service-worker.js').then(registration => {
-        console.log('SW registered: ', registration);
-      }).catch(registrationError => {
-        console.log('SW registration failed: ', registrationError);
-      });
-    });
-  }
-</script>
 </body>
 </html>

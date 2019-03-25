@@ -78,7 +78,8 @@ const About = () => {
     width: 143,
     borderRadius: 50,
     bottom: -20,
-    paddingTop: 9
+    paddingTop: 9,
+    color: 'white'
   };
 
   return (
@@ -108,7 +109,7 @@ const About = () => {
                       <MDBBtn color="transparent" target="_blank" rel="noopener noreferrer"
                               href={context.contact.resume}
                               style={button}>
-                        <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4"/> Résumé
+                        <MDBIcon icon="file-pdf fa-2x" className="mr-xl-1-4 white-text"/> Résumé
                       </MDBBtn>
                     </Swing>
                   </div>
