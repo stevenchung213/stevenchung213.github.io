@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width"/>
+	<meta name="author" content="Steven Chung">
+	<meta name="Description" content="Portfolio Site">
+	<meta name="theme-color" content="#000000"/>
+	<link rel="manifest" href="./assets/manifest.json">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+	<link rel="shortcut icon" href="#">
+	<title>~ WELCOME ~</title>
+</head>
+<body>
+<div id="main"></div>
+<noscript>JavaScript REQUIRED!</noscript>
+<script src="vendors~main.bundle.js"></script>
+<script src="main.bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./dist/assets/service-worker.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
+</script>
+</body>
+</html>

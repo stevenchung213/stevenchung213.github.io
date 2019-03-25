@@ -1,6 +1,8 @@
 const webpack = require('webpack'),
   CompressionPlugin = require('compression-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  WebpackPwaManifest = require('webpack-pwa-manifest'),
   WorkboxPlugin = require('workbox-webpack-plugin'),
   ImageminPlugin = require("imagemin-webpack"),
   imageminGifsicle = require("imagemin-gifsicle"),
@@ -8,7 +10,8 @@ const webpack = require('webpack'),
   imageminOptipng = require("imagemin-optipng"),
   imageminSvgo = require("imagemin-svgo"),
   MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-  OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+  OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"),
+  CssNano = require('cssnano');
 
 module.exports = env => {
 
@@ -16,16 +19,52 @@ module.exports = env => {
 
   return {
     mode: 'development',
-    entry: __dirname + '/src/index.jsx',
+    entry: './src/index.jsx',
     optimization: {
       minimizer: [
         new TerserPlugin({
           cache: true,
           parallel: true,
-          sourceMap: false,
+          sourceMap: true,
         }),
-        new OptimizeCSSAssetsPlugin({})
+        new OptimizeCSSAssetsPlugin({
+          cssProcessor: CssNano,
+          cssProcessorOptions: {
+            discardComments: {
+              removeAll: true
+            },
+            safe: true
+          },
+          canPrint: false
+        })
       ],
+      splitChunks: {
+        chunks: 'all',
+        minSize: 25000,
+        maxSize: 0,
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          commons: {
+            name: 'commons',
+            chunks: 'initial',
+            minChunks: 2
+          },
+          vendors: {
+            test: /[\\/]node_modules[\\/](react|react-dom|react-pose|react-pose-text|react-loadable|mdbreact)[\\/]/,
+            enforce: true,
+            priority: -10,
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
+      }
     },
     plugins: [
       new webpack.optimize.AggressiveMergingPlugin(),
@@ -50,21 +89,72 @@ module.exports = env => {
         }
       }),
       new MiniCssExtractPlugin({
-        filename: "styles.css"
+        filename: "[name].css",
+        chunkFilename: "[id].css"
       }),
       new CompressionPlugin({
         filename: "[path].gz[query]",
         algorithm: "gzip",
         test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
+        threshold: 8192,
         minRatio: 0.8
       }),
+      new HtmlWebpackPlugin({
+        inject: false,
+        filename: 'in' +
+          'dex.html',
+        template: require('html-webpack-template'),
+        minify: true,
+        cache: true,
+        mobile: true,
+        title: '~ WELCOME ~',
+        meta: [
+          {
+            charset: 'UTF-8'
+          },
+          {
+            name: 'author',
+            content: 'Steven Chung'
+          },
+          {
+            name : 'description',
+            content: 'Portfolio Site'
+          },
+          {
+            name: 'theme-color',
+            content: '#000000'
+          }
+        ],
+        links: ["https://fonts.googleapis.com/css?family=Montserrat"
+        ],
+        appMountId: 'main',
+        bodyHtmlSnippet: '<noscript>Please enable JavaScript...</noscript>'
+      }),
+      new WebpackPwaManifest({
+        inject: true,
+        filename: '/assets/manifest.json',
+        name: 'SC Portfolio PWA',
+        short_name: 'SC PWA',
+        description: 'My Progressive Web App Portfolio!',
+        display: 'standalone',
+        start_url: 'index.html',
+        theme_color: '#ffffff',
+        background_color: '#000000',
+        crossorigin: null, //can be null, use-credentials or anonymous
+        icons: [
+          {
+            src: './src/assets/profile.png',
+            sizes: [512],
+            destination: '/assets'
+          }
+        ],
+      }),
       new WorkboxPlugin.GenerateSW({
-        swDest: __dirname + '/dist/service-worker.js',
+        swDest: '/assets/service-worker.js',
         clientsClaim: true,
         skipWaiting: true,
         include: [/\.html$/, /\.js$/, /\.css$/],
-        precacheManifestFilename: 'sc-manifest.[manifestHash].js',
+        precacheManifestFilename: '/assets/sc-manifest.[manifestHash].js',
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
@@ -82,7 +172,8 @@ module.exports = env => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react', '@babel/preset-env']
+              presets: ['@babel/preset-react', '@babel/preset-env'],
+              cacheDirectory: true
             }
           }
         },
@@ -95,12 +186,22 @@ module.exports = env => {
           ],
         },
         {
-          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+          test: /\.(woff|woff2|eot|ttf)(\?[a-z0-9=.]+)?$/,
           use: {
             loader: 'url-loader',
             options: {
               limit: 10 * 1024,
-              name: '[name].[ext]'
+              name: '/fonts/[name].[ext]'
+            }
+          }
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)(\?[a-z0-9=.]+)?$/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 10 * 1024,
+              name: '/img/[name].[ext]'
             }
           }
         },
@@ -112,12 +213,12 @@ module.exports = env => {
               name: 'sc'
             }
           }
-        }
+        },
       ]
     },
     output: {
-      filename: '[name]_bundle.js',
-      chunkFilename: '[id]_bundle.js',
+      filename: '[name].bundle.js',
+      chunkFilename: '[name].bundle.js',
       path: __dirname + '/dist'
     }
   }
