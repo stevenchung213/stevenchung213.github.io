@@ -97,7 +97,7 @@ export default class Modal extends Component {
             this.props.project === 'Su Casa' ? project = context.projects.sucasa :
               this.props.project === 'Zillwoah!' ? project = context.projects.zillwoah :
                 this.props.project === 'My Map Pins' ? project = context.projects.mymappins :
-                  this.props.project === 'Portfolio' ? project = context.projects.portfolio : project = context.projects.repofetcher;
+                  this.props.project === 'Personal Site' ? project = context.projects.portfolio : project = context.projects.repofetcher;
             return (
               <Fragment>
                 <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal} style={{fontWeight: 800}}>More

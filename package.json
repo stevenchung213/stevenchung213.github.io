@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/hot-index.js",
-    "dev": "webpack-dev-server --confic webpack.dev.js",
     "server": "nodemon server/index.js",
     "build": "webpack --mode production --env.NODE_ENV=production --env.production --progress"
   },
