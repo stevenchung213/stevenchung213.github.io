@@ -77,7 +77,8 @@ export default class DataProvider extends Component {
         tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
         description: 'Front end bootstrapped using Material Design' +
           ' for' +
-          ' React *Webpack gzip compression, image compression and caching enabled for optimal loading speeds *' +
+          ' React *Optimizations: code splitting, gzip compression, image compression and caching *Webpack configuration: Terser |' +
+          ' OptimizeCSSAssets | Chunk Splitting | ImageMin | MiniCSSExtract | Compression | HTMLWebpack | WebpackPWAManifest | Workbox *' +
           'Deployed using Github Pages with conditional React rendering *Service worker implemented for offline availability (currently' +
           ' disabled since Github Pages deployment does not support service' +
           ' workers) *All image files hosted by S3 with caching enabled * Designed for Chrome',
