@@ -7,81 +7,92 @@ export default class DataProvider extends Component {
   state = {
     me: 'STEVEN CHUNG',
     about: {
-      blurb: `I’m Steve, a Full Stack Software Engineer, and I have a passion for problem solving all things computer related.  I build polished, pixel-perfect full-stack applications using the latest industry technologies.  After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since.  I am a self-taught, motivated individual with technical skills that span over more than a decade.`
+      blurb: `I’m Steve, a Full Stack Software Engineer and I have a passion for problem solving all things computer related.  I build well polished, pixel-perfect, robust full-stack applications using the latest industry technologies primarily with the MERN stack.  After years of hands-on computer hardware experience, I transitioned into software engineering and have been loving it ever since.  I am a self-taught, motivated individual with technical skills that span over more than a decade.`
     },
     contact: {
       github: 'https://www.github.com/stevenchung213',
       gmail: 'mailto:stevenchung.213@gmail.com',
       linkedin: 'https://www.linkedin.com/in/stevenchung-213',
-      resume: 'https://s3-us-west-1.amazonaws.com/my.portfolio/steven_chung_resume.pdf'
+      resume: 'https://s3-us-west-1.amazonaws.com/my.portfolio/my_resume.pdf'
     },
     profileImg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/profile.png',
     projects: {
       sucasa: {
         name: 'Su Casa',
         subtitle: 'Rental & Lodging App',
-        caption: 'Rental & Lodging Application',
+        caption: 'Lead Full Stack Software Engineer - Rental & Lodging Application',
         imgSm: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/sucasa-small.png',
         imgLg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/sucasa.png',
         tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | AWS EBS | AWS S3 | Jest | Enzyme',
-        description: 'Constructed a clean UI/UX experience while focusing on modularity via React *Optimized page load speeds from 3' +
-          ' seconds to less than 1 second using image resizing/compression and minifying *Developed using Agile methodologies and tested' +
-          ' with Jest/Enzyme *Deployed application using AWS Elastic Beanstalk, AWS S3 and Mongo Cloud Atlas',
+        description: 'Designed user interface with user experience in mind, focusing on delivering a clean and seamless' +
+          ' layout*Manipulated the DOM via JavaScript to enhance user experience with custom CSS animations *Optimized webpack' +
+          ' configuration to handle code splitting, minification, css extraction and compression for ideal front end load times' +
+          ' *Utilized a cloud service document-oriented database, keeping in mind the potential requirement of horizontal scalability' +
+          ' *Deployed onto AWS ECS cloud container service for quick and easy management including scalability *Configured a central' +
+          ' proxy to conjoin the team\'s modules from each member\'s cloud environments *Led regular inclusive stand up meetings to' +
+          ' track progress and discuss issues while using tools such as Trello to monitor the team\'s progression *Applied Agile' +
+          ' methodologies to maintain consistent and sustainable workflow without delay *Enforced code reviews on all pull requests before merging into the main branch on the organization\'s repository to ensure best practices and readability',
         href: 'https://github.com/stevenchung213/overview-proxy/tree/DEMO_LOCALHOST'
       },
       zillwoah: {
         name: 'Zillwoah!',
         subtitle: 'Real Estate App',
-        caption: 'Real Estate Application',
+        caption: 'Back End Software Engineer - Real Estate Application',
         imgSm: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/zillwoah-small.png',
         imgLg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/zillwoah.png',
         tech: 'React | Node | Express | PostgreSQL | CassandraDB | AWS EC2 | Nginx | K6 | New Relic | Loader.io',
-        description: 'Efficiently scaled legacy codebase to handle 10 million records *' +
-          'Created a seed script which randomly generated and populated PostgreSQL with 10 million records in less than 10 minutes;' +
-          ' Cassandra in less than 20 minutes *' +
-          'Reduced database query times to less than 0.5ms through indexing on Postgresql; less than 1ms on Cassandra *' +
-          'Stress-tested and horizontally scaled micro-service to 4 servers using NGINX load balancer to handle 15,000 requests/second *' +
-          'Deployed application using multiple AWS EC2 T2.micro instances',
+        description: 'Redesigned the legacy database schema to use decimal data types for more precise mortgage calculations *' +
+          'Created a custom script which randomly generated a csv file with 10 million mock mortgage records for testing purposes*' +
+          'Utilized a csv import method to efficiently inject those 10 million records into the database in under ten minutes *' +
+          'Reduced database select query times to less than half a millisecond by indexing the table *' +
+          'Deployed onto AWS EC2 cloud-computing platform for quick scalability in case of computational load changes' + '*Horizontally' +
+          ' scaled across four t2.micro instances using NGiNX load balancing to handle up to 15,000 requests/second for large scale' +
+          ' network traffic testing *Adhered to Agile methodologies using GitHub\'s version control system to submit pull requests and administer peer to peer code reviews',
         href: 'https://github.com/SDC-8/steve'
       },
       mymappins: {
         name: 'My Map Pins',
         subtitle: 'App using Google Maps API',
-        caption: 'Save your own labeled marker on Google Maps',
+        caption: 'Full Stack Software Engineer - Save your own labeled marker on Google Maps',
         imgSm: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/mappins-small.png',
         imgLg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/mappins.png',
         tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | Google Maps API',
-        description: 'MVP application designed with Bootstrap in the front end *' + 'Rendered maps utilizing the Google-Maps-React library' +
-          ' along with Google Maps API *Added functionality for user to attach a note to specified geographical Markers *' + "Saved" +
-          " user's personalized note along with assigned coordinates using MongoDB",
+        description: 'Designed front end with Bootstrap for a clean user interface with simplicity in mind*' + 'Rendered maps utilizing' +
+          ' the google-maps-react library in conjunction with the Google Maps API*Added functionality for user to attach a note to' +
+          ' specified geographical Markers *' + "Programmed functionality for users to attach or edit a note via tooltip at a user specific geographical marker *Formulated and applied proper logic for users to employ create, read, update and delete operations on notes stored within a document-oriented database",
         href: 'https://github.com/stevenchung213/mvp'
       },
       repofetcher: {
         name: 'Github Repo Fetcher',
         subtitle: 'App using Github API',
-        caption: 'Retrieve all repos of a Github user',
+        caption: 'Full Stack Software Engineer - Retrieve all repos of a Github user',
         imgSm: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/repofetcher-small.png',
         imgLg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/repofetcher.png',
         tech: 'React | Node | Express | MongoDB | Mongoose | jQuery | Bootstrap | GitHub API',
-        description: 'Designed a clean interface for users to search for and display a Github user\'s repos *' +
-          'Saves all user\'s repos to MongoDB *' +
-          'Lists top 25 repo\'s sorted by fork count when not searching for specific user',
+        description: 'Developed the front end with Bootstrap for a clean and simple user interface*' +
+          'Composed functionality for a user to search a GitHub handle\'s repositories and sort by popularity*' +
+          'Architected the back end to store all user searched repositories within a document-oriented database allowing the display of the overall top 25 most popular repos',
         href: 'https://github.com/stevenchung213/hrr34-fullstack-review'
       },
       portfolio: {
         name: 'Personal Site',
         subtitle: 'My Portfolio Site',
-        caption: 'Portfolio',
+        caption: 'Front End Software Engineer - Portfolio',
         imgSm: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/portfolio-small.png',
         imgLg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/portfolio.png',
         tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
         description: 'Front end bootstrapped using Material Design' +
           ' for' +
-          ' React *Optimizations: code splitting, gzip compression, image compression and caching *Webpack configuration: Terser |' +
-          ' OptimizeCSSAssets | Chunk Splitting | ImageMin | MiniCSSExtract | Compression | HTMLWebpack | WebpackPWAManifest | Workbox *' +
+          ' React *Front end optimizations: code splitting, gzip compression, css extraction, image compression and caching *Webpack' +
+          ' configuration:' +
+          ' TerserMinification |' +
+          ' OptimizeCSSAssets | Chunk Splitting | ImageMinification | MiniCSSExtract | Compression | HTMLWebpack | HTMLWebpackTemplate |' +
+          ' WebpackPWAManifest |' +
+          ' WorkboxServiceWorker' +
+          ' *' +
           'Deployed using Github Pages with conditional React rendering *Service worker implemented for offline availability (currently' +
           ' disabled since Github Pages deployment does not support service' +
-          ' workers) *All image files hosted by S3 with caching enabled * Designed for Chrome',
+          ' workers) *All image files hosted by S3 with caching enabled *Designed for Chrome',
         href: 'https://github.com/stevenchung213/stevenchung213.github.io'
       }
     },
