@@ -235,6 +235,10 @@ li.slide.selected {
     background: transparent;
 }
 
+.control-arrow {
+    transform: scale(3);
+}
+
 /*
     MODAL STYLES
 */

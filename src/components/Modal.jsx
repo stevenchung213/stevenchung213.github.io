@@ -1,12 +1,11 @@
-import React, {Component, Fragment} from 'react';
-import {MDBBtn, MDBDropdownMenu} from 'mdbreact';
+import React, { Component, Fragment } from 'react';
+import { MDBBtn, MDBDropdownMenu } from 'mdbreact';
 import ResponsiveModal from 'react-responsive-modal';
-import {Fade} from 'react-reveal';
+import { Fade } from 'react-reveal';
 import posed from 'react-pose';
 import SplitText from 'react-pose-text';
 
-import {DataContext} from "../providers/Data.jsx";
-
+import { DataContext } from "../providers/Data.jsx";
 
 export default class Modal extends Component {
   constructor(props) {
@@ -15,17 +14,17 @@ export default class Modal extends Component {
       showModal: false
     };
   }
-
+  
   handleOpenModal = () => {
-    this.setState({showModal: true});
+    this.setState({ showModal: true });
   };
-
+  
   handleCloseModal = () => {
-    this.setState({showModal: false});
+    this.setState({ showModal: false });
   };
-
+  
   render() {
-
+    
     const TextBox = posed.div({
       exit: {
         x: '0%'
@@ -37,10 +36,10 @@ export default class Modal extends Component {
       }
     });
     const charPoses = {
-      exit: {opacity: 0},
-      enter: {opacity: 1}
+      exit: { opacity: 0 },
+      enter: { opacity: 1 }
     };
-
+    
     const header = {
       display: 'flex',
       justifyContent: 'center',
@@ -52,7 +51,7 @@ export default class Modal extends Component {
       height: 'auto',
       width: '100%',
       display: 'inline-flex',
-
+      
       paddingTop: '0.5vh',
       paddingBottom: 0
     };
@@ -74,7 +73,7 @@ export default class Modal extends Component {
       marginTop: '1vh',
       paddingLeft: '4vw',
       paddingRight: '2vw'
-
+      
     };
     const listing = {
       textAlign: 'left',
@@ -85,11 +84,10 @@ export default class Modal extends Component {
       justifyContent: 'center',
       height: 'auto',
       width: '100%'
-
     };
-
+    
     let project;
-
+    
     return (
       <DataContext.Consumer>
         {
@@ -97,25 +95,27 @@ export default class Modal extends Component {
             this.props.project === 'Su Casa' ? project = context.projects.sucasa :
               this.props.project === 'Zillwoah!' ? project = context.projects.zillwoah :
                 this.props.project === 'My Map Pins' ? project = context.projects.mymappins :
-                  this.props.project === 'Personal Site' ? project = context.projects.portfolio : project = context.projects.repofetcher;
+                  this.props.project === 'Personal Site' ? project = context.projects.portfolio :
+                    this.props.project === 'My iTunes' ? project = context.projects.itunes :
+                      project = context.projects.repofetcher;
             return (
               <Fragment>
-                <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal} style={{fontWeight: 800}}>More
+                <MDBBtn className='modal-button-open' color="white" onClick={this.handleOpenModal} style={{ fontWeight: 800 }}>More
                   Info</MDBBtn>
                 <ResponsiveModal open={this.state.showModal} onClose={this.handleCloseModal} center={true}
                                  blockScroll={true} focusTrapped={false} closeOnEsc={true} showCloseIcon={false}>
                   <div className='modal-header' style={header}>
-                    <div className='modal-title-box' style={{display: 'flex', flexDirection: 'column'}}>
+                    <div className='modal-title-box' style={{ display: 'flex', flexDirection: 'column' }}>
                       <TextBox initialPose="exit" pose="enter">
-                        <h3 className='h3-responsive' style={{fontWeight: 600, textAlign: 'center', marginBlockEnd: 0}}>
+                        <h3 className='h3-responsive' style={{ fontWeight: 600, textAlign: 'center', marginBlockEnd: 0 }}>
                           <SplitText charPoses={charPoses}>
                             {project.name}
                           </SplitText>
                         </h3>
                       </TextBox>
-                      <div className='modal-subtitle-box' style={{display: 'flex', justifyContent: 'center'}}>
+                      <div className='modal-subtitle-box' style={{ display: 'flex', justifyContent: 'center' }}>
                         <TextBox initialPose="exit" pose="enter">
-                          <i style={{fontSize: '1rem', fontWeight: 500, textAlign: 'center'}}>
+                          <i style={{ fontSize: '1rem', fontWeight: 500, textAlign: 'center' }}>
                             <SplitText charPoses={charPoses}>
                               {project.caption}
                             </SplitText>
@@ -128,15 +128,15 @@ export default class Modal extends Component {
                     <div className='modal-body-top' style={bodyTop}>
                       <Fade big>
                         <div className='modal-image-container w-responsive'
-                             style={{width: '100%', height: 'auto'}}>
+                             style={{ width: '100%', height: 'auto' }}>
                           <img src={project.imgLg} alt={project.name} style={image}/>
                         </div>
                       </Fade>
-                      <div className='modal-project-info' style={{width: '100%', height: 'auto', paddingTop: '0.2vh'}}>
+                      <div className='modal-project-info' style={{ width: '100%', height: 'auto', paddingTop: '0.2vh' }}>
                         <div className='modal-tech-stack'>
                           <TextBox initialPose="exit" pose="enter">
                             <h5 className='h5-responsive'
-                                style={{fontWeight: 500, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center', marginTop: '1vh'}}>
+                                style={{ fontWeight: 500, paddingLeft: '1em', paddingRight: '1em', textAlign: 'center', marginTop: '1vh' }}>
                               <SplitText charPoses={charPoses}>
                                 {project.tech}
                               </SplitText>
@@ -164,6 +164,10 @@ export default class Modal extends Component {
                   <div className='modal-footer w-auto' style={footer}>
                     <MDBBtn color="black" onClick={this.handleCloseModal} href='#projects-nav'>Close</MDBBtn>
                     <MDBBtn color="black" target="_blank" rel="noopener noreferrer" href={project.href}>View Code</MDBBtn>
+                    {
+                      project.live &&
+                      <MDBBtn color="black" target="_blank" rel="noopener noreferrer" href={project.live}>View Site</MDBBtn>
+                    }
                   </div>
                 </ResponsiveModal>
               </Fragment>

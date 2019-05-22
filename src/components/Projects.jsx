@@ -1,13 +1,11 @@
-import React, {Fragment} from 'react';
-import {Carousel} from 'react-responsive-carousel';
-import {Fade, Slide} from 'react-reveal';
-import Zoom from 'react-reveal/Zoom';
+import React, { Fragment } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import { Fade, Slide } from 'react-reveal';
 import posed from "react-pose";
 import SplitText from "react-pose-text";
 import Loadable from 'react-loadable';
 import ReactLoading from './Loading.jsx';
-import {DataContext} from "../providers/Data.jsx";
-
+import { DataContext } from "../providers/Data.jsx";
 
 const LoadableModal = Loadable({
   loader: () => import(`./Modal.jsx`),
@@ -16,9 +14,8 @@ const LoadableModal = Loadable({
   }
 });
 
-
 const Projects = () => {
-
+  
   const TextBox = posed.div({
     exit: {
       x: '0%'
@@ -30,10 +27,10 @@ const Projects = () => {
     }
   });
   const charPoses = {
-    exit: {opacity: 0},
-    enter: {opacity: 1}
+    exit: { opacity: 0 },
+    enter: { opacity: 1 }
   };
-
+  
   const general = {
     height: 'auto',
     width: '100%',
@@ -53,26 +50,26 @@ const Projects = () => {
     color: 'white',
     marginBottom: 10
   };
-
+  
   const projectsArray = [];
-
+  
   return (
     <DataContext.Consumer>
       {
         context => {
-
+          
           for (const project in context.projects) {
             projectsArray.push(context.projects[project])
           }
-
+          
           return (
             <Fragment>
-              <Fade clear>
+              <Fade>
                 <div id='projects-container' style={general}>
                   <Fade top>
                     <div style={titleBox}>
                       <TextBox className="white-text" initialPose="exit" pose="enter">
-                        <h3 className='h3-responsive' style={{textAlign: 'center', fontWeight: 600}}>
+                        <h3 className='h3-responsive' style={{ textAlign: 'center', fontWeight: 600 }}>
                           <SplitText charPoses={charPoses}>
                             SOME OF MY WORK
                           </SplitText>
@@ -88,24 +85,28 @@ const Projects = () => {
                       projectsArray.map((project, i) =>
                         <div key={'project' + (i + 1)}>
                           <div>
-                            <div className="w-responsive mx-auto" style={{paddingBottom: '1.5vh'}}>
+                            <div className="w-responsive mx-auto" style={{ paddingBottom: '1.5vh' }}>
                               <div className="mx-auto w-responsive">
-                                <Zoom top>
+                                <Fade>
                                   <img className="mx-auto w-responsive" src={project.imgSm} alt={project.name}/>
-                                </Zoom>
+                                </Fade>
                                 <div className='w-responsive mx-auto text-center p-1 mt-1'>
-                                  <Slide right>
-                                    <h4 className="h4-responsive" style={{color: 'white', fontWeight: 500}}>
-                                      {project.name}
+                                  <TextBox className="white-text" initialPose="exit" pose="enter">
+                                    <h4 className="h4-responsive" style={{ color: 'white', fontWeight: 500 }}>
+                                      <SplitText charPoses={charPoses}>
+                                        {project.name}
+                                      </SplitText>
                                     </h4>
-                                  </Slide>
-                                  <Slide left>
-                                    <h5 className='h5-responsive' style={{color: 'white', marginBottom: 5}}>
+                                  </TextBox>
+                                    <TextBox className="white-text" initialPose="exit" pose="enter">
+                                    <h5 className='h5-responsive' style={{ color: 'white', marginBottom: 5 }}>
                                       <i>
+                                        <SplitText charPoses={charPoses}>
                                         {project.subtitle}
+                                        </SplitText>
                                       </i>
                                     </h5>
-                                  </Slide>
+                                    </TextBox>
                                   <Slide bottom>
                                     <LoadableModal project={project.name}/>
                                   </Slide>

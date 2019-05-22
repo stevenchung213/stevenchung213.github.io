@@ -17,6 +17,25 @@ export default class DataProvider extends Component {
     },
     profileImg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/profile.png',
     projects: {
+      itunes: {
+        name: 'My iTunes',
+        subtitle: 'Personal iTunes Catalog',
+        caption: 'Full Stack Software Engineer - Prototype for TEKSystems',
+        imgSm: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/itunescatalog-small.png',
+        imgLg: 'https://s3-us-west-1.amazonaws.com/my.portfolio/png/itunescatalog.png',
+        tech: 'React | Node | Express | Material UI | Responsive Design | HTML5 Web Storage | AWS S3 | Heroku',
+        description: 'User interface developed with Material UI*Front end optimizations: code splitting | lazy loading | gzip' +
+          ' compression |' +
+          ' css' +
+          ' extraction | image compression | caching*Webpack' +
+          ' configuration:' +
+          ' TerserMinification |' +
+          ' OptimizeCSSAssets | Chunk Splitting | MiniCSSExtract | Compression | HTMLWebpack | HTMLWebpackTemplate*HTML5 web storage' +
+          ' data' +
+          ' persistence implemented for this prototype*Deployed onto Heroku for demonstration purposes',
+        href: 'https://github.com/stevenchung213/teksystems-apple',
+        live: 'https://itunes-catalog.herokuapp.com/'
+      },
       sucasa: {
         name: 'Su Casa',
         subtitle: 'Rental & Lodging App',
@@ -32,7 +51,8 @@ export default class DataProvider extends Component {
           ' proxy to conjoin the team\'s modules from each member\'s cloud environments *Led regular inclusive stand up meetings to' +
           ' track progress and discuss issues while using tools such as Trello to monitor the team\'s progression *Applied Agile' +
           ' methodologies to maintain consistent and sustainable workflow without delay *Enforced code reviews on all pull requests before merging into the main branch on the organization\'s repository to ensure best practices and readability',
-        href: 'https://github.com/stevenchung213/overview-proxy/tree/DEMO_LOCALHOST'
+        href: 'https://github.com/stevenchung213/overview-proxy/tree/DEMO_LOCALHOST',
+        live: false
       },
       zillwoah: {
         name: 'Zillwoah!',
@@ -48,7 +68,8 @@ export default class DataProvider extends Component {
           'Deployed onto AWS EC2 cloud-computing platform for quick scalability in case of computational load changes' + '*Horizontally' +
           ' scaled across four t2.micro instances using NGiNX load balancing to handle up to 15,000 requests/second for large scale' +
           ' network traffic testing *Adhered to Agile methodologies using GitHub\'s version control system to submit pull requests and administer peer to peer code reviews',
-        href: 'https://github.com/SDC-8/steve'
+        href: 'https://github.com/SDC-8/steve',
+        live: false
       },
       mymappins: {
         name: 'My Map Pins',
@@ -60,7 +81,8 @@ export default class DataProvider extends Component {
         description: 'Designed front end with Bootstrap for a clean user interface with simplicity in mind*' + 'Rendered maps utilizing' +
           ' the google-maps-react library in conjunction with the Google Maps API*Added functionality for user to attach a note to' +
           ' specified geographical Markers *' + "Programmed functionality for users to attach or edit a note via tooltip at a user specific geographical marker *Formulated and applied proper logic for users to employ create, read, update and delete operations on notes stored within a document-oriented database",
-        href: 'https://github.com/stevenchung213/mvp'
+        href: 'https://github.com/stevenchung213/mvp',
+        live: false
       },
       repofetcher: {
         name: 'Github Repo Fetcher',
@@ -72,7 +94,8 @@ export default class DataProvider extends Component {
         description: 'Developed the front end with Bootstrap for a clean and simple user interface*' +
           'Composed functionality for a user to search a GitHub handle\'s repositories and sort by popularity*' +
           'Architected the back end to store all user searched repositories within a document-oriented database allowing the display of the overall top 25 most popular repos',
-        href: 'https://github.com/stevenchung213/hrr34-fullstack-review'
+        href: 'https://github.com/stevenchung213/hrr34-fullstack-review',
+        live: false
       },
       portfolio: {
         name: 'Personal Site',
@@ -83,17 +106,19 @@ export default class DataProvider extends Component {
         tech: 'React | Node | Express | Material Design Bootstrap | Responsive Design | AWS S3 | Github Pages',
         description: 'Front end bootstrapped using Material Design' +
           ' for' +
-          ' React *Front end optimizations: code splitting, gzip compression, css extraction, image compression and caching *Webpack' +
+          ' React *Front end optimizations: code splitting | lazy loading | gzip compression | css extraction | image compression |' +
+          ' caching *Webpack' +
           ' configuration:' +
           ' TerserMinification |' +
           ' OptimizeCSSAssets | Chunk Splitting | ImageMinification | MiniCSSExtract | Compression | HTMLWebpack | HTMLWebpackTemplate |' +
           ' WebpackPWAManifest |' +
           ' WorkboxServiceWorker' +
           ' *' +
-          'Deployed using Github Pages with conditional React rendering *Service worker implemented for offline availability (currently' +
+          'Deployed using Github Pages*Service worker implemented for offline availability (currently' +
           ' disabled since Github Pages deployment does not support service' +
           ' workers) *All image files hosted by S3 with caching enabled *Designed for Chrome',
-        href: 'https://github.com/stevenchung213/stevenchung213.github.io'
+        href: 'https://github.com/stevenchung213/stevenchung213.github.io',
+        live: false
       }
     },
     technologies: {
